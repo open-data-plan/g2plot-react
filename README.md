@@ -1,4 +1,4 @@
-# g2plot-react
+# @cisdi/g2plot-react
 
 > [G2Plot](https://g2plot.antv.vision/) for React 🚧
 
@@ -11,13 +11,13 @@
 ## Install
 
 ```
-npm install g2plot-react
+npm install @cisdi/g2plot-react
 ```
 
 ## Usage
 
 ```js
-import { LineChart } from 'g2plot-react'
+import { LineChart } from '@cisdi/g2plot-react'
 ```
 
 ## Develop
@@ -35,7 +35,7 @@ All config defined in `G2Plot` [document](https://g2plot.antv.vision/zh/docs/man
 
 ```tsx
 import React from 'react'
-import { LineChart } from 'g2plot-react'
+import { LineChart } from '@cisdi/g2plot-react'
 import { LineConfig } from '@antv/g2plot'
 
 const config: LineConfig = {
