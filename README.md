@@ -36,6 +36,7 @@ All config defined in `G2Plot` [document](https://g2plot.antv.vision/zh/docs/man
 ```tsx
 import React from 'react'
 import { LineChart } from 'g2plot-react'
+import { LineConfig } from '@antv/g2plot'
 
 const config: LineConfig = {
   height: 400,
