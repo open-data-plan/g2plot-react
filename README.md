@@ -2,6 +2,7 @@
 
 > [G2Plot](https://g2plot.antv.vision/) for React 🚧
 
+[![build](https://github.com/kagawagao/g2plot-react/workflows/build/badge.svg)](https://github.com/kagawagao/g2plot-react/actions?query=workflow%3Abuild)
 [![npm](https://img.shields.io/npm/v/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
 [![npm](https://img.shields.io/npm/dm/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
 [![npm](https://img.shields.io/npm/l/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
