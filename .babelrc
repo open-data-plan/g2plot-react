@@ -1,0 +1,3 @@
+{
+  "presets": ["@cisdi/babel-preset-component"]
+}

@@ -1,0 +1,3 @@
+{
+  "extends": ["@cisdi/stylelint-config-cisdi"]
+}

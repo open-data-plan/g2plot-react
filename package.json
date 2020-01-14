@@ -1,0 +1,89 @@
+{
+  "name": "g2plot-react",
+  "version": "0.0.0",
+  "description": "G2Plot for React",
+  "keywords": [
+    "component",
+    "ui-engine",
+    "cisdi"
+  ],
+  "author": "kagawagao <kingsongao1221@gmail.com> (https://kingsongao.com/)",
+  "homepage": "https://github.com/kagawagao/g2plot-react",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "typings",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib",
+    "es",
+    "typings",
+    "*.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kagawagao/g2plot-react.git"
+  },
+  "scripts": {
+    "lint": "eslint . --ext=.ts,.tsx",
+    "lint:fix": "eslint . --ext=.ts,.tsx --fix",
+    "test": "jest",
+    "prebuild": "npm test",
+    "build": "npm run build:es & npm run build:commonjs & npm run build:types",
+    "build:es": "babel src -d es --extensions .ts,.tsx",
+    "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d lib --extensions .ts,.tsx",
+    "build:types": "tsc",
+    "preversion": "npm run build"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0",
+    "@cisdi/babel-preset-component": "^0.2.2",
+    "@cisdi/eslint-config-cisdi": "^0.10.3",
+    "@cisdi/jest-preset-cisdi": "^0.1.2",
+    "@cisdi/prettier-config-cisdi": "^0.1.4",
+    "@cisdi/stylelint-config-cisdi": "^0.1.5",
+    "@types/jest": "^24.0.23",
+    "@types/lodash": "^4.14.149",
+    "@types/react-dom": "^16.9.4",
+    "canvas": "^2.6.1",
+    "cross-env": "^6.0.3",
+    "husky": "^4.0.7",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^24.8.0",
+    "lint-staged": "^9.5.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-test-renderer": "^16.12.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.7.2"
+  },
+  "prettier": "@cisdi/prettier-config-cisdi",
+  "dependencies": {
+    "@antv/g2plot": "^0.11.22"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{css,less}": [
+      "stylelint --fix",
+      "git add"
+    ],
+    "*.{json,md}": [
+      "prettier -c --write",
+      "git add"
+    ]
+  }
+}
