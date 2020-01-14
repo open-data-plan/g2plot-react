@@ -5,6 +5,7 @@
 [![npm](https://img.shields.io/npm/v/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
 [![npm](https://img.shields.io/npm/dm/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
 [![npm](https://img.shields.io/npm/l/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
+[![codecov](https://codecov.io/gh/kagawagao/g2plot-react/branch/master/graph/badge.svg)](https://codecov.io/gh/kagawagao/g2plot-react)
 
 ## Progress
 
