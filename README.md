@@ -2,6 +2,10 @@
 
 > [G2Plot](https://g2plot.antv.vision/) for React 🚧
 
+[![npm](https://img.shields.io/npm/v/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
+[![npm](https://img.shields.io/npm/dm/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
+[![npm](https://img.shields.io/npm/l/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
+
 ## Progress
 
 - [x] `LineChart`
