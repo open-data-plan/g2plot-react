@@ -4,8 +4,9 @@
   "description": "G2Plot for React",
   "keywords": [
     "component",
-    "ui-engine",
-    "cisdi"
+    "g2",
+    "g2plot",
+    "chart"
   ],
   "author": "kagawagao <kingsongao1221@gmail.com> (https://kingsongao.com/)",
   "homepage": "https://github.com/kagawagao/g2plot-react",
