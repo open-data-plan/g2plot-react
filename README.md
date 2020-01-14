@@ -6,7 +6,7 @@
 
 - [x] `LineChart`
 - [x] `ScatterChart`
-- [ ] `ColumnChart`
+- [x] `ColumnChart`
 
 ## Install
 
