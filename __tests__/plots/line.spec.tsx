@@ -30,13 +30,13 @@ describe('LineChart', () => {
 
     expect(instance.props.data).toEqual([])
 
-    expect(renderer.toJSON()).toMatchSnapshot('LineChart')
+    expect(renderer.toJSON()).toMatchSnapshot()
 
     act(() => {
       renderer.update(<LineChart data={[{ x: 1 }]} forceFit />)
     })
 
-    expect(renderer.toJSON()).toMatchSnapshot('LineChart')
+    expect(renderer.toJSON()).toMatchSnapshot()
 
     expect(instance.props.data).toEqual([{ x: 1 }])
 
