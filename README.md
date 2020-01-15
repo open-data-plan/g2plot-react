@@ -8,11 +8,30 @@
 [![npm](https://img.shields.io/npm/l/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
 [![codecov](https://codecov.io/gh/kagawagao/g2plot-react/branch/master/graph/badge.svg)](https://codecov.io/gh/kagawagao/g2plot-react)
 
-## Progress
+## Support Chart
 
-- [x] `LineChart`
-- [x] `ScatterChart`
-- [x] `ColumnChart`
+- [x] [`LineChart`](https://g2plot.antv.vision/zh/docs/manual/plots/line)
+- [x] [`ScatterChart`](https://g2plot.antv.vision/zh/docs/manual/plots/scatter)
+- [x] [`ColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/column)
+- [x] [`StackColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/stack-column)
+- [x] [`GroupColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/group-column)
+- [x] [`BarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/bar)
+- [x] [`StackBarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/stack-bar)
+- [x] [`GroupBarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/group-bar)
+- [x] [`AreaChart`](https://g2plot.antv.vision/zh/docs/manual/plots/area)
+- [x] [`StackAreaChart`](https://g2plot.antv.vision/zh/docs/manual/plots/stack-area)
+- [x] [`BubbleChart`](https://g2plot.antv.vision/zh/docs/manual/plots/bubble)
+- [x] [`PieChart`](https://g2plot.antv.vision/zh/docs/manual/plots/pie)
+- [x] [`RingChart`](https://g2plot.antv.vision/zh/docs/manual/plots/ring)
+- [x] [`RadarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/radar)
+- [x] [`GaugeChart`](https://g2plot.antv.vision/zh/docs/manual/plots/gauge)
+- [x] [`HeatmapChart`](https://g2plot.antv.vision/zh/docs/manual/plots/heatmap)
+- [x] [`MatrixChart`](https://g2plot.antv.vision/zh/docs/manual/plots/matrix)
+- [x] [`ProgressChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-progress)
+- [x] [`RingProgressChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-ring-progress)
+- [x] [`TinyLineChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-line)
+- [x] [`TinyAreaChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-area)
+- [x] [`TinyColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-column)
 
 ## Install
 
