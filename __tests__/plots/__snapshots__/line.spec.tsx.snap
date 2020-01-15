@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LineChart test lifecycle: LineChart 1`] = `[Function]`;
+
+exports[`LineChart test lifecycle: LineChart 2`] = `[Function]`;
