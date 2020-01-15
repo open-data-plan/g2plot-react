@@ -18,6 +18,7 @@ export interface BaseChartProps<
   C extends PlotConfig = PlotConfig
 > extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
   chart: Plot<T, C>
+  onMount?: (chart: BasePlot<C>) => void
 }
 
 export default class BaseChart<
@@ -32,11 +33,11 @@ export default class BaseChart<
   }
 
   private getConfig = (props: BaseChartProps<T, C>) => {
-    return omit(props, ['style', 'className', 'chart']) as C
+    return omit(props, ['style', 'className', 'chart', 'onMount']) as C
   }
 
   componentDidMount() {
-    const { chart } = this.props
+    const { chart, onMount } = this.props
     const config = this.getConfig(this.props)
     const Chart = chart
     const { data, ...restConfig } = config as any
@@ -44,6 +45,9 @@ export default class BaseChart<
     if (this.el) {
       this.chart = new Chart(this.el, config)
       this.chart.render()
+      if (typeof onMount === 'function') {
+        onMount(this.chart)
+      }
     }
   }
 

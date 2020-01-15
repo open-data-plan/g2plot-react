@@ -56,10 +56,14 @@ npm run build
 
 All config defined in `G2Plot` [document](https://g2plot.antv.vision/zh/docs/manual/introduction) can be used as `props`
 
+Extra Props:
+
+- `onMount`: `(chart: Plot) => void`. triggered after chart render
+
 ### Example
 
 ```tsx
-import React from 'react'
+import React, { useCallback } from 'react'
 import { LineChart } from '@cisdi/g2plot-react'
 import { LineConfig } from '@antv/g2plot'
 
@@ -102,6 +106,9 @@ const config: LineConfig = {
 }
 
 export default () => {
-  return <LineChart {...config} />
+  const handleChartMount = useCallback(chart => {
+    console.log(chart)
+  }, [])
+  return <LineChart {...config} onMount={handleChartMount} />
 }
 ```
