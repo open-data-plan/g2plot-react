@@ -19,6 +19,7 @@ export interface BaseChartProps<
 > extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
   chart: Plot<T, C>
   onMount?: (chart: BasePlot<C>) => void
+  [x: string]: any
 }
 
 export default class BaseChart<

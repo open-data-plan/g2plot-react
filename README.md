@@ -33,6 +33,10 @@
 - [x] [`TinyAreaChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-area)
 - [x] [`TinyColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-column)
 
+## TODO
+
+- [ ] add themes
+
 ## Install
 
 ```
