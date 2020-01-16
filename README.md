@@ -11,6 +11,7 @@
 ## Support Chart
 
 - [x] [`LineChart`](https://g2plot.antv.vision/zh/docs/manual/plots/line)
+- [x] [`StepLineChart`](https://g2plot.antv.vision/zh/examples/step-line/multiple)
 - [x] [`ScatterChart`](https://g2plot.antv.vision/zh/docs/manual/plots/scatter)
 - [x] [`ColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/column)
 - [x] [`StackColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/stack-column)
