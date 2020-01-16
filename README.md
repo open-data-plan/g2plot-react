@@ -1,12 +1,12 @@
-# @cisdi/g2plot-react
+# @opd/g2plot-react
 
 > [G2Plot](https://g2plot.antv.vision/) for React 🚧
 
-[![build](https://github.com/kagawagao/g2plot-react/workflows/build/badge.svg)](https://github.com/kagawagao/g2plot-react/actions?query=workflow%3Abuild)
-[![npm](https://img.shields.io/npm/v/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
-[![npm](https://img.shields.io/npm/dm/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
-[![npm](https://img.shields.io/npm/l/@cisdi/g2plot-react.svg)](https://www.npmjs.com/package/@cisdi/g2plot-react)
-[![codecov](https://codecov.io/gh/kagawagao/g2plot-react/branch/master/graph/badge.svg)](https://codecov.io/gh/kagawagao/g2plot-react)
+[![build](https://github.com/open-data-plan/g2plot-react/workflows/build/badge.svg)](https://github.com/open-data-plan/g2plot-react/actions?query=workflow%3Abuild)
+[![npm](https://img.shields.io/npm/v/@opd/g2plot-react.svg)](https://www.npmjs.com/package/@opd/g2plot-react)
+[![npm](https://img.shields.io/npm/dm/@opd/g2plot-react.svg)](https://www.npmjs.com/package/@opd/g2plot-react)
+[![npm](https://img.shields.io/npm/l/@opd/g2plot-react.svg)](https://www.npmjs.com/package/@opd/g2plot-react)
+[![codecov](https://codecov.io/gh/open-data-plan/g2plot-react/branch/master/graph/badge.svg)](https://codecov.io/gh/open-data-plan/g2plot-react)
 
 ## Support Chart
 
@@ -43,13 +43,13 @@
 ## Install
 
 ```
-npm install @cisdi/g2plot-react
+npm install @opd/g2plot-react
 ```
 
 ## Usage
 
 ```js
-import { LineChart } from '@cisdi/g2plot-react'
+import { LineChart } from '@opd/g2plot-react'
 ```
 
 ## Develop
@@ -71,7 +71,7 @@ Extra Props:
 
 ```tsx
 import React, { useCallback } from 'react'
-import { LineChart } from '@cisdi/g2plot-react'
+import { LineChart } from '@opd/g2plot-react'
 import { LineConfig } from '@antv/g2plot'
 
 const config: LineConfig = {

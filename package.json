@@ -1,6 +1,6 @@
 {
-  "name": "@cisdi/g2plot-react",
-  "version": "0.0.1-beta.0",
+  "name": "@opd/g2plot-react",
+  "version": "0.0.0",
   "description": "G2Plot for React",
   "keywords": [
     "component",
@@ -9,7 +9,7 @@
     "chart"
   ],
   "author": "kagawagao <kingsongao1221@gmail.com> (https://kingsongao.com/)",
-  "homepage": "https://github.com/kagawagao/g2plot-react",
+  "homepage": "https://github.com/open-data-plan/g2plot-react",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kagawagao/g2plot-react.git"
+    "url": "https://github.com/open-data-plan/g2plot-react.git"
   },
   "scripts": {
     "lint": "eslint . --ext=.ts,.tsx",
