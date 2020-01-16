@@ -32,6 +32,9 @@
 - [x] [`TinyLineChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-line)
 - [x] [`TinyAreaChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-area)
 - [x] [`TinyColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-column)
+- [x] [`FunnelChart`](https://g2plot.antv.vision/zh/examples/funnel/basic)
+- [x] [`LiquidChart`](https://g2plot.antv.vision/zh/examples/liquid/basic)
+- [x] [`OverlappedComboChart`](https://g2plot.antv.vision/zh/examples/combo/basic)
 
 ## TODO
 
