@@ -120,3 +120,7 @@ export default () => {
   return <LineChart {...config} onMount={handleChartMount} />
 }
 ```
+
+## ❓ Why `Scoped`
+
+package named as [`g2plot-react`](https://www.npmjs.com/package/g2plot-react) has been used by others
