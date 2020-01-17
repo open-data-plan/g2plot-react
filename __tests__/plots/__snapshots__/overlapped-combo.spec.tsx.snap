@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`overlappedComboChart should render without crashed 1`] = `<div />`;
+exports[`OverlappedComboChart test lifecycle 1`] = `<div />`;
+
+exports[`OverlappedComboChart test lifecycle 2`] = `<div />`;
