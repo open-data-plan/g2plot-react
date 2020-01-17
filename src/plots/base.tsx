@@ -6,7 +6,7 @@ import BasePlot, { PlotConfig } from '@antv/g2plot/lib/base/plot'
 
 type PickedAttrs = 'className' | 'style'
 
-interface Plot<
+export interface Plot<
   T extends BasePlot = BasePlot,
   C extends PlotConfig = PlotConfig
 > {

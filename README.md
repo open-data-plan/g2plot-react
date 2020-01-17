@@ -15,12 +15,16 @@
 - [x] [`ScatterChart`](https://g2plot.antv.vision/zh/docs/manual/plots/scatter)
 - [x] [`ColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/column)
 - [x] [`StackColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/stack-column)
+- [x] [`PercentageStackColumnChart`](https://g2plot.antv.vision/zh/examples/column/percentageStack)
 - [x] [`GroupColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/group-column)
+- [x] [`WaterfallChart`](https://g2plot.antv.vision/zh/examples/column/waterfall)
 - [x] [`BarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/bar)
 - [x] [`StackBarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/stack-bar)
+- [x] [`PercentageStackBarChart`](https://g2plot.antv.vision/zh/examples/bar/percentageStack)
 - [x] [`GroupBarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/group-bar)
 - [x] [`AreaChart`](https://g2plot.antv.vision/zh/docs/manual/plots/area)
 - [x] [`StackAreaChart`](https://g2plot.antv.vision/zh/docs/manual/plots/stack-area)
+- [x] [`PercentageStackAreaChart`](https://g2plot.antv.vision/zh/examples/area/percentageArea)
 - [x] [`BubbleChart`](https://g2plot.antv.vision/zh/docs/manual/plots/bubble)
 - [x] [`PieChart`](https://g2plot.antv.vision/zh/docs/manual/plots/pie)
 - [x] [`RingChart`](https://g2plot.antv.vision/zh/docs/manual/plots/ring)
@@ -36,6 +40,7 @@
 - [x] [`FunnelChart`](https://g2plot.antv.vision/zh/examples/funnel/basic)
 - [x] [`LiquidChart`](https://g2plot.antv.vision/zh/examples/liquid/basic)
 - [x] [`OverlappedComboChart`](https://g2plot.antv.vision/zh/examples/combo/basic)
+- [ ] [`RoseChart`]
 
 ## TODO
 
