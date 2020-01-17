@@ -40,7 +40,7 @@
 - [x] [`FunnelChart`](https://g2plot.antv.vision/zh/examples/funnel/basic)
 - [x] [`LiquidChart`](https://g2plot.antv.vision/zh/examples/liquid/basic)
 - [x] [`OverlappedComboChart`](https://g2plot.antv.vision/zh/examples/combo/basic)
-- [ ] [`RoseChart`]
+- [ ] [`RoseChart`](https://github.com/antvis/G2Plot/blob/8800376bd26d2b8e0db42e6666b8e06e7b586f84/src/plots/index.ts#L27)
 
 ## TODO
 
