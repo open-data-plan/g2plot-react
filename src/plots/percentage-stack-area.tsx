@@ -10,6 +10,7 @@ const PercentageStackAreaChart: FC<PercentageStackAreaChartProps> = props => {
   return (
     <BaseChart
       chart={
+        // FIXME: remove `as` in next G2Plot version
         PercentageStackArea as Plot<
           BasePlot<PercentageStackAreaConfig>,
           PercentageStackAreaConfig
