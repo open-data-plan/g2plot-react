@@ -1,5 +1,6 @@
 import React from 'react'
 import { create, act, ReactTestRenderer } from 'react-test-renderer'
+import ReactDOM from 'react-dom'
 import OverlappedComboChart from '../../src/plots/overlapped-combo'
 
 const uvBillData = [
@@ -46,10 +47,17 @@ const config = {
 }
 
 describe('OverlappedComboChart', () => {
-  test('should render without crashed', () => {
-    const renderer = create(<OverlappedComboChart {...config} />)
+  test('render without crashed', () => {
+    const div = document.createElement('div')
+    ReactDOM.render(<OverlappedComboChart {...config} />, div)
+  })
 
-    expect(renderer.toJSON()).toMatchSnapshot()
+  test('onMount should be called', () => {
+    const onMount = jest.fn()
+    const div = document.createElement('div')
+    ReactDOM.render(<OverlappedComboChart {...config} onMount={onMount} />, div)
+
+    expect(onMount).toBeCalled()
   })
   test('test lifecycle', () => {
     let renderer: ReactTestRenderer
