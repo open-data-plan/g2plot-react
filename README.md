@@ -1,6 +1,6 @@
 # @opd/g2plot-react
 
-> [G2Plot](https://g2plot.antv.vision/) for React 🚧
+> [G2Plot](https://g2plot.antv.vision/) for React
 
 [![build](https://github.com/open-data-plan/g2plot-react/workflows/build/badge.svg)](https://github.com/open-data-plan/g2plot-react/actions?query=workflow%3Abuild)
 [![npm](https://img.shields.io/npm/v/@opd/g2plot-react.svg)](https://www.npmjs.com/package/@opd/g2plot-react)

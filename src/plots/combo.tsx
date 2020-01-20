@@ -24,7 +24,7 @@ export default class ComboChart<
   C extends ComboPlotConfig = ComboPlotConfig
 > extends React.Component<ComboChartProps<T, C>> {
   private el: HTMLDivElement | null = null
-  private chart?: ComboPlot<C>
+  private chart?: ComboPlot<C> | null = null
   private getContainer = (el: HTMLDivElement | null) => {
     this.el = el
   }
@@ -48,6 +48,7 @@ export default class ComboChart<
 
   componentDidUpdate() {
     const config = this.getConfig(this.props)
+    /* istanbul ignore else */
     if (this.chart) {
       this.chart.updateConfig(config as any)
       this.chart.render()
@@ -55,8 +56,10 @@ export default class ComboChart<
   }
 
   componentWillUnmount() {
+    /* istanbul ignore else */
     if (this.chart) {
       this.chart.destroy()
+      this.chart = null
     }
   }
 

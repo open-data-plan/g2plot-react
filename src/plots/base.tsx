@@ -26,7 +26,7 @@ export default class BaseChart<
   C extends PlotConfig = PlotConfig
 > extends React.Component<BaseChartProps<T, C>> {
   private el: HTMLDivElement | null = null
-  private chart?: BasePlot<C>
+  private chart?: BasePlot<C> | null
   private config?: any
   private getContainer = (el: HTMLDivElement | null) => {
     this.el = el
@@ -55,6 +55,7 @@ export default class BaseChart<
     const config = this.getConfig(this.props)
     const { data, ...restConfig } = config as any
     const isConfigChanged = !isEqual(this.config, restConfig)
+    /* istanbul ignore else */
     if (this.chart) {
       if (isConfigChanged) {
         this.config = cloneDeep(restConfig)
@@ -67,8 +68,10 @@ export default class BaseChart<
   }
 
   componentWillUnmount() {
+    /* istanbul ignore else */
     if (this.chart) {
       this.chart.destroy()
+      this.chart = null
     }
   }
 

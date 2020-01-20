@@ -2,8 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { create, act, ReactTestRenderer } from 'react-test-renderer'
 import LineChart from '../../src/plots/line'
-// import { LineConfig } from '@antv/g2plot'
-// import BasePlot from '@antv/g2plot/lib/base/plot'
 
 describe('LineChart', () => {
   test('render without crashed', () => {
@@ -17,6 +15,17 @@ describe('LineChart', () => {
     ReactDOM.render(<LineChart data={[]} onMount={onMount} />, div)
 
     expect(onMount).toBeCalled()
+  })
+
+  test('test update config and data', () => {
+    const div = document.createElement('div')
+    ReactDOM.render(<LineChart data={[]} />, div)
+
+    ReactDOM.render(<LineChart data={[]} forceFit />, div)
+
+    ReactDOM.render(<LineChart data={[{ x: 1 }]} forceFit />, div)
+
+    ReactDOM.unmountComponentAtNode(div)
   })
 
   test('test lifecycle', () => {

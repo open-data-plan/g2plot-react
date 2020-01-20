@@ -59,6 +59,20 @@ describe('OverlappedComboChart', () => {
 
     expect(onMount).toBeCalled()
   })
+
+  test('test update config ', () => {
+    const div = document.createElement('div')
+    ReactDOM.render(<OverlappedComboChart {...config} />, div)
+
+    ReactDOM.render(
+      <OverlappedComboChart
+        layers={[config[0], { ...config[1], lineSize: 3 }]}
+      />,
+      div
+    )
+
+    ReactDOM.unmountComponentAtNode(div)
+  })
   test('test lifecycle', () => {
     let renderer: ReactTestRenderer
 
