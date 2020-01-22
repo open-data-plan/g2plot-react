@@ -57,7 +57,7 @@
     "cross-env": "^6.0.3",
     "husky": "^4.0.10",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.8.0",
+    "jest": "^25.1.0",
     "jest-canvas-mock": "^2.2.0",
     "lint-staged": "^10.0.1",
     "react": "^16.12.0",
