@@ -129,6 +129,8 @@ export default () => {
 }
 ```
 
+[![Edit g2plot-react-example](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/g2plot-react-example-xx3gp?fontsize=14&hidenavigation=1&theme=dark)
+
 ## ❓ Why `Scoped`
 
 package named as [`g2plot-react`](https://www.npmjs.com/package/g2plot-react) has been used by others
