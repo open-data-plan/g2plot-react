@@ -1,11 +1,11 @@
-// import React, { FC } from 'react'
-// import { Rose, RoseConfig } from '@antv/g2plot'
-// import BaseChart, { BaseChartProps } from './base'
+import React, { FC } from 'react'
+import { Rose, RoseConfig } from '@antv/g2plot'
+import BaseChart, { BaseChartProps } from './base'
 
-// export type RoseChartProps = Omit<BaseChartProps, 'chart'> & RoseConfig
+export type RoseChartProps = Omit<BaseChartProps, 'chart'> & RoseConfig
 
-// const RoseChart: FC<RoseChartProps> = props => {
-//   return <BaseChart chart={Rose} {...props} />
-// }
+const RoseChart: FC<RoseChartProps> = props => {
+  return <BaseChart chart={Rose} {...props} />
+}
 
-// export default RoseChart
+export default RoseChart
