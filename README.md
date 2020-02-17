@@ -44,10 +44,7 @@
 - [x] [`OverlappedComboChart`](https://g2plot.antv.vision/zh/examples/combo/basic)
 - [x] [`RoseChart`](https://g2plot.antv.vision/zh/examples/rose/basic)
 - [x] [`WordCloudChart`](https://g2plot.antv.vision/zh/examples/word-cloud/basic)
-
-## TODO
-
-- [ ] add themes
+- [x] [`AVAChart`](https://github.com/antvis/AVA)
 
 ## Install
 
