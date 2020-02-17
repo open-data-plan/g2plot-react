@@ -8,6 +8,7 @@ export interface AVAProps extends AutoChartOptions {
 const AVA: FC<AVAProps> = props => {
   const container = useRef<HTMLDivElement>(null)
   useEffect(() => {
+    /* istanbul ignore else */
     if (container.current) {
       const { data, ...config } = props
       autoChart(container.current, data, config)

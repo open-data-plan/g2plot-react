@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AVAChart should render without crashed 1`] = `<div />`;
+exports[`AVAChart match snapshot 1`] = `<div />`;
