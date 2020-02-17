@@ -72,7 +72,7 @@
   "dependencies": {
     "@antv/chart-advisor": "0.0.2-alpha.17",
     "@antv/g": "^3.5.0-beta.3",
-    "@antv/g2plot": "^0.11.27"
+    "@antv/g2plot": "^0.11.28"
   },
   "husky": {
     "hooks": {
