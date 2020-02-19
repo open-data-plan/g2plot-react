@@ -44,11 +44,11 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@cisdi/babel-preset-component": "^0.2.5",
-    "@cisdi/eslint-config-cisdi": "^0.10.4",
+    "@cisdi/babel-preset-component": "^0.2.6",
+    "@cisdi/eslint-config-cisdi": "^0.10.5",
     "@cisdi/jest-preset-cisdi": "^0.1.4",
     "@cisdi/prettier-config-cisdi": "^0.1.4",
-    "@cisdi/stylelint-config-cisdi": "^0.1.8",
+    "@cisdi/stylelint-config-cisdi": "^0.1.9",
     "@types/jest": "^25.1.2",
     "@types/lodash": "^4.14.149",
     "@types/react-dom": "^16.9.5",
@@ -72,7 +72,7 @@
   "dependencies": {
     "@antv/chart-advisor": "0.0.2-alpha.17",
     "@antv/g": "^3.5.0-beta.3",
-    "@antv/g2plot": "^0.11.28"
+    "@antv/g2plot": "^0.11.31"
   },
   "husky": {
     "hooks": {
