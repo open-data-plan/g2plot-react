@@ -40,7 +40,8 @@
     "build:es": "babel src -d es --extensions .ts,.tsx",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d lib --extensions .ts,.tsx",
     "build:types": "tsc",
-    "preversion": "npm run build"
+    "preversion": "npm run build",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
@@ -49,11 +50,14 @@
     "@cisdi/jest-preset-cisdi": "^0.1.4",
     "@cisdi/prettier-config-cisdi": "^0.1.4",
     "@cisdi/stylelint-config-cisdi": "^0.1.9",
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
     "@types/jest": "^25.1.3",
     "@types/lodash": "^4.14.149",
     "@types/react-dom": "^16.9.5",
     "@types/react-test-renderer": "^16.9.2",
     "canvas": "^2.6.1",
+    "conventional-changelog-cli": "^2.0.31",
     "cross-env": "^7.0.0",
     "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
@@ -76,7 +80,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
   },
   "lint-staged": {
