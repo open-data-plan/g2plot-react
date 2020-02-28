@@ -1,3 +1,11 @@
+<a name="0.5.1"></a>
+
+## [0.5.1](https://github.com/open-data-plan/g2plot-react/compare/v0.5.0...v0.5.1) (2020-02-28)
+
+### Features
+
+- support SunburstChart ([805aa45](https://github.com/open-data-plan/g2plot-react/commit/805aa45))
+
 # [0.5.0](https://github.com/open-data-plan/g2plot-react/compare/v0.4.4...v0.5.0) (2020-02-24)
 
 ### Features
