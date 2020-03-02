@@ -1,3 +1,11 @@
+<a name="0.6.0"></a>
+
+# [0.6.0](https://github.com/open-data-plan/g2plot-react/compare/v0.5.1...v0.6.0) (2020-03-02)
+
+### Features
+
+- add chart support ([9004332](https://github.com/open-data-plan/g2plot-react/commit/9004332))
+
 <a name="0.5.1"></a>
 
 ## [0.5.1](https://github.com/open-data-plan/g2plot-react/compare/v0.5.0...v0.5.1) (2020-02-28)
