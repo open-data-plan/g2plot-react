@@ -2,4 +2,4 @@
 title: All
 ---
 
-## [LineChart](./line)
+## [LineChart](/examples/line)
