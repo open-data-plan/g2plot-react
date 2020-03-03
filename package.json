@@ -32,6 +32,7 @@
     "url": "https://github.com/open-data-plan/g2plot-react.git"
   },
   "scripts": {
+    "dev": "dumi dev",
     "lint": "eslint . --ext=.ts,.tsx",
     "lint:fix": "eslint . --ext=.ts,.tsx --fix",
     "test": "jest",
@@ -40,6 +41,7 @@
     "build:es": "babel src -d es --extensions .ts,.tsx",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d lib --extensions .ts,.tsx",
     "build:types": "tsc",
+    "build:docs": "dumi build",
     "preversion": "npm run build",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
