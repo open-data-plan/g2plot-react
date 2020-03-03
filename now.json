@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "scope": "opd",
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/.*", "dest": "/index.html" }
+  ],
+  "alias": "g2plot.open-data-plan.com",
+  "github": {
+    "enable": true
+  }
+}
