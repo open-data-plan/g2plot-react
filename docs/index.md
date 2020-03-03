@@ -39,8 +39,8 @@ import React, { useCallback } from 'react'
 import { LineChart, ColumnChart, PieChart } from '@opd/g2plot-react'
 
 const config = {
-  width: 300,
-  height: 300,
+  width: 400,
+  height: 400,
   padding: 'auto',
   forceFit: true,
   xField: 'year',
@@ -78,8 +78,8 @@ const config = {
 }
 
 const pieConfig = {
-  width: 300,
-  height: 300,
+  width: 400,
+  height: 400,
   forceFit: true,
   padding: 'auto',
   radius: 1,
