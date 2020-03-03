@@ -59,6 +59,7 @@
     "canvas": "^2.6.1",
     "conventional-changelog-cli": "^2.0.31",
     "cross-env": "^7.0.0",
+    "dumi": "^1.0.0",
     "husky": "^4.2.3",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.1.0",

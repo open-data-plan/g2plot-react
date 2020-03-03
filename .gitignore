@@ -61,3 +61,7 @@ typings/
 lib
 es
 *.css
+
+# umi
+.umi
+dist
