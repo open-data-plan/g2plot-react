@@ -14,4 +14,5 @@ export default {
         'https://github.com/open-data-plan/g2plot-react/blob/master/CHANGELOG.md',
     },
   ],
+  dynamicImport: {},
 }
