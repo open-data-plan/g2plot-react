@@ -1,6 +1,7 @@
 ---
+title: G2Plot React
 hero:
-  title: G2Plot-React
+  title: G2Plot React
   desc: G2Plot for React
   actions:
     - text: API
@@ -10,7 +11,7 @@ hero:
 features:
   - icon: https://gw.alipayobjects.com/zos/antfincdn/SlbIagEvT7/G2plot.svg
     title: G2Plot
-    desc: Powered by G2Plot [G2Plot](https://g2plot.antv.vision)
+    desc: Powered by [G2Plot](https://g2plot.antv.vision)
   - icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9Ii0xMS41IC0xMC4yMzE3NCAyMyAyMC40NjM0OCI+CiAgPHRpdGxlPlJlYWN0IExvZ288L3RpdGxlPgogIDxjaXJjbGUgY3g9IjAiIGN5PSIwIiByPSIyLjA1IiBmaWxsPSIjNjFkYWZiIi8+CiAgPGcgc3Ryb2tlPSIjNjFkYWZiIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIi8+CiAgICA8ZWxsaXBzZSByeD0iMTEiIHJ5PSI0LjIiIHRyYW5zZm9ybT0icm90YXRlKDYwKSIvPgogICAgPGVsbGlwc2Ugcng9IjExIiByeT0iNC4yIiB0cmFuc2Zvcm09InJvdGF0ZSgxMjApIi8+CiAgPC9nPgo8L3N2Zz4K
     title: React
     desc: Born for React
