@@ -140,4 +140,4 @@ export default () => {
 }
 ```
 
-[More examples](/examples)
+[More examples](/examples/)

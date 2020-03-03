@@ -1,5 +1,5 @@
 ---
-title: Examples
+title: All
 ---
 
-# Examples
+## [LineChart](./line)
