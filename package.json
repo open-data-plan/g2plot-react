@@ -51,7 +51,7 @@
     "@cisdi/eslint-config-cisdi": "^0.10.5",
     "@cisdi/jest-preset-cisdi": "^0.1.4",
     "@cisdi/prettier-config-cisdi": "^0.1.4",
-    "@cisdi/stylelint-config-cisdi": "^0.1.9",
+    "@cisdi/stylelint-config-cisdi": "^1.0.0",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
     "@types/jest": "^25.1.3",
