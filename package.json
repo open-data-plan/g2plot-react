@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@cisdi/babel-preset-component": "^0.2.6",
+    "@cisdi/babel-preset-component": "^1.0.0",
     "@cisdi/eslint-config-cisdi": "^0.10.5",
     "@cisdi/jest-preset-cisdi": "^0.1.4",
     "@cisdi/prettier-config-cisdi": "^0.1.4",
