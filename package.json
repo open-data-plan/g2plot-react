@@ -50,7 +50,7 @@
     "@cisdi/babel-preset-component": "^0.2.6",
     "@cisdi/eslint-config-cisdi": "^0.10.5",
     "@cisdi/jest-preset-cisdi": "^0.1.4",
-    "@cisdi/prettier-config-cisdi": "^0.1.4",
+    "@cisdi/prettier-config-cisdi": "^1.0.0",
     "@cisdi/stylelint-config-cisdi": "^0.1.9",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
