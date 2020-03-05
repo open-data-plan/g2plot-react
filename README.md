@@ -116,7 +116,6 @@ Extra Props:
 - [x] [`OverlappedComboChart`](https://g2plot.antv.vision/zh/examples/combo/basic)
 - [x] [`RoseChart`](https://g2plot.antv.vision/zh/examples/rose/basic)
 - [x] [`WordCloudChart`](https://g2plot.antv.vision/zh/examples/word-cloud/basic)
-- [x] [`AVAChart`](https://github.com/antvis/AVA)
 - [x] [`BulletChart`](https://g2plot.antv.vision/zh/examples/bullet/basic)
 - [x] [`TreemapChart`](https://g2plot.antv.vision/zh/examples/treemap/rect)
 - [x] `SunburstChart`

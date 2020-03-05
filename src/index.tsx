@@ -35,5 +35,3 @@ export { default as BulletChart } from './plots/bullet'
 export { default as TreemapChart } from './plots/treemap'
 
 export { default as OverlappedComboChart } from './plots/overlapped-combo'
-
-export { default as AVAChart } from './plots/ava'
