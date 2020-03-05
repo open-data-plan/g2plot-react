@@ -1,3 +1,23 @@
+<a name="0.7.0"></a>
+
+# [0.7.0](https://github.com/open-data-plan/g2plot-react/compare/v0.6.0...v0.7.0) (2020-03-05)
+
+### Bug Fixes
+
+- fix broken link ([3f45efe](https://github.com/open-data-plan/g2plot-react/commit/3f45efe))
+
+### Code Refactoring
+
+- split AVAChart into a independent package ([2b21b9a](https://github.com/open-data-plan/g2plot-react/commit/2b21b9a))
+
+### Features
+
+- **g2plot:** bump g2plot version ([57cdbc3](https://github.com/open-data-plan/g2plot-react/commit/57cdbc3))
+
+### BREAKING CHANGES
+
+- remove AVAChart for bundle size
+
 <a name="0.6.0"></a>
 
 # [0.6.0](https://github.com/open-data-plan/g2plot-react/compare/v0.5.1...v0.6.0) (2020-03-02)
