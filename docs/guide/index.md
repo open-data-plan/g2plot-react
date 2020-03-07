@@ -1,5 +1,7 @@
 ---
 title: Guide
+nav:
+  order: 0
 ---
 
 ## What
