@@ -7,7 +7,6 @@
 [![npm](https://img.shields.io/npm/dm/@opd/g2plot-react.svg)](https://www.npmjs.com/package/@opd/g2plot-react)
 [![npm](https://img.shields.io/npm/l/@opd/g2plot-react.svg)](https://www.npmjs.com/package/@opd/g2plot-react)
 [![codecov](https://codecov.io/gh/open-data-plan/g2plot-react/branch/master/graph/badge.svg)](https://codecov.io/gh/open-data-plan/g2plot-react)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/d6ca5967-fa39-43e7-bb73-05c9ac665d5b/deploy-status)](https://app.netlify.com/sites/g2plot-react/deploys)
 
 ## Install
 
