@@ -5,20 +5,23 @@ import { LineConfig } from '@antv/g2plot'
 const config: LineConfig = {
   title: {
     visible: true,
-    text: '单折线图的基础用法',
+    text: 'The causes of CO2 emissions',
   },
-  description: {
-    visible: true,
-    text: '最基础简单的折线图使用方式，显示一个指标的趋势',
-  },
-  forceFit: true,
   padding: 'auto',
-  xField: 'Date',
-  yField: 'scales',
+  forceFit: true,
+  xField: 'year',
+  yField: 'value',
+  seriesField: 'category',
   xAxis: {
     type: 'time',
-    tickCount: 5,
   },
+  yAxis: {
+    label: {
+      // 数值格式化为千分位
+      formatter: v => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, s => `${s},`),
+    },
+  },
+  responsive: true,
 }
 
 const BasicLine = () => {
@@ -26,7 +29,7 @@ const BasicLine = () => {
 
   useEffect(() => {
     let active = true
-    fetch('https://g2plot.antv.vision/zh/examples/data/fireworks-sales.json')
+    fetch('https://g2plot.antv.vision/zh/examples/data/emissions.json')
       .then(res => res.json())
       .then(data => {
         if (active) {
@@ -36,7 +39,7 @@ const BasicLine = () => {
     return () => {
       active = false
     }
-  })
+  }, [])
 
   return <LineChart {...config} data={data} />
 }
