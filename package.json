@@ -61,7 +61,7 @@
     "canvas": "^2.6.1",
     "conventional-changelog-cli": "^2.0.31",
     "cross-env": "^7.0.2",
-    "dumi": "^1.0.3",
+    "dumi": "^1.0.5",
     "husky": "^4.2.3",
     "jest": "^25.1.0",
     "jest-canvas-mock": "^2.2.0",
@@ -76,7 +76,7 @@
     "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {
-    "@antv/g2plot": "^0.11.35",
+    "@antv/g2plot": "^0.11.37",
     "@antv/util": "^2.0.6"
   },
   "husky": {
