@@ -58,6 +58,7 @@
     "@types/lodash": "^4.14.149",
     "@types/react-dom": "^16.9.5",
     "@types/react-test-renderer": "^16.9.2",
+    "@umijs/plugin-analytics": "^0.1.1",
     "canvas": "^2.6.1",
     "conventional-changelog-cli": "^2.0.31",
     "cross-env": "^7.0.2",
