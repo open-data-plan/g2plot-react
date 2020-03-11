@@ -9,7 +9,7 @@
     "chart"
   ],
   "author": "kagawagao <kingsongao1221@gmail.com> (https://kingsongao.com/)",
-  "homepage": "https://github.com/open-data-plan/g2plot-react",
+  "homepage": "https://g2plot.open-data-plan.com/",
   "license": "MIT",
   "main": "lib/index.js",
   "module": "es/index.js",
