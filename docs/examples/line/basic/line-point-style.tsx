@@ -42,6 +42,6 @@ const config: LineConfig = {
   },
 }
 
-const SmoothLine = () => <LineChart {...config} />
+const StyledPointLine = () => <LineChart {...config} />
 
-export default SmoothLine
+export default StyledPointLine

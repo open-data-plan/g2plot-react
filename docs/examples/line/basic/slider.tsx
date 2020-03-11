@@ -37,7 +37,7 @@ const config: LineConfig = {
   ],
 }
 
-const BasicLine = () => {
+const SliderLine = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -57,4 +57,4 @@ const BasicLine = () => {
   return <LineChart {...config} data={data} />
 }
 
-export default BasicLine
+export default SliderLine

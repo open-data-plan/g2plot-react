@@ -1,7 +1,7 @@
 ---
 title: Series Line
 group:
-  title: Line Chart
+  title: LineChart
 ---
 
 ## Basic

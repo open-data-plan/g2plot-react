@@ -38,7 +38,7 @@ const config: LineConfig = {
   smooth: true,
 }
 
-const BasicLine = () => {
+const LabelLine = () => {
   const [data, setData] = useState([])
 
   useEffect(() => {
@@ -58,4 +58,4 @@ const BasicLine = () => {
   return <LineChart {...config} data={data} />
 }
 
-export default BasicLine
+export default LabelLine
