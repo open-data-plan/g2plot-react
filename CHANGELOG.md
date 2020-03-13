@@ -1,3 +1,13 @@
+<a name="0.7.2"></a>
+
+## [0.7.2](https://github.com/open-data-plan/g2plot-react/compare/v0.7.1...v0.7.2) (2020-03-13)
+
+### Features
+
+- **types:** export chart props type definitions ([de9b67c](https://github.com/open-data-plan/g2plot-react/commit/de9b67c))
+- bump g2plot to v0.11.38 ([ff28976](https://github.com/open-data-plan/g2plot-react/commit/ff28976))
+- update g2plot version ([9da92ba](https://github.com/open-data-plan/g2plot-react/commit/9da92ba))
+
 <a name="0.7.1"></a>
 
 ## [0.7.1](https://github.com/open-data-plan/g2plot-react/compare/v0.7.0...v0.7.1) (2020-03-07)
