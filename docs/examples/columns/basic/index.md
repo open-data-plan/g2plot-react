@@ -8,22 +8,22 @@ group:
 
 <code src="./basic.tsx" />
 
-# Label
+## Label
 
 <code src="./basic-with-label.tsx" />
 
-# Auto adjust label color
+## Auto adjust label color
 
 <code src="./auto-adjust-color.tsx" />
 
-# Slider
+## Slider
 
 <code src="./slider.tsx" />
 
-# Scrollbar
+## Scrollbar
 
 <code src="./scrollbar.tsx" />
 
-# Conversion tag
+## Conversion tag
 
 <code src="./conversion.tsx" />
