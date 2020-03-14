@@ -1,3 +1,18 @@
+<a name="0.7.3"></a>
+## [0.7.3](https://github.com/open-data-plan/g2plot-react/compare/v0.7.2...v0.7.3) (2020-03-14)
+
+
+### Bug Fixes
+
+* **types:** remove type export to fix no export warning ([2f2d021](https://github.com/open-data-plan/g2plot-react/commit/2f2d021))
+
+
+### Features
+
+* **g2plot:** bump g2plot version ([cfbffb9](https://github.com/open-data-plan/g2plot-react/commit/cfbffb9))
+
+
+
 <a name="0.7.2"></a>
 
 ## [0.7.2](https://github.com/open-data-plan/g2plot-react/compare/v0.7.1...v0.7.2) (2020-03-13)
