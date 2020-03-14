@@ -18,6 +18,7 @@ const config: LineConfig = {
   xAxis: {
     type: 'time',
     tickCount: 5,
+    mask: 'YYYY-MM',
   },
 }
 

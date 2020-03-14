@@ -12,6 +12,7 @@ const config: AreaConfig = {
   xAxis: {
     type: 'time',
     tickCount: 5,
+    mask: 'YYYY-MM',
   },
 }
 

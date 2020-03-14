@@ -20,7 +20,6 @@ const config: StackAreaConfig = {
   label: {
     visible: true,
     type: 'line',
-    // autoScale: true,
   },
   legend: {
     visible: true,

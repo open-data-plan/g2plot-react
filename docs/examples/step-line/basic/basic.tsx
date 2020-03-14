@@ -18,6 +18,7 @@ const config: StepLineConfig = {
   xAxis: {
     type: 'time',
     tickCount: 5,
+    mask: 'YYYY-MM',
   },
 }
 

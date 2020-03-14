@@ -10,11 +10,9 @@ const config: StackAreaConfig = {
   padding: 'auto',
   xField: 'year',
   yField: 'value',
-  seriesField: 'category',
+  stackField: 'category',
   xAxis: {
     type: 'time',
-    // eslint-disable-next-line
-    // @ts-ignore
     mask: 'YYYY',
   },
   yAxis: {
