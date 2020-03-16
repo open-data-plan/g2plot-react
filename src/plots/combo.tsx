@@ -4,32 +4,26 @@ import ComboPlot, { ComboPlotConfig } from '@antv/g2plot/lib/combo-plots/base'
 
 type PickedAttrs = 'className' | 'style'
 
-interface Plot<
-  T extends ComboPlot = ComboPlot,
-  C extends ComboPlotConfig = ComboPlotConfig
-> {
-  new (container: HTMLElement, props: C): T
+interface Plot<C extends ComboPlotConfig = ComboPlotConfig> {
+  new (container: HTMLElement, props: C): ComboPlot<C>
 }
 
-export interface ComboChartProps<
-  T extends ComboPlot = ComboPlot,
-  C extends ComboPlotConfig = ComboPlotConfig
-> extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
-  chart: Plot<T, C>
+export interface ComboChartProps<C extends ComboPlotConfig = ComboPlotConfig>
+  extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
+  chart: Plot<C>
   onMount?: (chart: ComboPlot<C>) => void
 }
 
 export default class ComboChart<
-  T extends ComboPlot = ComboPlot,
   C extends ComboPlotConfig = ComboPlotConfig
-> extends React.Component<ComboChartProps<T, C>> {
+> extends React.Component<ComboChartProps<C>> {
   private el: HTMLDivElement | null = null
   private chart?: ComboPlot<C> | null = null
   private getContainer = (el: HTMLDivElement | null) => {
     this.el = el
   }
 
-  private getConfig = (props: ComboChartProps<T, C>) => {
+  private getConfig = (props: ComboChartProps<C>) => {
     return omit(props, ['style', 'className', 'chart', 'onMount']) as C
   }
 

@@ -27,7 +27,7 @@ const transformData = [
 const config = {
   layers: [
     {
-      type: 'groupColumn',
+      type: 'groupedColumn',
       name: '订单量',
       data: uvBillData,
       xField: 'time',

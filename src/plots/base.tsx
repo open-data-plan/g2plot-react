@@ -2,37 +2,33 @@ import React, { HTMLAttributes } from 'react'
 import omit from 'lodash/omit'
 import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
-import BasePlot, { PlotConfig } from '@antv/g2plot/lib/base/plot'
+import { Base as BasePlot, ViewLayer, PlotConfig } from '@antv/g2plot'
 
 type PickedAttrs = 'className' | 'style'
 
-export interface Plot<
-  T extends BasePlot = BasePlot,
-  C extends PlotConfig = PlotConfig
-> {
-  new (container: HTMLElement, props: C): T
+export type LayerCtor<C> = ViewLayer<C>
+
+export interface Plot<C extends PlotConfig = PlotConfig> {
+  new (container: HTMLElement, props: C): BasePlot<C, LayerCtor<C>>
 }
 
-export interface BaseChartProps<
-  T extends BasePlot = BasePlot,
-  C extends PlotConfig = PlotConfig
-> extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
-  chart: Plot<T, C>
-  onMount?: (chart: BasePlot<C>) => void
+export interface BaseChartProps<C extends PlotConfig = PlotConfig>
+  extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
+  chart: Plot<C>
+  onMount?: (chart: BasePlot<C, LayerCtor<C>>) => void
 }
 
 export default class BaseChart<
-  T extends BasePlot = BasePlot,
   C extends PlotConfig = PlotConfig
-> extends React.Component<BaseChartProps<T, C>> {
+> extends React.Component<BaseChartProps<C>> {
   private el: HTMLDivElement | null = null
-  private chart?: BasePlot<C> | null
+  private chart?: BasePlot<C, LayerCtor<C>> | null
   private config?: any
   private getContainer = (el: HTMLDivElement | null) => {
     this.el = el
   }
 
-  private getConfig = (props: BaseChartProps<T, C>) => {
+  private getConfig = (props: BaseChartProps<C>) => {
     return omit(props, ['style', 'className', 'chart', 'onMount']) as C
   }
 
