@@ -1,35 +1,29 @@
 <a name="1.0.0"></a>
-# [1.0.0](https://github.com/open-data-plan/g2plot-react/compare/v0.7.3...v1.0.0) (2020-03-16)
 
+# [1.0.0](https://github.com/open-data-plan/g2plot-react/compare/v0.7.3...v1.0.0) (2020-03-16)
 
 ### Features
 
-* compatible g2plot v1.0.0 ([e27c55c](https://github.com/open-data-plan/g2plot-react/commit/e27c55c))
-
+- compatible with g2plot v1.0.0 ([e27c55c](https://github.com/open-data-plan/g2plot-react/commit/e27c55c))
 
 ### BREAKING CHANGES
 
-* - StackChart renamed to StackedChart
+- StackChart renamed to StackedChart
 - PercentageStackChart renamed to PercentStackChart
 - GroupChart renamed to GroupedChart
-- remove MartixChart and SunburstChart
-
-
+- remove MatrixChart and SunburstChart
 
 <a name="0.7.3"></a>
-## [0.7.3](https://github.com/open-data-plan/g2plot-react/compare/v0.7.2...v0.7.3) (2020-03-14)
 
+## [0.7.3](https://github.com/open-data-plan/g2plot-react/compare/v0.7.2...v0.7.3) (2020-03-14)
 
 ### Bug Fixes
 
-* **types:** remove type export to fix no export warning ([2f2d021](https://github.com/open-data-plan/g2plot-react/commit/2f2d021))
-
+- **types:** remove type export to fix no export warning ([2f2d021](https://github.com/open-data-plan/g2plot-react/commit/2f2d021))
 
 ### Features
 
-* **g2plot:** bump g2plot version ([cfbffb9](https://github.com/open-data-plan/g2plot-react/commit/cfbffb9))
-
-
+- **g2plot:** bump g2plot version ([cfbffb9](https://github.com/open-data-plan/g2plot-react/commit/cfbffb9))
 
 <a name="0.7.2"></a>
 
