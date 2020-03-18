@@ -8,10 +8,10 @@
 
 ### BREAKING CHANGES
 
-- StackChart renamed to StackedChart
-- PercentageStackChart renamed to PercentStackChart
-- GroupChart renamed to GroupedChart
-- remove MatrixChart and SunburstChart
+- `StackChart` renamed to `StackedChart`
+- `PercentageStackChart` renamed to `PercentStackedChart`
+- `GroupChart` renamed to `GroupedChart`
+- remove `MatrixChart` and `SunburstChart`
 
 <a name="0.7.3"></a>
 
