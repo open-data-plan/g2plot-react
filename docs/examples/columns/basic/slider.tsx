@@ -17,7 +17,6 @@ const config: ColumnConfig = {
   xField: '城市',
   xAxis: {
     visible: true,
-    autoHideLabel: true,
   },
   yAxis: {
     visible: true,
