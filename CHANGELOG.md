@@ -1,3 +1,14 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/open-data-plan/g2plot-react/compare/v1.0.0...v1.1.0) (2020-03-21)
+
+
+### Features
+
+* add FanGaugeChart and MeterGaugeChart ([ebd608b](https://github.com/open-data-plan/g2plot-react/commit/ebd608b))
+* introduce new chart ([7f4de05](https://github.com/open-data-plan/g2plot-react/commit/7f4de05))
+
+
+
 <a name="1.0.0"></a>
 
 # [1.0.0](https://github.com/open-data-plan/g2plot-react/compare/v0.7.3...v1.0.0) (2020-03-16)
