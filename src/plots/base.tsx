@@ -1,5 +1,6 @@
 import React, { HTMLAttributes } from 'react'
 import omit from 'lodash/omit'
+import map from 'lodash/map'
 import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
 import { Base as BasePlot, ViewLayer, PlotConfig } from '@antv/g2plot'
@@ -24,6 +25,7 @@ export default class BaseChart<
   private el: HTMLDivElement | null = null
   private chart?: BasePlot<C, LayerCtor<C>> | null
   private config?: any
+  private data?: any
   private getContainer = (el: HTMLDivElement | null) => {
     this.el = el
   }
@@ -32,11 +34,24 @@ export default class BaseChart<
     return omit(props, ['style', 'className', 'chart', 'onMount']) as C
   }
 
+  private getFnKeys = (config: any): string[] => {
+    const keys = [] as string[]
+    const recursive = (obj: any, parents: string[]) => {
+      map(obj, (val, key) => {
+        if (typeof val === 'object') return recursive(val, [...parents, key])
+        if (typeof val === 'function') keys.push([...parents, key].join('.'))
+      })
+    }
+    recursive(config, [])
+    return keys
+  }
+
   componentDidMount() {
     const { chart, onMount } = this.props
     const config = this.getConfig(this.props)
     const Chart = chart
     const { data, ...restConfig } = config as any
+    this.data = cloneDeep(data)
     this.config = cloneDeep(restConfig)
     if (this.el) {
       this.chart = new Chart(this.el, config)
@@ -50,15 +65,25 @@ export default class BaseChart<
   componentDidUpdate() {
     const config = this.getConfig(this.props)
     const { data, ...restConfig } = config as any
-    const isConfigChanged = !isEqual(this.config, restConfig)
+    console.log(data)
+    console.log(this.config.data)
+    const thisFnKeys = this.getFnKeys(this.config)
+    const restFnKeys = this.getFnKeys(restConfig)
+    const isConfigChanged = !isEqual(
+      omit(this.config, thisFnKeys),
+      omit(restConfig, restFnKeys)
+    )
+    const dataChanged = !isEqual(data, this.data)
     /* istanbul ignore else */
     if (this.chart) {
       if (isConfigChanged) {
         this.config = cloneDeep(restConfig)
         this.chart.updateConfig(config as any)
-        this.chart.render()
-      } else {
+        return this.chart.render()
+      }
+      if (dataChanged) {
         this.chart.changeData(data)
+        this.data = cloneDeep(data)
       }
     }
   }
