@@ -25,7 +25,6 @@ export default class BaseChart<
   private el: HTMLDivElement | null = null
   private chart?: BasePlot<C, LayerCtor<C>> | null
   private config?: any
-  private data?: any
   private getContainer = (el: HTMLDivElement | null) => {
     this.el = el
   }
@@ -51,7 +50,6 @@ export default class BaseChart<
     const config = this.getConfig(this.props)
     const Chart = chart
     const { data, ...restConfig } = config as any
-    this.data = cloneDeep(data)
     this.config = cloneDeep(restConfig)
     if (this.el) {
       this.chart = new Chart(this.el, config)
@@ -65,25 +63,20 @@ export default class BaseChart<
   componentDidUpdate() {
     const config = this.getConfig(this.props)
     const { data, ...restConfig } = config as any
-    console.log(data)
-    console.log(this.config.data)
     const thisFnKeys = this.getFnKeys(this.config)
     const restFnKeys = this.getFnKeys(restConfig)
     const isConfigChanged = !isEqual(
       omit(this.config, thisFnKeys),
       omit(restConfig, restFnKeys)
     )
-    const dataChanged = !isEqual(data, this.data)
     /* istanbul ignore else */
     if (this.chart) {
       if (isConfigChanged) {
         this.config = cloneDeep(restConfig)
         this.chart.updateConfig(config as any)
-        return this.chart.render()
-      }
-      if (dataChanged) {
+        this.chart.render()
+      } else {
         this.chart.changeData(data)
-        this.data = cloneDeep(data)
       }
     }
   }
