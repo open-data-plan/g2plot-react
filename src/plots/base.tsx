@@ -1,5 +1,6 @@
 import React, { HTMLAttributes } from 'react'
 import omit from 'lodash/omit'
+import map from 'lodash/map'
 import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
 import { Base as BasePlot, ViewLayer, PlotConfig } from '@antv/g2plot'
@@ -32,6 +33,18 @@ export default class BaseChart<
     return omit(props, ['style', 'className', 'chart', 'onMount']) as C
   }
 
+  private getFnKeys = (config: any): string[] => {
+    const keys = [] as string[]
+    const recursive = (obj: any, parents: string[]) => {
+      map(obj, (val, key) => {
+        if (typeof val === 'object') return recursive(val, [...parents, key])
+        if (typeof val === 'function') keys.push([...parents, key].join('.'))
+      })
+    }
+    recursive(config, [])
+    return keys
+  }
+
   componentDidMount() {
     const { chart, onMount } = this.props
     const config = this.getConfig(this.props)
@@ -50,7 +63,12 @@ export default class BaseChart<
   componentDidUpdate() {
     const config = this.getConfig(this.props)
     const { data, ...restConfig } = config as any
-    const isConfigChanged = !isEqual(this.config, restConfig)
+    const thisFnKeys = this.getFnKeys(this.config)
+    const restFnKeys = this.getFnKeys(restConfig)
+    const isConfigChanged = !isEqual(
+      omit(this.config, thisFnKeys),
+      omit(restConfig, restFnKeys)
+    )
     /* istanbul ignore else */
     if (this.chart) {
       if (isConfigChanged) {
