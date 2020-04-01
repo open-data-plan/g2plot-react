@@ -2,7 +2,6 @@ import React, { HTMLAttributes } from 'react'
 import omit from 'lodash/omit'
 import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
-import getFnKeys from '../utils/get-fn-keys'
 import { Base as BasePlot, ViewLayer, PlotConfig } from '@antv/g2plot'
 
 type PickedAttrs = 'className' | 'style'
@@ -51,11 +50,8 @@ export default class BaseChart<
   componentDidUpdate() {
     const config = this.getConfig(this.props)
     const { data, ...restConfig } = config as any
-    const fnKeys = getFnKeys(restConfig)
-    const isConfigChanged = !isEqual(
-      omit(this.config, fnKeys),
-      omit(restConfig, fnKeys)
-    )
+    const isConfigChanged = !isEqual(this.config, restConfig)
+
     /* istanbul ignore else */
     if (this.chart) {
       if (isConfigChanged) {

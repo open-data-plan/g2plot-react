@@ -19,6 +19,12 @@ describe('LineChart', () => {
 
   test('test update config and data', () => {
     const div = document.createElement('div')
+    const handleLineClick1 = () => {
+      console.log(1)
+    }
+    const handleLineClick2 = () => {
+      console.log(2)
+    }
     ReactDOM.render(<LineChart data={[]} />, div)
 
     ReactDOM.render(<LineChart data={[]} forceFit />, div)
@@ -26,7 +32,38 @@ describe('LineChart', () => {
     ReactDOM.render(<LineChart data={[{ x: 1 }]} forceFit />, div)
 
     ReactDOM.render(
-      <LineChart data={[]} forceFit xAxis={{ visible: true }} />,
+      <LineChart
+        data={[]}
+        forceFit
+        xAxis={{ visible: true }}
+        events={{
+          onLineClick: handleLineClick1,
+        }}
+      />,
+      div
+    )
+
+    ReactDOM.render(
+      <LineChart
+        data={[]}
+        forceFit
+        xAxis={{ visible: true }}
+        events={{
+          onLineClick: handleLineClick2,
+        }}
+      />,
+      div
+    )
+
+    ReactDOM.render(
+      <LineChart
+        data={[]}
+        forceFit
+        xAxis={{ visible: true }}
+        events={{
+          onLineClick: handleLineClick2,
+        }}
+      />,
       div
     )
 
