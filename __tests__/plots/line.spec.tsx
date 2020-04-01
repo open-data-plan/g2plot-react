@@ -25,6 +25,8 @@ describe('LineChart', () => {
 
     ReactDOM.render(<LineChart data={[{ x: 1 }]} forceFit />, div)
 
+    ReactDOM.render(<LineChart data={[]} forceFit={false} />, div)
+
     ReactDOM.unmountComponentAtNode(div)
   })
 
