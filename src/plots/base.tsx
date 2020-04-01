@@ -51,11 +51,10 @@ export default class BaseChart<
   componentDidUpdate() {
     const config = this.getConfig(this.props)
     const { data, ...restConfig } = config as any
-    const thisFnKeys = getFnKeys(config)
-    const restFnKeys = getFnKeys(restConfig)
+    const fnKeys = getFnKeys(restConfig)
     const isConfigChanged = !isEqual(
-      omit(this.config, thisFnKeys),
-      omit(restConfig, restFnKeys)
+      omit(this.config, fnKeys),
+      omit(restConfig, fnKeys)
     )
     /* istanbul ignore else */
     if (this.chart) {
