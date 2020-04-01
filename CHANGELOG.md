@@ -1,3 +1,15 @@
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/open-data-plan/g2plot-react/compare/v1.1.0...v1.1.1) (2020-04-01)
+
+
+### Bug Fixes
+
+* decrease unnecessary rerenders ([#67](https://github.com/open-data-plan/g2plot-react/issues/67)) ([78370fa](https://github.com/open-data-plan/g2plot-react/commit/78370fa))
+* fix config comparison ([31fdc85](https://github.com/open-data-plan/g2plot-react/commit/31fdc85))
+* fix no update after events changed ([e6b12ab](https://github.com/open-data-plan/g2plot-react/commit/e6b12ab))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/open-data-plan/g2plot-react/compare/v1.0.0...v1.1.0) (2020-03-21)
 
