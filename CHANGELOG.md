@@ -1,3 +1,13 @@
+<a name="1.1.2"></a>
+## [1.1.2](https://github.com/open-data-plan/g2plot-react/compare/v1.1.1...v1.1.2) (2020-04-03)
+
+
+### Bug Fixes
+
+* export missed charts ([c471c13](https://github.com/open-data-plan/g2plot-react/commit/c471c13))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/open-data-plan/g2plot-react/compare/v1.1.0...v1.1.1) (2020-04-01)
 
