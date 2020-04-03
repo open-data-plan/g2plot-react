@@ -36,11 +36,11 @@ import { LineChart } from '@opd/g2plot-react'
 
 ```tsx | inline
 import React, { useCallback } from 'react'
-import { LineChart, ColumnChart, PieChart } from '@opd/g2plot-react'
+import { LineChart, ColumnChart, PieChart, BarChart } from '@opd/g2plot-react'
 
 const config = {
-  width: 400,
-  height: 400,
+  width: 375,
+  height: 375,
   padding: 'auto',
   forceFit: true,
   xField: 'year',
@@ -134,6 +134,7 @@ export default () => {
     >
       <LineChart {...config} onMount={handleChartMount} />
       <ColumnChart {...config} />
+      <BarChart {...config} xField="value" yField="year" />
       <PieChart {...pieConfig} />
     </div>
   )
