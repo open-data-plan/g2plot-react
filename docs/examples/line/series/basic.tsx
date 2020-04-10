@@ -246,7 +246,7 @@ const config: LineConfig = {
   yAxis: {
     label: {
       // 数值格式化为千分位
-      formatter: v => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, s => `${s},`),
+      formatter: (v) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`),
     },
   },
   legend: {

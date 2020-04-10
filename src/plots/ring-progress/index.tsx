@@ -5,7 +5,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 export type RingProgressChartProps = Omit<BaseChartProps, 'chart'> &
   RingProgressConfig
 
-const RingProgressChart: FC<RingProgressChartProps> = props => {
+const RingProgressChart: FC<RingProgressChartProps> = (props) => {
   return <BaseChart chart={RingProgress} {...props} />
 }
 

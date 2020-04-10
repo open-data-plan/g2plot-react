@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type GaugeChartProps = Omit<BaseChartProps, 'chart'> & GaugeConfig
 
-const GaugeChart: FC<GaugeChartProps> = props => {
+const GaugeChart: FC<GaugeChartProps> = (props) => {
   return <BaseChart chart={Gauge} {...props} />
 }
 

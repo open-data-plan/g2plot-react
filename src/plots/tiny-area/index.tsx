@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type TinyAreaChartProps = Omit<BaseChartProps, 'chart'> & TinyAreaConfig
 
-const TinyAreaChart: FC<TinyAreaChartProps> = props => {
+const TinyAreaChart: FC<TinyAreaChartProps> = (props) => {
   return <BaseChart chart={TinyArea} {...props} />
 }
 

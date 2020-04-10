@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type LineChartProps = Omit<BaseChartProps, 'chart'> & LineConfig
 
-const LineChart: FC<LineChartProps> = props => {
+const LineChart: FC<LineChartProps> = (props) => {
   return <BaseChart chart={Line} {...props} />
 }
 

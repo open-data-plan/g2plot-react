@@ -5,7 +5,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 export type StackedAreaChartProps = Omit<BaseChartProps, 'chart'> &
   StackedAreaConfig
 
-const StackedAreaChart: FC<StackedAreaChartProps> = props => {
+const StackedAreaChart: FC<StackedAreaChartProps> = (props) => {
   return <BaseChart chart={StackedArea} {...props} />
 }
 

@@ -5,7 +5,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 export type GroupedRoseChartProps = Omit<BaseChartProps, 'chart'> &
   GroupedRoseConfig
 
-const GroupedRoseChart: FC<GroupedRoseChartProps> = props => {
+const GroupedRoseChart: FC<GroupedRoseChartProps> = (props) => {
   return <BaseChart chart={GroupedRose} {...props} />
 }
 

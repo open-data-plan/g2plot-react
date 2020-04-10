@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type TreemapChartProps = Omit<BaseChartProps, 'chart'> & TreemapConfig
 
-const TreemapChart: FC<TreemapChartProps> = props => {
+const TreemapChart: FC<TreemapChartProps> = (props) => {
   return <BaseChart chart={Treemap} {...props} />
 }
 

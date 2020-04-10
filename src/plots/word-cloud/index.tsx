@@ -5,7 +5,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 export type WordCloudChartProps = Omit<BaseChartProps, 'chart'> &
   WordCloudConfig
 
-const WordCloudChart: FC<WordCloudChartProps> = props => {
+const WordCloudChart: FC<WordCloudChartProps> = (props) => {
   return <BaseChart chart={WordCloud} {...props} />
 }
 

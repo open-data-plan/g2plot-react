@@ -47,12 +47,12 @@
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@cisdi/babel-preset-component": "^1.0.2",
-    "@cisdi/eslint-config-cisdi": "^1.0.2",
-    "@cisdi/jest-preset-cisdi": "^1.0.1",
-    "@cisdi/prettier-config-cisdi": "^1.0.1",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
+    "@opd/babel-preset-component": "^1.1.0",
+    "@opd/eslint-config-pangu": "^1.1.0",
+    "@opd/jest-preset-pangu": "^1.1.0",
+    "@opd/prettier-config-pangu": "^1.1.0",
     "@types/jest": "^25.2.1",
     "@types/lodash": "^4.14.149",
     "@types/react": "^16.9.32",
@@ -72,7 +72,7 @@
     "react-test-renderer": "^16.13.1",
     "typescript": "^3.8.3"
   },
-  "prettier": "@cisdi/prettier-config-cisdi",
+  "prettier": "@opd/prettier-config-pangu",
   "peerDependencies": {
     "react": "^15.0.0 || ^16.0.0"
   },
@@ -88,9 +88,6 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "eslint --fix"
-    ],
-    "*.{css,less}": [
-      "stylelint --fix"
     ],
     "*.{json,md}": [
       "prettier -c --write"

@@ -5,7 +5,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 export type HistogramChartProps = Omit<BaseChartProps, 'chart'> &
   HistogramConfig
 
-const HistogramChart: FC<HistogramChartProps> = props => {
+const HistogramChart: FC<HistogramChartProps> = (props) => {
   return <BaseChart chart={Histogram} {...props} />
 }
 

@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type BubbleChartProps = Omit<BaseChartProps, 'chart'> & BubbleConfig
 
-const BubbleChart: FC<BubbleChartProps> = props => {
+const BubbleChart: FC<BubbleChartProps> = (props) => {
   return <BaseChart chart={Bubble} {...props} />
 }
 

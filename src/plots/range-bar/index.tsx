@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type RangeBarChartProps = Omit<BaseChartProps, 'chart'> & RangeBarConfig
 
-const RangeBarChart: FC<RangeBarChartProps> = props => {
+const RangeBarChart: FC<RangeBarChartProps> = (props) => {
   return <BaseChart chart={RangeBar} {...props} />
 }
 

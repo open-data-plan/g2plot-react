@@ -28,8 +28,8 @@ const BasicLine = () => {
   useEffect(() => {
     let active = true
     fetch('https://g2plot.antv.vision/zh/examples/data/fireworks-sales.json')
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (active) {
           setData(data)
         }

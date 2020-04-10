@@ -5,7 +5,7 @@ import BaseChart, { BaseChartProps, Plot } from '../../components/base'
 export type PercentStackedBarChartProps = Omit<BaseChartProps, 'chart'> &
   PercentStackedBarConfig
 
-const PercentStackedBarChart: FC<PercentStackedBarChartProps> = props => {
+const PercentStackedBarChart: FC<PercentStackedBarChartProps> = (props) => {
   return (
     <BaseChart
       chart={PercentStackedBar as Plot<PercentStackedBarConfig>}

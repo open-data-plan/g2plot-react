@@ -5,7 +5,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 export type WaterfallChartProps = Omit<BaseChartProps, 'chart'> &
   WaterfallConfig
 
-const WaterfallChart: FC<WaterfallChartProps> = props => {
+const WaterfallChart: FC<WaterfallChartProps> = (props) => {
   return <BaseChart chart={Waterfall} {...props} />
 }
 

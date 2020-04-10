@@ -5,7 +5,7 @@ import ComboChart, { ComboChartProps } from '../../components/combo'
 export type OverlappedComboPlotChartProps = Omit<ComboChartProps, 'chart'> &
   OverlappedComboPlotConfig
 
-const OverlappedComboPlotChart: FC<OverlappedComboPlotChartProps> = props => {
+const OverlappedComboPlotChart: FC<OverlappedComboPlotChartProps> = (props) => {
   return <ComboChart chart={OverlappedComboPlot} {...props} />
 }
 

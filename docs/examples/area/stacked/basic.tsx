@@ -27,8 +27,8 @@ const BasicStackedArea = () => {
   useEffect(() => {
     let active = true
     fetch('https://g2plot.antv.vision/zh/examples/data/oil.json')
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (active) {
           setData(data)
         }

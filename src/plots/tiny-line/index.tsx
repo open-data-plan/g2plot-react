@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type TinyLineChartProps = Omit<BaseChartProps, 'chart'> & TinyLineConfig
 
-const TinyLineChart: FC<TinyLineChartProps> = props => {
+const TinyLineChart: FC<TinyLineChartProps> = (props) => {
   return <BaseChart chart={TinyLine} {...props} />
 }
 

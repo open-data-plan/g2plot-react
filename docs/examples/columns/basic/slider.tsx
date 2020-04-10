@@ -21,7 +21,7 @@ const config: ColumnConfig = {
   yAxis: {
     visible: true,
     label: {
-      formatter: v => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, s => `${s},`),
+      formatter: (v) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`),
     },
   },
   yField: '销售额',
@@ -42,8 +42,8 @@ const SliderColumn = () => {
   useEffect(() => {
     let active = true
     fetch('https://g2plot.antv.vision/zh/examples/data/sales.json')
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (active) {
           setData(data)
         }

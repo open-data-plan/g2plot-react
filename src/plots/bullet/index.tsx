@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type BulletChartProps = Omit<BaseChartProps, 'chart'> & BulletConfig
 
-const BulletChart: FC<BulletChartProps> = props => {
+const BulletChart: FC<BulletChartProps> = (props) => {
   return <BaseChart chart={Bullet} {...props} />
 }
 

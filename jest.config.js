@@ -1,4 +1,4 @@
 module.exports = {
-  preset: '@cisdi/jest-preset-cisdi',
+  preset: '@opd/jest-preset-pangu',
   setupFiles: ['jest-canvas-mock'],
 }

@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type FunnelChartProps = Omit<BaseChartProps, 'chart'> & FunnelConfig
 
-const FunnelChart: FC<FunnelChartProps> = props => {
+const FunnelChart: FC<FunnelChartProps> = (props) => {
   return <BaseChart chart={Funnel} {...props} />
 }
 

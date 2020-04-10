@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type ProgressChartProps = Omit<BaseChartProps, 'chart'> & ProgressConfig
 
-const ProgressChart: FC<ProgressChartProps> = props => {
+const ProgressChart: FC<ProgressChartProps> = (props) => {
   return <BaseChart chart={Progress} {...props} />
 }
 

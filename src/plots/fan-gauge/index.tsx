@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type FanGaugeChartProps = Omit<BaseChartProps, 'chart'> & FanGaugeConfig
 
-const FanGaugeChart: FC<FanGaugeChartProps> = props => {
+const FanGaugeChart: FC<FanGaugeChartProps> = (props) => {
   return <BaseChart chart={FanGauge} {...props} />
 }
 

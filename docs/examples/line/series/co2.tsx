@@ -19,7 +19,7 @@ const config: LineConfig = {
   yAxis: {
     label: {
       // 数值格式化为千分位
-      formatter: v => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, s => `${s},`),
+      formatter: (v) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`),
     },
   },
   responsive: true,
@@ -31,8 +31,8 @@ const BasicLine = () => {
   useEffect(() => {
     let active = true
     fetch('https://g2plot.antv.vision/zh/examples/data/emissions.json')
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (active) {
           setData(data)
         }

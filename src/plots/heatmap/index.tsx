@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type HeatmapChartProps = Omit<BaseChartProps, 'chart'> & HeatmapConfig
 
-const HeatmapChart: FC<HeatmapChartProps> = props => {
+const HeatmapChart: FC<HeatmapChartProps> = (props) => {
   return <BaseChart chart={Heatmap} {...props} />
 }
 

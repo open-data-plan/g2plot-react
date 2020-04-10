@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type StepLineChartProps = Omit<BaseChartProps, 'chart'> & StepLineConfig
 
-const StepLineChart: FC<StepLineChartProps> = props => {
+const StepLineChart: FC<StepLineChartProps> = (props) => {
   return <BaseChart chart={StepLine} {...props} />
 }
 

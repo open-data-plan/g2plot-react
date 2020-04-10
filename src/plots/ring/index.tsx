@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type RingChartProps = Omit<BaseChartProps, 'chart'> & RingConfig
 
-const RingChart: FC<RingChartProps> = props => {
+const RingChart: FC<RingChartProps> = (props) => {
   return <BaseChart chart={Ring} {...props} />
 }
 
