@@ -7,11 +7,18 @@ export default {
   },
   navs: [
     null,
-    { title: 'GitHub', path: 'https://github.com/open-data-plan/g2plot-react' },
+    {
+      title: 'GitHub',
+      path: 'https://github.com/open-data-plan/g2plot-react',
+    },
     {
       title: 'Changelog',
       path:
         'https://github.com/open-data-plan/g2plot-react/blob/master/CHANGELOG.md',
+    },
+    {
+      title: 'G2Plot',
+      path: 'https://g2plot.antv.vision/',
     },
   ],
   analytics: {

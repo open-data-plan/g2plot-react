@@ -18,12 +18,20 @@ const config: LineConfig = {
   yField: 'gdp',
   seriesField: 'name',
   xAxis: {
-    autoHideLabel: true,
+    type: 'time',
+    mask: 'YYYY',
+    label: {
+      visible: true,
+      autoHide: true,
+    },
   },
   yAxis: {
-    label: {
-      formatter: (v: number) => `${(v / 10e8).toFixed(1)} B`,
-    },
+    // eslint-disable-next-line
+    // @ts-ignore
+    formatter: (name: string) => `${(+name / 10e8).toFixed(1)} B`,
+    // label: {
+    //   formatter: (name: string) => `${(+name / 10e8).toFixed(1)} B`,
+    // },
   },
   legend: {
     visible: false,
@@ -33,7 +41,9 @@ const config: LineConfig = {
     type: 'line',
   },
   animation: {
-    type: 'clipingWithData',
+    enter: {
+      animation: 'clipingWithData',
+    },
   },
   smooth: true,
 }
