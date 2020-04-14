@@ -1,35 +1,33 @@
+<a name="1.1.3-beta.0"></a>
+
+## [1.1.3-beta.0](https://github.com/open-data-plan/g2plot-react/compare/v1.1.2...v1.1.3-beta.0) (2020-04-14)
+
 <a name="1.1.2"></a>
+
 ## [1.1.2](https://github.com/open-data-plan/g2plot-react/compare/v1.1.1...v1.1.2) (2020-04-03)
 
-
 ### Bug Fixes
 
-* export missed charts ([c471c13](https://github.com/open-data-plan/g2plot-react/commit/c471c13))
-
-
+- export missed charts ([c471c13](https://github.com/open-data-plan/g2plot-react/commit/c471c13))
 
 <a name="1.1.1"></a>
-## [1.1.1](https://github.com/open-data-plan/g2plot-react/compare/v1.1.0...v1.1.1) (2020-04-01)
 
+## [1.1.1](https://github.com/open-data-plan/g2plot-react/compare/v1.1.0...v1.1.1) (2020-04-01)
 
 ### Bug Fixes
 
-* decrease unnecessary rerenders ([#67](https://github.com/open-data-plan/g2plot-react/issues/67)) ([78370fa](https://github.com/open-data-plan/g2plot-react/commit/78370fa))
-* fix config comparison ([31fdc85](https://github.com/open-data-plan/g2plot-react/commit/31fdc85))
-* fix no update after events changed ([e6b12ab](https://github.com/open-data-plan/g2plot-react/commit/e6b12ab))
-
-
+- decrease unnecessary rerenders ([#67](https://github.com/open-data-plan/g2plot-react/issues/67)) ([78370fa](https://github.com/open-data-plan/g2plot-react/commit/78370fa))
+- fix config comparison ([31fdc85](https://github.com/open-data-plan/g2plot-react/commit/31fdc85))
+- fix no update after events changed ([e6b12ab](https://github.com/open-data-plan/g2plot-react/commit/e6b12ab))
 
 <a name="1.1.0"></a>
-# [1.1.0](https://github.com/open-data-plan/g2plot-react/compare/v1.0.0...v1.1.0) (2020-03-21)
 
+# [1.1.0](https://github.com/open-data-plan/g2plot-react/compare/v1.0.0...v1.1.0) (2020-03-21)
 
 ### Features
 
-* add FanGaugeChart and MeterGaugeChart ([ebd608b](https://github.com/open-data-plan/g2plot-react/commit/ebd608b))
-* introduce new chart ([7f4de05](https://github.com/open-data-plan/g2plot-react/commit/7f4de05))
-
-
+- add FanGaugeChart and MeterGaugeChart ([ebd608b](https://github.com/open-data-plan/g2plot-react/commit/ebd608b))
+- introduce new chart ([7f4de05](https://github.com/open-data-plan/g2plot-react/commit/7f4de05))
 
 <a name="1.0.0"></a>
 
