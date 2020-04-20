@@ -6,4 +6,4 @@ group:
 
 ## Basic
 
-<code src="./basic.tsx />
+<code src="./basic.tsx" />
