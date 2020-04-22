@@ -39,7 +39,6 @@ const config: OverlappedComboPlotConfig = {
       xField: 'time',
       yField: 'value',
       color: '#f8ca45',
-      lineSize: 2,
     },
   ],
 }

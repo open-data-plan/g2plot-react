@@ -1,7 +1,5 @@
 ---
-title: Percentage Stacked Area
-group:
-  title: PercentageStackedAreaChart
+title: Percent Stacked Area
 ---
 
 ## Basic

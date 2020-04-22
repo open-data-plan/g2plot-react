@@ -21,5 +21,5 @@ view `G2Plot` [docs](https://g2plot.antv.vision/en/docs/manual/introduction)
 
 ## Lifecycle
 
-- `OnMount`: `(chart: Plot) => void`
+- `onMount`: `(chart: Plot) => void`
   triggered after chart render

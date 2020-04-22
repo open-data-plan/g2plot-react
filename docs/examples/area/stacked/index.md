@@ -1,7 +1,5 @@
 ---
 title: Stacked Area
-group:
-  title: StackedAreaChart
 ---
 
 ## Basic
