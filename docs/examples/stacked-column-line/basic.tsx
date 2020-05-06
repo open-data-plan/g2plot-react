@@ -1,6 +1,7 @@
 import React from 'react'
-import { OverlappedComboChart } from '@opd/g2plot-react'
-import { OverlappedComboPlotConfig } from '@antv/g2plot'
+import { StackedColumnLineChart } from '@opd/g2plot-react'
+import { StackedColumnLineConfig } from '@antv/g2plot'
+
 const uvBillData = [
   { time: '2019-03', value: 350, type: 'uv' },
   { time: '2019-04', value: 900, type: 'uv' },
@@ -22,27 +23,11 @@ const transformData = [
   { time: '2019-07', value: 220 },
 ]
 
-const config: OverlappedComboPlotConfig = {
-  layers: [
-    {
-      type: 'groupedColumn',
-      name: '订单量',
-      data: uvBillData,
-      xField: 'time',
-      yField: 'value',
-      groupField: 'type',
-    },
-    {
-      type: 'line',
-      name: '转化',
-      data: transformData,
-      xField: 'time',
-      yField: 'value',
-      color: '#f8ca45',
-    },
-  ],
+const config: StackedColumnLineConfig = {
+  data: [uvBillData, transformData],
+  stackField: 'type',
+  xField: 'time',
+  yField: ['value', 'value'],
 }
 
-const SmoothLine = () => <OverlappedComboChart {...config} />
-
-export default SmoothLine
+export default () => <StackedColumnLineChart {...config} />

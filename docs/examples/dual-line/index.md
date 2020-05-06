@@ -1,7 +1,7 @@
 ---
-title: OverlappedCombo
+title: DualLine
 group:
-  title: OverlappedComboChart
+  title: DualLineChart
 ---
 
 ## Basic

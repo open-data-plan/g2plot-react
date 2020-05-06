@@ -2,7 +2,6 @@
 title: Basic Line
 group:
   title: LineChart
-  order: 0
 ---
 
 ## Basic

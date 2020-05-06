@@ -60,7 +60,7 @@ const config: LineConfig = {
 }
 
 export default () => {
-  const handleChartMount = useCallback(chart => {
+  const handleChartMount = useCallback((chart) => {
     console.log(chart)
   }, [])
   return <LineChart {...config} onMount={handleChartMount} />
@@ -111,7 +111,6 @@ Extra Props:
 - [x] [`TinyColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-column)
 - [x] [`FunnelChart`](https://g2plot.antv.vision/zh/examples/funnel/basic)
 - [x] [`LiquidChart`](https://g2plot.antv.vision/zh/examples/liquid/basic)
-- [x] [`OverlappedComboChart`](https://g2plot.antv.vision/zh/examples/combo/basic)
 - [x] [`RoseChart`](https://g2plot.antv.vision/zh/examples/rose/basic)
 - [x] [`WordCloudChart`](https://g2plot.antv.vision/zh/examples/word-cloud/basic)
 - [x] [`BulletChart`](https://g2plot.antv.vision/zh/examples/bullet/basic)
