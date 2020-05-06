@@ -64,7 +64,7 @@
     "cross-env": "^7.0.2",
     "dumi": "^1.0.20",
     "husky": "^4.2.5",
-    "jest": "^25.5.4",
+    "jest": "^26.0.1",
     "jest-canvas-mock": "^2.2.0",
     "lint-staged": "^10.2.2",
     "react": "^16.13.1",
