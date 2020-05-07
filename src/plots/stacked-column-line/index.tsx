@@ -6,7 +6,7 @@ export type StackedColumnLineChartProps = Omit<BaseChartProps, 'chart'> &
   StackedColumnLineConfig
 
 const StackedColumnLineChart: FC<StackedColumnLineChartProps> = (props) => {
-  return <BaseChart chart={StackededColumnLine} {...props} />
+  return <BaseChart chart={StackedColumnLine} {...props} />
 }
 
 export default StackedColumnLineChart
