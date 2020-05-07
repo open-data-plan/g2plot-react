@@ -1,3 +1,12 @@
+<a name="1.2.1"></a>
+
+## [1.2.1](https://github.com/open-data-plan/g2plot-react/compare/v1.2.0...v1.2.1) (2020-05-07)
+
+### Bug Fixes
+
+- bump g2plot and fix StackedColumnLine chart name ([80d5c9d](https://github.com/open-data-plan/g2plot-react/commit/80d5c9d))
+- fix wrong Component name ([#102](https://github.com/open-data-plan/g2plot-react/issues/102)) ([9302bfa](https://github.com/open-data-plan/g2plot-react/commit/9302bfa))
+
 <a name="1.2.0"></a>
 
 # [1.2.0](https://github.com/open-data-plan/g2plot-react/compare/v1.1.4...v1.2.0) (2020-05-06)
