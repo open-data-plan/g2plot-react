@@ -1,8 +1,7 @@
 import React from 'react'
-import { LineChart } from '@opd/g2plot-react'
-import { LineConfig } from '@antv/g2plot'
+import { LineChart, LineChartProps } from '@opd/g2plot-react'
 
-const config: LineConfig = {
+const config: LineChartProps = {
   title: {
     visible: true,
     text: '曲线折线图',
