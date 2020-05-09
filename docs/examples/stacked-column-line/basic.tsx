@@ -25,7 +25,7 @@ const transformData = [
 
 const config: StackedColumnLineConfig = {
   data: [uvBillData, transformData],
-  stackField: 'type',
+  columnStackField: 'type',
   xField: 'time',
   yField: ['value', 'value'],
 }

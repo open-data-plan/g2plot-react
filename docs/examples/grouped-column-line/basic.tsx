@@ -1,6 +1,5 @@
 import React from 'react'
 import { GroupedColumnLineChart } from '@opd/g2plot-react'
-import { GroupedColumnLineConfig } from '@antv/g2plot'
 
 const uvBillData = [
   { time: '2019-03', value: 350, type: 'uv' },
@@ -16,18 +15,29 @@ const uvBillData = [
 ]
 
 const transformData = [
-  { time: '2019-03', value: 800 },
-  { time: '2019-04', value: 600 },
-  { time: '2019-05', value: 400 },
-  { time: '2019-06', value: 380 },
-  { time: '2019-07', value: 220 },
+  { time: '2019-03', count: 800, name: 'a' },
+  { time: '2019-04', count: 600, name: 'a' },
+  { time: '2019-05', count: 400, name: 'a' },
+  { time: '2019-06', count: 380, name: 'a' },
+  { time: '2019-07', count: 220, name: 'a' },
+  { time: '2019-03', count: 500, name: 'b' },
+  { time: '2019-04', count: 300, name: 'b' },
+  { time: '2019-05', count: 200, name: 'b' },
+  { time: '2019-06', count: 180, name: 'b' },
+  { time: '2019-07', count: 320, name: 'b' },
+  { time: '2019-03', count: 200, name: 'c' },
+  { time: '2019-04', count: 400, name: 'c' },
+  { time: '2019-05', count: 300, name: 'c' },
+  { time: '2019-06', count: 480, name: 'c' },
+  { time: '2019-07', count: 120, name: 'c' },
 ]
 
-const config: GroupedColumnLineConfig = {
+const config = {
   data: [uvBillData, transformData],
-  groupField: 'type',
+  columnGroupField: 'type',
+  lineSeriesField: 'name',
   xField: 'time',
-  yField: ['value', 'value'],
+  yField: ['value', 'count'],
 }
 
 export default () => <GroupedColumnLineChart {...config} />

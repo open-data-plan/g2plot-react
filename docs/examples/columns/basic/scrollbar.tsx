@@ -16,11 +16,14 @@ const config: ColumnConfig = {
   xField: '城市',
   xAxis: {
     visible: true,
-    autoHideLabel: true,
+    label: {
+      autoHide: true,
+    },
   },
   yAxis: {
     visible: true,
     label: {
+      visible: true,
       formatter: (v) => `${v}`.replace(/\d{1,3}(?=(\d{3})+$)/g, (s) => `${s},`),
     },
   },
@@ -28,6 +31,7 @@ const config: ColumnConfig = {
   interactions: [
     {
       type: 'scrollbar',
+      cfg: {},
     },
   ],
 }
