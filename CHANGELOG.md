@@ -1,3 +1,12 @@
+<a name="1.2.2"></a>
+
+## [1.2.2](https://github.com/open-data-plan/g2plot-react/compare/v1.2.1...v1.2.2) (2020-05-09)
+
+### Features
+
+- compatible with g2plot 1.2.1 ([f69b853](https://github.com/open-data-plan/g2plot-react/commit/f69b853))
+- export component props ([81f5922](https://github.com/open-data-plan/g2plot-react/commit/81f5922))
+
 <a name="1.2.1"></a>
 
 ## [1.2.1](https://github.com/open-data-plan/g2plot-react/compare/v1.2.0...v1.2.1) (2020-05-07)
