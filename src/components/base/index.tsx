@@ -34,7 +34,7 @@ export default class BaseChart<
     this.el = el
   }
 
-  declare context: StateManager
+  context!: StateManager
 
   private getConfig = (props: BaseChartProps<C>) => {
     return omit(props, ['style', 'className', 'chart', 'onMount']) as C
