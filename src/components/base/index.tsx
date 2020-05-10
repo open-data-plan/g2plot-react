@@ -2,7 +2,13 @@ import React, { HTMLAttributes } from 'react'
 import omit from 'lodash/omit'
 import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
-import { Base as BasePlot, ViewLayer, PlotConfig } from '@antv/g2plot'
+import {
+  Base as BasePlot,
+  ViewLayer,
+  PlotConfig,
+  StateManager,
+} from '@antv/g2plot'
+import { StateManagerContext } from '../state-manager'
 
 type PickedAttrs = 'className' | 'style'
 
@@ -28,9 +34,13 @@ export default class BaseChart<
     this.el = el
   }
 
+  declare context: StateManager
+
   private getConfig = (props: BaseChartProps<C>) => {
     return omit(props, ['style', 'className', 'chart', 'onMount']) as C
   }
+
+  static contextType = StateManagerContext
 
   componentDidMount() {
     const { chart, onMount } = this.props
@@ -43,6 +53,11 @@ export default class BaseChart<
       this.chart.render()
       if (typeof onMount === 'function') {
         onMount(this.chart)
+      }
+
+      if (this.context) {
+        // TODO: set cfg
+        this.chart.bindStateManager(this.context, {})
       }
     }
   }
