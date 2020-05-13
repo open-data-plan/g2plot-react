@@ -14,6 +14,30 @@ type PickedAttrs = 'className' | 'style'
 
 export type LayerCtor<C> = ViewLayer<C>
 
+type ExpCbFunc = (...args: any[]) => any
+
+interface ManagerStateCfg {
+  name: string
+  exp: string | number | ExpCbFunc
+}
+
+type StateExp = ManagerStateCfg | ManagerStateCfg
+
+interface ManagerState {
+  event?: string
+  state: StateExp
+}
+
+interface StateChangeObj {
+  name: string
+  callback: (...args: any[]) => any
+}
+
+interface StateManagerCfg {
+  setState?: ManagerState[]
+  onStateChange?: StateChangeObj[]
+}
+
 export interface Plot<C extends PlotConfig = PlotConfig> {
   new (container: HTMLElement, props: C): BasePlot<C, LayerCtor<C>>
 }
@@ -22,6 +46,7 @@ export interface BaseChartProps<C extends PlotConfig = PlotConfig>
   extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
   chart: Plot<C>
   onMount?: (chart: BasePlot<C, LayerCtor<C>>) => void
+  stateManager?: StateManagerCfg
 }
 
 export default class BaseChart<
@@ -37,13 +62,20 @@ export default class BaseChart<
   context!: StateManager
 
   private getConfig = (props: BaseChartProps<C>) => {
-    return omit(props, ['style', 'className', 'chart', 'onMount']) as C
+    return omit(props, [
+      'style',
+      'className',
+      'chart',
+      'onMount',
+      'stateManager',
+      'data',
+    ]) as C
   }
 
   static contextType = StateManagerContext
 
   componentDidMount() {
-    const { chart, onMount } = this.props
+    const { chart, onMount, stateManager } = this.props
     const config = this.getConfig(this.props)
     const Chart = chart
     const { data, ...restConfig } = config as any
@@ -55,9 +87,9 @@ export default class BaseChart<
         onMount(this.chart)
       }
 
-      if (this.context) {
+      if (this.context && stateManager) {
         // TODO: set cfg
-        this.chart.bindStateManager(this.context, {})
+        this.chart.bindStateManager(this.context, stateManager)
       }
     }
   }
