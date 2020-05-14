@@ -1,3 +1,11 @@
+<a name="1.2.3"></a>
+
+## [1.2.3](https://github.com/open-data-plan/g2plot-react/compare/v1.2.2...v1.2.3) (2020-05-14)
+
+### Bug Fixes
+
+- fix empty export warning ([2ab739b](https://github.com/open-data-plan/g2plot-react/commit/2ab739b))
+
 <a name="1.2.2"></a>
 
 ## [1.2.2](https://github.com/open-data-plan/g2plot-react/compare/v1.2.1...v1.2.2) (2020-05-09)
