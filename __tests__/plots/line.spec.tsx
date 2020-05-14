@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { createRef } from 'react'
 import ReactDOM from 'react-dom'
 import { create, act, ReactTestRenderer } from 'react-test-renderer'
 import LineChart from '../../src/plots/line'
+import StateManagerProvider from '../../src/components/state-manager'
+import { StateManager } from '@antv/g2plot'
 
 describe('LineChart', () => {
   test('render without crashed', () => {
@@ -15,6 +17,21 @@ describe('LineChart', () => {
     ReactDOM.render(<LineChart data={[]} onMount={onMount} />, div)
 
     expect(onMount).toBeCalled()
+  })
+
+  test('state manager', () => {
+    const div = document.createElement('div')
+    const ref = createRef<StateManager>()
+    ReactDOM.render(
+      <StateManagerProvider ref={ref}>
+        <LineChart
+          data={[]}
+          stateManager={{ setState: [], onStateChange: [] }}
+        />
+        <LineChart data={[]} />
+      </StateManagerProvider>,
+      div
+    )
   })
 
   test('test update config and data', () => {

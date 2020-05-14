@@ -68,7 +68,6 @@ export default class BaseChart<
       'chart',
       'onMount',
       'stateManager',
-      'data',
     ]) as C
   }
 
@@ -88,7 +87,6 @@ export default class BaseChart<
       }
 
       if (this.context && stateManager) {
-        // TODO: set cfg
         this.chart.bindStateManager(this.context, stateManager)
       }
     }
