@@ -11,11 +11,13 @@ import { StateManagerProvider, LineChart, PieChart } from '@opd/g2plot-react'
 
 export default () => (
   <StateManagerProvider>
-    <LineChart />
-    <PieChart />
+    <LineChart stateManager={{ setState: [], onStateChange: [] }} />
+    <PieChart stateManager={{ setState: [], onStateChange: [] }} />
   </StateManagerProvider>
 )
 ```
+
+> see [example](/examples/state-manager) for detail
 
 ## Props
 
