@@ -193,3 +193,8 @@ export type GroupedColumnLineChartProps = _GroupedColumnLineChartProps
 
 export { default as StackedColumnLineChart } from './plots/stacked-column-line'
 export type StackedColumnLineChartProps = _StackedColumnLineChartProps
+
+export {
+  default as StateManagerProvider,
+  StateManagerContext,
+} from './components/state-manager'

@@ -2,11 +2,41 @@ import React, { HTMLAttributes } from 'react'
 import omit from 'lodash/omit'
 import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
-import { Base as BasePlot, ViewLayer, PlotConfig } from '@antv/g2plot'
+import {
+  Base as BasePlot,
+  ViewLayer,
+  PlotConfig,
+  StateManager,
+} from '@antv/g2plot'
+import { StateManagerContext } from '../state-manager'
 
 type PickedAttrs = 'className' | 'style'
 
 export type LayerCtor<C> = ViewLayer<C>
+
+type ExpCbFunc = (...args: any[]) => any
+
+interface ManagerStateCfg {
+  name: string
+  exp: string | number | ExpCbFunc
+}
+
+type StateExp = ManagerStateCfg | ExpCbFunc
+
+interface ManagerState {
+  event?: string
+  state: StateExp
+}
+
+interface StateChangeObj {
+  name: string
+  callback: (...args: any[]) => any
+}
+
+interface StateManagerCfg {
+  setState?: ManagerState[]
+  onStateChange?: StateChangeObj[]
+}
 
 export interface Plot<C extends PlotConfig = PlotConfig> {
   new (container: HTMLElement, props: C): BasePlot<C, LayerCtor<C>>
@@ -16,6 +46,7 @@ export interface BaseChartProps<C extends PlotConfig = PlotConfig>
   extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
   chart: Plot<C>
   onMount?: (chart: BasePlot<C, LayerCtor<C>>) => void
+  stateManager?: StateManagerCfg
 }
 
 export default class BaseChart<
@@ -28,12 +59,22 @@ export default class BaseChart<
     this.el = el
   }
 
+  context!: StateManager
+
   private getConfig = (props: BaseChartProps<C>) => {
-    return omit(props, ['style', 'className', 'chart', 'onMount']) as C
+    return omit(props, [
+      'style',
+      'className',
+      'chart',
+      'onMount',
+      'stateManager',
+    ]) as C
   }
 
+  static contextType = StateManagerContext
+
   componentDidMount() {
-    const { chart, onMount } = this.props
+    const { chart, onMount, stateManager } = this.props
     const config = this.getConfig(this.props)
     const Chart = chart
     const { data, ...restConfig } = config as any
@@ -43,6 +84,10 @@ export default class BaseChart<
       this.chart.render()
       if (typeof onMount === 'function') {
         onMount(this.chart)
+      }
+
+      if (this.context && stateManager) {
+        this.chart.bindStateManager(this.context, stateManager)
       }
     }
   }
