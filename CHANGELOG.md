@@ -1,3 +1,11 @@
+<a name="1.3.0"></a>
+
+# [1.3.0](https://github.com/open-data-plan/g2plot-react/compare/v1.2.4...v1.3.0) (2020-05-20)
+
+### Features
+
+- introduce state manager ([#104](https://github.com/open-data-plan/g2plot-react/issues/104)) ([91fc38a](https://github.com/open-data-plan/g2plot-react/commit/91fc38a))
+
 <a name="1.2.4"></a>
 
 ## [1.2.4](https://github.com/open-data-plan/g2plot-react/compare/v1.2.3...v1.2.4) (2020-05-14)
