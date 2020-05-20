@@ -21,7 +21,7 @@ interface ManagerStateCfg {
   exp: string | number | ExpCbFunc
 }
 
-type StateExp = ManagerStateCfg | ManagerStateCfg
+type StateExp = ManagerStateCfg | ExpCbFunc
 
 interface ManagerState {
   event?: string

@@ -32,6 +32,8 @@ describe('LineChart', () => {
       </StateManagerProvider>,
       div
     )
+
+    expect(ref.current).toBeDefined()
   })
 
   test('test update config and data', () => {
