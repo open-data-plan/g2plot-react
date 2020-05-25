@@ -1,11 +1,14 @@
-import React, { FC } from 'react'
-import { Calendar, CalendarConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { Calendar, CalendarConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type CalendarChartProps = Omit<BaseChartProps, 'chart'> & CalendarConfig
+export type CalendarChartProps = Omit<BaseChartProps<CalendarConfig>, 'chart'> &
+  CalendarConfig
 
-const CalendarChart: FC<CalendarChartProps> = (props) => {
-  return <BaseChart chart={Calendar} {...props} />
-}
+const CalendarChart = forwardRef<BasePlot<CalendarConfig>, CalendarChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={Calendar} ref={ref} {...props} />
+  }
+)
 
 export default CalendarChart

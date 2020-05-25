@@ -1,11 +1,14 @@
-import React, { FC } from 'react'
-import { Density, DensityConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { Density, DensityConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type DensityChartProps = Omit<BaseChartProps, 'chart'> & DensityConfig
+export type DensityChartProps = Omit<BaseChartProps<DensityConfig>, 'chart'> &
+  DensityConfig
 
-const DensityChart: FC<DensityChartProps> = (props) => {
-  return <BaseChart chart={Density} {...props} />
-}
+const DensityChart = forwardRef<BasePlot<DensityConfig>, DensityChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={Density} ref={ref} {...props} />
+  }
+)
 
 export default DensityChart

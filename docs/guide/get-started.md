@@ -107,9 +107,9 @@ const config = {
 }
 
 export default () => {
-  const handleChartMount = useCallback(chart => {
+  const getChart = useCallback((chart) => {
     console.log(chart)
   }, [])
-  return <LineChart {...config} onMount={handleChartMount} />
+  return <LineChart {...config} ref={getChart} />
 }
 ```

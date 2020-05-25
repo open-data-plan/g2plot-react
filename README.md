@@ -17,7 +17,7 @@ npm install @opd/g2plot-react
 ## Usage
 
 ```tsx
-import React, { useCallback } from 'react'
+import React, { useRef } from 'react'
 import { LineChart, LineChartProps } from '@opd/g2plot-react'
 
 const config: LineChartProps = {
@@ -59,10 +59,8 @@ const config: LineChartProps = {
 }
 
 export default () => {
-  const handleChartMount = useCallback((chart) => {
-    console.log(chart)
-  }, [])
-  return <LineChart {...config} onMount={handleChartMount} />
+  const ref = useRef()
+  return <LineChart {...config} ref={ref} />
 }
 ```
 
@@ -71,10 +69,6 @@ export default () => {
 ## API
 
 All config defined in `G2Plot` [document](https://g2plot.antv.vision/zh/docs/manual/introduction) can be used as `props`
-
-Extra Props:
-
-- `onMount`: `(chart: Plot) => void`. triggered after chart render
 
 ## Support Chart
 

@@ -6,20 +6,18 @@ nav:
 
 ## Configurations
 
-All configurations defined in `G2Plot` can be used as `React` `props` in `G2Plot React`
+All configurations defined in `G2Plot` can be used as `props`, and use `ref` can access chart instance
 
 For example
 
-```ts
+```js
 import React from 'react'
 import { LineChart } from '@opd/g2plot-react'
 
-export default () => <LineChart xField="x" height={400} forceFit />
+export default () => {
+  const ref = useRef()
+  return <LineChart xField="x" height={400} ref={ref} forceFit />
+}
 ```
 
 view `G2Plot` [docs](https://g2plot.antv.vision/en/docs/manual/introduction)
-
-## Lifecycle
-
-- `onMount`: `(chart: Plot) => void`
-  triggered after chart render

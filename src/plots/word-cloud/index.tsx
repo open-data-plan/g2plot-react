@@ -1,12 +1,18 @@
-import React, { FC } from 'react'
-import { WordCloud, WordCloudConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { WordCloud, WordCloudConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type WordCloudChartProps = Omit<BaseChartProps, 'chart'> &
+export type WordCloudChartProps = Omit<
+  BaseChartProps<WordCloudConfig>,
+  'chart'
+> &
   WordCloudConfig
 
-const WordCloudChart: FC<WordCloudChartProps> = (props) => {
-  return <BaseChart chart={WordCloud} {...props} />
-}
+const WordCloudChart = forwardRef<
+  BasePlot<WordCloudConfig>,
+  WordCloudChartProps
+>((props, ref) => {
+  return <BaseChart chart={WordCloud} ref={ref} {...props} />
+})
 
 export default WordCloudChart

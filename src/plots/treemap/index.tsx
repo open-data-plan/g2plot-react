@@ -1,11 +1,14 @@
-import React, { FC } from 'react'
-import { Treemap, TreemapConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { Treemap, TreemapConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type TreemapChartProps = Omit<BaseChartProps, 'chart'> & TreemapConfig
+export type TreemapChartProps = Omit<BaseChartProps<TreemapConfig>, 'chart'> &
+  TreemapConfig
 
-const TreemapChart: FC<TreemapChartProps> = (props) => {
-  return <BaseChart chart={Treemap} {...props} />
-}
+const TreemapChart = forwardRef<BasePlot<TreemapConfig>, TreemapChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={Treemap} ref={ref} {...props} />
+  }
+)
 
 export default TreemapChart

@@ -1,17 +1,22 @@
-import React, { FC } from 'react'
-import { PercentStackedArea, PercentStackedAreaConfig } from '@antv/g2plot'
-import BaseChart, { BaseChartProps, Plot } from '../../components/base'
+import React, { forwardRef } from 'react'
+import {
+  PercentStackedArea,
+  PercentStackedAreaConfig,
+  Base as BasePlot,
+} from '@antv/g2plot'
+import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type PercentStackedAreaChartProps = Omit<BaseChartProps, 'chart'> &
+export type PercentStackedAreaChartProps = Omit<
+  BaseChartProps<PercentStackedAreaConfig>,
+  'chart'
+> &
   PercentStackedAreaConfig
 
-const PercentStackedAreaChart: FC<PercentStackedAreaChartProps> = (props) => {
-  return (
-    <BaseChart
-      chart={PercentStackedArea as Plot<PercentStackedAreaConfig>}
-      {...props}
-    />
-  )
-}
+const PercentStackedAreaChart = forwardRef<
+  BasePlot<PercentStackedAreaConfig>,
+  PercentStackedAreaChartProps
+>((props, ref) => {
+  return <BaseChart chart={PercentStackedArea} ref={ref} {...props} />
+})
 
 export default PercentStackedAreaChart

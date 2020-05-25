@@ -1,11 +1,14 @@
-import React, { FC } from 'react'
-import { Gauge, GaugeConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { Gauge, GaugeConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type GaugeChartProps = Omit<BaseChartProps, 'chart'> & GaugeConfig
+export type GaugeChartProps = Omit<BaseChartProps<GaugeConfig>, 'chart'> &
+  GaugeConfig
 
-const GaugeChart: FC<GaugeChartProps> = (props) => {
-  return <BaseChart chart={Gauge} {...props} />
-}
+const GaugeChart = forwardRef<BasePlot<GaugeConfig>, GaugeChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={Gauge} ref={ref} {...props} />
+  }
+)
 
 export default GaugeChart

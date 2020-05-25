@@ -1,11 +1,14 @@
-import React, { FC } from 'react'
-import { Progress, ProgressConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { Progress, ProgressConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type ProgressChartProps = Omit<BaseChartProps, 'chart'> & ProgressConfig
+export type ProgressChartProps = Omit<BaseChartProps<ProgressConfig>, 'chart'> &
+  ProgressConfig
 
-const ProgressChart: FC<ProgressChartProps> = (props) => {
-  return <BaseChart chart={Progress} {...props} />
-}
+const ProgressChart = forwardRef<BasePlot<ProgressConfig>, ProgressChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={Progress} ref={ref} {...props} />
+  }
+)
 
 export default ProgressChart

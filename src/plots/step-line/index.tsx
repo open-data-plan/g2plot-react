@@ -1,11 +1,14 @@
-import React, { FC } from 'react'
-import { StepLine, StepLineConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { StepLine, StepLineConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type StepLineChartProps = Omit<BaseChartProps, 'chart'> & StepLineConfig
+export type StepLineChartProps = Omit<BaseChartProps<StepLineConfig>, 'chart'> &
+  StepLineConfig
 
-const StepLineChart: FC<StepLineChartProps> = (props) => {
-  return <BaseChart chart={StepLine} {...props} />
-}
+const StepLineChart = forwardRef<BasePlot<StepLineConfig>, StepLineChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={StepLine} ref={ref} {...props} />
+  }
+)
 
 export default StepLineChart

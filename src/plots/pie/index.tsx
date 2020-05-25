@@ -1,11 +1,13 @@
-import React, { FC } from 'react'
-import { Pie, PieConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { Pie, PieConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type PieChartProps = Omit<BaseChartProps, 'chart'> & PieConfig
+export type PieChartProps = Omit<BaseChartProps<PieConfig>, 'chart'> & PieConfig
 
-const PieChart: FC<PieChartProps> = (props) => {
-  return <BaseChart chart={Pie} {...props} />
-}
+const PieChart = forwardRef<BasePlot<PieConfig>, PieChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={Pie} ref={ref} {...props} />
+  }
+)
 
 export default PieChart

@@ -1,11 +1,14 @@
-import React, { FC } from 'react'
-import { Heatmap, HeatmapConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { Heatmap, HeatmapConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type HeatmapChartProps = Omit<BaseChartProps, 'chart'> & HeatmapConfig
+export type HeatmapChartProps = Omit<BaseChartProps<HeatmapConfig>, 'chart'> &
+  HeatmapConfig
 
-const HeatmapChart: FC<HeatmapChartProps> = (props) => {
-  return <BaseChart chart={Heatmap} {...props} />
-}
+const HeatmapChart = forwardRef<BasePlot<HeatmapConfig>, HeatmapChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={Heatmap} ref={ref} {...props} />
+  }
+)
 
 export default HeatmapChart

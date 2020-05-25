@@ -1,11 +1,14 @@
-import React, { FC } from 'react'
-import { TinyLine, TinyLineConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { TinyLine, TinyLineConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type TinyLineChartProps = Omit<BaseChartProps, 'chart'> & TinyLineConfig
+export type TinyLineChartProps = Omit<BaseChartProps<TinyLineConfig>, 'chart'> &
+  TinyLineConfig
 
-const TinyLineChart: FC<TinyLineChartProps> = (props) => {
-  return <BaseChart chart={TinyLine} {...props} />
-}
+const TinyLineChart = forwardRef<BasePlot<TinyLineConfig>, TinyLineChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={TinyLine} ref={ref} {...props} />
+  }
+)
 
 export default TinyLineChart

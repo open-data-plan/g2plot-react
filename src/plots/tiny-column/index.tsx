@@ -1,12 +1,18 @@
-import React, { FC } from 'react'
-import { TinyColumn, TinyColumnConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { TinyColumn, TinyColumnConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type TinyColumnChartProps = Omit<BaseChartProps, 'chart'> &
+export type TinyColumnChartProps = Omit<
+  BaseChartProps<TinyColumnConfig>,
+  'chart'
+> &
   TinyColumnConfig
 
-const TinyColumnChart: FC<TinyColumnChartProps> = (props) => {
-  return <BaseChart chart={TinyColumn} {...props} />
-}
+const TinyColumnChart = forwardRef<
+  BasePlot<TinyColumnConfig>,
+  TinyColumnChartProps
+>((props, ref) => {
+  return <BaseChart chart={TinyColumn} ref={ref} {...props} />
+})
 
 export default TinyColumnChart

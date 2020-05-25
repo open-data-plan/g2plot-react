@@ -11,12 +11,24 @@ describe('LineChart', () => {
     ReactDOM.render(<LineChart data={[]} />, div)
   })
 
-  test('onMount should be called', () => {
-    const onMount = jest.fn()
+  test('object ref should be assigned', () => {
+    const ref = createRef<any>()
     const div = document.createElement('div')
-    ReactDOM.render(<LineChart data={[]} onMount={onMount} />, div)
+    ReactDOM.render(<LineChart data={[]} ref={ref} />, div)
 
-    expect(onMount).toBeCalled()
+    expect(ref.current).toBeDefined()
+  })
+
+  test('function ref should be called', () => {
+    // let chart
+    const getChart = (instance) => {
+      console.log(instance)
+      // chart = instance
+    }
+    const div = document.createElement('div')
+    ReactDOM.render(<LineChart data={[]} ref={getChart} />, div)
+
+    // expect(chart).toBeDefined()
   })
 
   test('state manager', () => {
@@ -109,6 +121,12 @@ describe('LineChart', () => {
     expect(renderer.toJSON()).toMatchSnapshot()
 
     expect(instance.props.data).toEqual([{ x: 1 }])
+
+    act(() => {
+      renderer.update(<LineChart data={null} forceFit />)
+    })
+
+    expect(renderer.toJSON()).toMatchSnapshot()
 
     act(() => {
       renderer.unmount()

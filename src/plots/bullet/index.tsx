@@ -1,11 +1,14 @@
-import React, { FC } from 'react'
-import { Bullet, BulletConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { Bullet, BulletConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type BulletChartProps = Omit<BaseChartProps, 'chart'> & BulletConfig
+export type BulletChartProps = Omit<BaseChartProps<BulletConfig>, 'chart'> &
+  BulletConfig
 
-const BulletChart: FC<BulletChartProps> = (props) => {
-  return <BaseChart chart={Bullet} {...props} />
-}
+const BulletChart = forwardRef<BasePlot<BulletConfig>, BulletChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={Bullet} ref={ref} {...props} />
+  }
+)
 
 export default BulletChart

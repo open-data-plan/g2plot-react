@@ -1,14 +1,24 @@
-import React, { HTMLAttributes } from 'react'
-import omit from 'lodash/omit'
+import React, {
+  HTMLAttributes,
+  forwardRef,
+  useRef,
+  useContext,
+  useEffect,
+  Ref,
+  MutableRefObject,
+  ReactElement,
+  RefAttributes,
+} from 'react'
 import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
 import {
   Base as BasePlot,
   ViewLayer,
   PlotConfig,
-  StateManager,
+  ViewConfig,
 } from '@antv/g2plot'
 import { StateManagerContext } from '../state-manager'
+import { RecursivePartial } from '@antv/g2plot/lib/interface/types'
 
 type PickedAttrs = 'className' | 'style'
 
@@ -38,87 +48,98 @@ interface StateManagerCfg {
   onStateChange?: StateChangeObj[]
 }
 
-export interface Plot<C extends PlotConfig = PlotConfig> {
+interface ChartConfig extends PlotConfig, ViewConfig {}
+
+export interface Plot<C extends PlotConfig> {
   new (container: HTMLElement, props: C): BasePlot<C, LayerCtor<C>>
 }
 
-export interface BaseChartProps<C extends PlotConfig = PlotConfig>
+const syncRef = <C extends PlotConfig>(
+  source: MutableRefObject<BasePlot<C, LayerCtor<C>> | null>,
+  target?: Ref<BasePlot<C, LayerCtor<C>> | null>
+) => {
+  /* istanbul ignore else */
+  if (typeof target === 'function') {
+    target(source.current)
+  } else if (target) {
+    ;(target as MutableRefObject<BasePlot<C, LayerCtor<C>> | null>).current =
+      source.current
+  }
+}
+
+export interface BaseChartProps<C extends PlotConfig>
   extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
   chart: Plot<C>
-  onMount?: (chart: BasePlot<C, LayerCtor<C>>) => void
   stateManager?: StateManagerCfg
 }
 
-export default class BaseChart<
-  C extends PlotConfig = PlotConfig
-> extends React.Component<BaseChartProps<C>> {
-  private el: HTMLDivElement | null = null
-  private chart?: BasePlot<C, LayerCtor<C>> | null
-  private config?: any
-  private getContainer = (el: HTMLDivElement | null) => {
-    this.el = el
-  }
+const BaseChart = <C extends PlotConfig>(
+  props: BaseChartProps<C>,
+  ref?: Ref<BasePlot<C, LayerCtor<C>> | null>
+) => {
+  const {
+    chart: Chart,
+    stateManager: stateManagerCfg,
+    style,
+    className,
+    ...restProps
+  } = props
+  const chartRef = useRef<BasePlot<C, LayerCtor<C>> | null>(null)
+  const configRef = useRef<ChartConfig>()
+  const containerRef = useRef<HTMLDivElement>(null)
+  const stateManager = useContext(StateManagerContext)
+  const isFirstRenderRef = useRef<boolean>(true)
 
-  context!: StateManager
-
-  private getConfig = (props: BaseChartProps<C>) => {
-    return omit(props, [
-      'style',
-      'className',
-      'chart',
-      'onMount',
-      'stateManager',
-    ]) as C
-  }
-
-  static contextType = StateManagerContext
-
-  componentDidMount() {
-    const { chart, onMount, stateManager } = this.props
-    const config = this.getConfig(this.props)
-    const Chart = chart
-    const { data, ...restConfig } = config as any
-    this.config = cloneDeep(restConfig)
-    if (this.el) {
-      this.chart = new Chart(this.el, config)
-      this.chart.render()
-      if (typeof onMount === 'function') {
-        onMount(this.chart)
-      }
-
-      if (this.context && stateManager) {
-        this.chart.bindStateManager(this.context, stateManager)
+  useEffect(() => {
+    const { current: container } = containerRef
+    /* istanbul ignore else */
+    if (container) {
+      const { data, ...config } = restProps as ChartConfig
+      configRef.current = cloneDeep(config)
+      chartRef.current = new Chart(container, restProps as C)
+      chartRef.current.render()
+      /* istanbul ignore else */
+      if (stateManager && stateManagerCfg) {
+        chartRef.current.bindStateManager(stateManager, stateManagerCfg)
       }
     }
-  }
+    syncRef(chartRef, ref)
+    return () => {
+      /* istanbul ignore else */
+      if (chartRef.current) {
+        chartRef.current.destroy()
+        chartRef.current = null
+        syncRef(chartRef, ref)
+      }
+    }
+    // eslint-disable-next-line
+  }, [])
 
-  componentDidUpdate() {
-    const config = this.getConfig(this.props)
-    const { data, ...restConfig } = config as any
-    const isConfigChanged = !isEqual(this.config, restConfig)
-
+  useEffect(() => {
+    const { current: chart } = chartRef
     /* istanbul ignore else */
-    if (this.chart) {
-      if (isConfigChanged) {
-        this.config = cloneDeep(restConfig)
-        this.chart.updateConfig(config as any)
-        this.chart.render()
+    if (chart) {
+      // avoid update in first time
+      if (!isFirstRenderRef.current) {
+        const { data, ...config } = restProps as ChartConfig
+        if (!isEqual(config, configRef.current)) {
+          chart.updateConfig(config as RecursivePartial<C>)
+        } else {
+          if (data) {
+            chart.changeData(data)
+          } else {
+            chart.changeData([])
+          }
+        }
       } else {
-        this.chart.changeData(data)
+        isFirstRenderRef.current = false
       }
     }
-  }
+  }, [restProps])
 
-  componentWillUnmount() {
-    /* istanbul ignore else */
-    if (this.chart) {
-      this.chart.destroy()
-      this.chart = null
-    }
-  }
-
-  render() {
-    const { style, className } = this.props
-    return <div ref={this.getContainer} className={className} style={style} />
-  }
+  return <div style={style} className={className} ref={containerRef} />
 }
+
+export default forwardRef(BaseChart) as <C extends PlotConfig>(
+  p: BaseChartProps<C> & RefAttributes<BasePlot<C, LayerCtor<C>> | null>
+) => ReactElement

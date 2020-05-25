@@ -3,3 +3,5 @@
 exports[`LineChart test lifecycle 1`] = `<div />`;
 
 exports[`LineChart test lifecycle 2`] = `<div />`;
+
+exports[`LineChart test lifecycle 3`] = `<div />`;

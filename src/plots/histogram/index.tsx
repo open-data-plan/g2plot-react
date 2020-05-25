@@ -1,12 +1,18 @@
-import React, { FC } from 'react'
-import { Histogram, HistogramConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { Histogram, HistogramConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type HistogramChartProps = Omit<BaseChartProps, 'chart'> &
+export type HistogramChartProps = Omit<
+  BaseChartProps<HistogramConfig>,
+  'chart'
+> &
   HistogramConfig
 
-const HistogramChart: FC<HistogramChartProps> = (props) => {
-  return <BaseChart chart={Histogram} {...props} />
-}
+const HistogramChart = forwardRef<
+  BasePlot<HistogramConfig>,
+  HistogramChartProps
+>((props, ref) => {
+  return <BaseChart chart={Histogram} ref={ref} {...props} />
+})
 
 export default HistogramChart

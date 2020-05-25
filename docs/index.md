@@ -39,10 +39,10 @@ import React, { useCallback } from 'react'
 import { LineChart, ColumnChart, PieChart, BarChart } from '@opd/g2plot-react'
 
 const config = {
-  width: 375,
-  height: 375,
-  padding: 'auto',
+  width: 350,
+  height: 350,
   forceFit: true,
+  padding: 'auto',
   xField: 'year',
   yField: 'value',
   label: {
@@ -78,8 +78,8 @@ const config = {
 }
 
 const pieConfig = {
-  width: 400,
-  height: 400,
+  width: 350,
+  height: 350,
   forceFit: true,
   padding: 'auto',
   radius: 1,
@@ -121,9 +121,6 @@ const pieConfig = {
 }
 
 export default () => {
-  const handleChartMount = useCallback(chart => {
-    console.log(chart)
-  }, [])
   return (
     <div
       style={{
@@ -132,10 +129,15 @@ export default () => {
         justifyContent: 'space-between',
       }}
     >
-      <LineChart {...config} onMount={handleChartMount} />
-      <ColumnChart {...config} />
-      <BarChart {...config} xField="value" yField="year" />
-      <PieChart {...pieConfig} />
+      <LineChart style={{ width: '50%', minWidth: 350 }} {...config} />
+      <ColumnChart style={{ width: '50%', minWidth: 350 }} {...config} />
+      <BarChart
+        style={{ width: '50%', minWidth: 350 }}
+        {...config}
+        xField="value"
+        yField="year"
+      />
+      <PieChart style={{ width: '50%', minWidth: 350 }} {...pieConfig} />
     </div>
   )
 }

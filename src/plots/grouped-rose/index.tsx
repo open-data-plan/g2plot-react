@@ -1,12 +1,18 @@
-import React, { FC } from 'react'
-import { GroupedRose, GroupedRoseConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import { GroupedRose, GroupedRoseConfig, Base as BasePlot } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type GroupedRoseChartProps = Omit<BaseChartProps, 'chart'> &
+export type GroupedRoseChartProps = Omit<
+  BaseChartProps<GroupedRoseConfig>,
+  'chart'
+> &
   GroupedRoseConfig
 
-const GroupedRoseChart: FC<GroupedRoseChartProps> = (props) => {
-  return <BaseChart chart={GroupedRose} {...props} />
-}
+const GroupedRoseChart = forwardRef<
+  BasePlot<GroupedRoseConfig>,
+  GroupedRoseChartProps
+>((props, ref) => {
+  return <BaseChart chart={GroupedRose} ref={ref} {...props} />
+})
 
 export default GroupedRoseChart

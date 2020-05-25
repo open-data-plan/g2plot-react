@@ -1,12 +1,22 @@
-import React, { FC } from 'react'
-import { StackedColumn, StackedColumnConfig } from '@antv/g2plot'
+import React, { forwardRef } from 'react'
+import {
+  StackedColumn,
+  StackedColumnConfig,
+  Base as BasePlot,
+} from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type StackedColumnChartProps = Omit<BaseChartProps, 'chart'> &
+export type StackedColumnChartProps = Omit<
+  BaseChartProps<StackedColumnConfig>,
+  'chart'
+> &
   StackedColumnConfig
 
-const StackedColumnChart: FC<StackedColumnChartProps> = (props) => {
-  return <BaseChart chart={StackedColumn} {...props} />
-}
+const StackedColumnChart = forwardRef<
+  BasePlot<StackedColumnConfig>,
+  StackedColumnChartProps
+>((props, ref) => {
+  return <BaseChart chart={StackedColumn} ref={ref} {...props} />
+})
 
 export default StackedColumnChart
