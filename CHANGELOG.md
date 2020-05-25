@@ -1,3 +1,11 @@
+<a name="1.4.0"></a>
+
+# [1.4.0](https://github.com/open-data-plan/g2plot-react/compare/v1.3.0...v1.4.0) (2020-05-25)
+
+### Features
+
+- update g2plot version ([4f8758a](https://github.com/open-data-plan/g2plot-react/commit/4f8758a))
+
 <a name="1.3.0"></a>
 
 # [1.3.0](https://github.com/open-data-plan/g2plot-react/compare/v1.2.4...v1.3.0) (2020-05-20)
