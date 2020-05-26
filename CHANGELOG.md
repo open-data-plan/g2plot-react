@@ -1,3 +1,11 @@
+<a name="1.4.1"></a>
+
+## [1.4.1](https://github.com/open-data-plan/g2plot-react/compare/v1.4.0...v1.4.1) (2020-05-26)
+
+### Bug Fixes
+
+- fix config persist ([e940416](https://github.com/open-data-plan/g2plot-react/commit/e940416))
+
 <a name="1.4.0"></a>
 
 # [1.4.0](https://github.com/open-data-plan/g2plot-react/compare/v1.3.0...v1.4.0) (2020-05-25)
