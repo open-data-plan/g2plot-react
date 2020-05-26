@@ -1,6 +1,5 @@
 import React, { createRef } from 'react'
 import ReactDOM from 'react-dom'
-import { create, act, ReactTestRenderer } from 'react-test-renderer'
 import LineChart from '../../src/plots/line'
 import StateManagerProvider from '../../src/components/state-manager'
 import { StateManager } from '@antv/g2plot'
@@ -22,8 +21,7 @@ describe('LineChart', () => {
   test('function ref should be called', () => {
     // let chart
     const getChart = (instance) => {
-      console.log(instance)
-      // chart = instance
+      expect(instance).toBeTruthy()
     }
     const div = document.createElement('div')
     ReactDOM.render(<LineChart data={[]} ref={getChart} />, div)
@@ -59,6 +57,8 @@ describe('LineChart', () => {
     ReactDOM.render(<LineChart data={[]} />, div)
 
     ReactDOM.render(<LineChart data={[]} forceFit />, div)
+
+    ReactDOM.render(<LineChart data={null} forceFit />, div)
 
     ReactDOM.render(<LineChart data={[{ x: 1 }]} forceFit />, div)
 
@@ -99,37 +99,5 @@ describe('LineChart', () => {
     )
 
     ReactDOM.unmountComponentAtNode(div)
-  })
-
-  test('test lifecycle', () => {
-    let renderer: ReactTestRenderer
-
-    act(() => {
-      renderer = create(<LineChart data={[]} />)
-    })
-
-    const instance = renderer.root
-
-    expect(instance.props.data).toEqual([])
-
-    expect(renderer.toJSON()).toMatchSnapshot()
-
-    act(() => {
-      renderer.update(<LineChart data={[{ x: 1 }]} forceFit />)
-    })
-
-    expect(renderer.toJSON()).toMatchSnapshot()
-
-    expect(instance.props.data).toEqual([{ x: 1 }])
-
-    act(() => {
-      renderer.update(<LineChart data={null} forceFit />)
-    })
-
-    expect(renderer.toJSON()).toMatchSnapshot()
-
-    act(() => {
-      renderer.unmount()
-    })
   })
 })

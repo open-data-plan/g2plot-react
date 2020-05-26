@@ -123,6 +123,7 @@ const BaseChart = <C extends PlotConfig>(
       if (!isFirstRenderRef.current) {
         const { data, ...config } = restProps as ChartConfig
         if (!isEqual(config, configRef.current)) {
+          configRef.current = cloneDeep(config)
           chart.updateConfig(config as RecursivePartial<C>)
         } else {
           if (data) {
