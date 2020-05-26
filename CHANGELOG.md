@@ -13,6 +13,11 @@
 ### Features
 
 - update g2plot version ([4f8758a](https://github.com/open-data-plan/g2plot-react/commit/4f8758a))
+- rewrite BaseChart with hooks
+
+### BREAKING CHANGES
+
+- `onMount` has been deprecated, should use `ref` instead
 
 <a name="1.3.0"></a>
 
