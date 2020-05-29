@@ -47,6 +47,7 @@
     "postversion": "npm publish"
   },
   "devDependencies": {
+    "@antv/g2plot": "^1.1.5",
     "@babel/cli": "^7.10.1",
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
@@ -75,11 +76,10 @@
   },
   "prettier": "@opd/prettier-config-pangu",
   "peerDependencies": {
-    "react": "^15.0.0 || ^16.0.0"
+    "react": "^15.0.0 || ^16.0.0",
+    "@antv/g2plot": "^1.0.0"
   },
-  "dependencies": {
-    "@antv/g2plot": "^1.1.5"
-  },
+  "dependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
