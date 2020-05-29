@@ -1,3 +1,12 @@
+<a name="1.5.0"></a>
+
+# [1.5.0](https://github.com/open-data-plan/g2plot-react/compare/v1.4.1...v1.5.0) (2020-05-29)
+
+### Features
+
+- move g2plot to peer ([ee087b0](https://github.com/open-data-plan/g2plot-react/commit/ee087b0))
+- update g2plot version ([53feb19](https://github.com/open-data-plan/g2plot-react/commit/53feb19))
+
 <a name="1.4.1"></a>
 
 ## [1.4.1](https://github.com/open-data-plan/g2plot-react/compare/v1.4.0...v1.4.1) (2020-05-26)
