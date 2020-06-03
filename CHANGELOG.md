@@ -1,3 +1,7 @@
+<a name="1.5.1"></a>
+
+## [1.5.1](https://github.com/open-data-plan/g2plot-react/compare/v1.5.0...v1.5.1) (2020-06-03)
+
 <a name="1.5.0"></a>
 
 # [1.5.0](https://github.com/open-data-plan/g2plot-react/compare/v1.4.1...v1.5.0) (2020-05-29)
