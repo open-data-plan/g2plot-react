@@ -24,4 +24,7 @@ export default {
   analytics: {
     ga: 'UA-81696369-2',
   },
+  dynamicImport: {},
+  // ssr: {},
+  exportStatic: {},
 }

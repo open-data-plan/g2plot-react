@@ -4,6 +4,7 @@ import {
   StackedAreaChart,
   StackedBarChart,
   DonutChart,
+  StackedBarChartProps,
 } from '@opd/g2plot-react'
 
 const sales = [
@@ -115,7 +116,7 @@ const trend = [
   { time: '2018季3', area: '西南', value: 319745 },
 ]
 
-const stackedBarConfig = {
+const stackedBarConfig: StackedBarChartProps = {
   title: {
     visible: true,
     text: '地区销量',
@@ -128,6 +129,11 @@ const stackedBarConfig = {
     visible: false,
   },
   color: ['#945fb9', '#1e9493', '#ff9845'],
+  xAxis: {
+    title: {
+      visible: false,
+    },
+  },
 }
 
 const donutConfig = {
@@ -208,6 +214,7 @@ export default () => {
                 },
               ],
             }}
+            style={{ width: '50%' }}
           />
           <DonutChart
             {...donutConfig}
@@ -242,6 +249,7 @@ export default () => {
                 },
               ],
             }}
+            style={{ width: '50%' }}
           />
         </div>
         <StackedAreaChart
