@@ -55,7 +55,7 @@
     "@opd/eslint-config-pangu": "^1.2.0",
     "@opd/jest-preset-pangu": "^1.4.0",
     "@opd/prettier-config-pangu": "^1.2.0",
-    "@types/jest": "^25.2.3",
+    "@types/jest": "^26.0.0",
     "@types/lodash": "^4.14.155",
     "@types/react": "^16.9.36",
     "@types/react-dom": "^16.9.8",
