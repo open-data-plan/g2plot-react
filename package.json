@@ -69,6 +69,7 @@
     "jest": "^26.0.1",
     "jest-canvas-mock": "^2.2.0",
     "lint-staged": "^10.2.10",
+    "lodash": "^4.17.15",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
@@ -76,8 +77,9 @@
   },
   "prettier": "@opd/prettier-config-pangu",
   "peerDependencies": {
-    "react": "^15.0.0 || ^16.0.0",
-    "@antv/g2plot": "^1.0.0"
+    "@antv/g2plot": "^1.0.0",
+    "lodash": "^4.17.x",
+    "react": "^15.0.0 || ^16.0.0"
   },
   "dependencies": {},
   "husky": {
