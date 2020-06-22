@@ -49,7 +49,7 @@
   "devDependencies": {
     "@antv/g2plot": "^1.1.5",
     "@babel/cli": "^7.10.1",
-    "@commitlint/cli": "^8.3.5",
+    "@commitlint/cli": "^9.0.1",
     "@commitlint/config-conventional": "^8.3.4",
     "@opd/babel-preset-component": "^1.3.0",
     "@opd/eslint-config-pangu": "^1.2.0",
