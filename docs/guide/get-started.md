@@ -110,6 +110,9 @@ export default () => {
   const getChart = useCallback((chart) => {
     console.log(chart)
   }, [])
-  return <LineChart {...config} ref={getChart} />
+  const getContainer = useCallback((container) => {
+    console.log(container)
+  }, [])
+  return <LineChart {...config} ref={getContainer} chartRef={getChart} />
 }
 ```

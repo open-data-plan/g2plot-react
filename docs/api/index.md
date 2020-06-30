@@ -6,7 +6,7 @@ nav:
 
 ## Configurations
 
-All configurations defined in `G2Plot` can be used as `props`, and use `ref` can access chart instance
+All configurations defined in `G2Plot` can be used as `props`, and use `chartRef` can access chart instance
 
 For example
 
@@ -16,7 +16,10 @@ import { LineChart } from '@opd/g2plot-react'
 
 export default () => {
   const ref = useRef()
-  return <LineChart xField="x" height={400} ref={ref} forceFit />
+  const chartRef = useRef()
+  return (
+    <LineChart xField="x" height={400} ref={ref} chartRef={chartRef} forceFit />
+  )
 }
 ```
 

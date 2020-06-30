@@ -8,6 +8,7 @@ import React, {
   MutableRefObject,
   ReactElement,
   RefAttributes,
+  useImperativeHandle,
 } from 'react'
 import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
@@ -70,18 +71,20 @@ const syncRef = <C extends PlotConfig>(
 export interface BaseChartProps<C extends PlotConfig>
   extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
   chart: Plot<C>
+  chartRef: Ref<BasePlot<C, LayerCtor<C>> | null>
   stateManager?: StateManagerCfg
 }
 
 const BaseChart = <C extends PlotConfig>(
   props: BaseChartProps<C>,
-  ref?: Ref<BasePlot<C, LayerCtor<C>> | null>
+  ref?: Ref<HTMLDivElement | null>
 ) => {
   const {
     chart: Chart,
     stateManager: stateManagerCfg,
     style,
     className,
+    chartRef: chart,
     ...restProps
   } = props
   const chartRef = useRef<BasePlot<C, LayerCtor<C>> | null>(null)
@@ -89,6 +92,9 @@ const BaseChart = <C extends PlotConfig>(
   const containerRef = useRef<HTMLDivElement>(null)
   const stateManager = useContext(StateManagerContext)
   const isFirstRenderRef = useRef<boolean>(true)
+
+  useImperativeHandle(ref, () => containerRef.current)
+  useImperativeHandle(chart, () => chartRef.current)
 
   useEffect(() => {
     const { current: container } = containerRef
@@ -103,13 +109,13 @@ const BaseChart = <C extends PlotConfig>(
         chartRef.current.bindStateManager(stateManager, stateManagerCfg)
       }
     }
-    syncRef(chartRef, ref)
+    syncRef(chartRef, chart)
     return () => {
       /* istanbul ignore else */
       if (chartRef.current) {
         chartRef.current.destroy()
         chartRef.current = null
-        syncRef(chartRef, ref)
+        syncRef(chartRef, chart)
       }
     }
     // eslint-disable-next-line

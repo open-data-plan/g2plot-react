@@ -12,10 +12,11 @@ describe('LineChart', () => {
 
   test('object ref should be assigned', () => {
     const ref = createRef<any>()
+    const chartRef = createRef()
     const div = document.createElement('div')
-    ReactDOM.render(<LineChart data={[]} ref={ref} />, div)
-
+    ReactDOM.render(<LineChart data={[]} ref={ref} chartRef={chartRef} />, div)
     expect(ref.current).toBeDefined()
+    expect(chartRef.current).toBeDefined()
   })
 
   test('function ref should be called', () => {
