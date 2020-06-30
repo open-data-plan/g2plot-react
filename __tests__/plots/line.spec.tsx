@@ -2,7 +2,8 @@ import React, { createRef } from 'react'
 import ReactDOM from 'react-dom'
 import LineChart from '../../src/plots/line'
 import StateManagerProvider from '../../src/components/state-manager'
-import { StateManager } from '@antv/g2plot'
+import { StateManager, LineConfig } from '@antv/g2plot'
+import BasePlot from '@antv/g2plot/lib/base/plot'
 
 describe('LineChart', () => {
   test('render without crashed', () => {
@@ -11,8 +12,8 @@ describe('LineChart', () => {
   })
 
   test('object ref should be assigned', () => {
-    const ref = createRef<any>()
-    const chartRef = createRef()
+    const ref = createRef<HTMLDivElement | null>()
+    const chartRef = createRef<BasePlot<LineConfig> | null>()
     const div = document.createElement('div')
     ReactDOM.render(<LineChart data={[]} ref={ref} chartRef={chartRef} />, div)
     expect(ref.current).toBeDefined()
@@ -25,7 +26,7 @@ describe('LineChart', () => {
       expect(instance).toBeTruthy()
     }
     const div = document.createElement('div')
-    ReactDOM.render(<LineChart data={[]} ref={getChart} />, div)
+    ReactDOM.render(<LineChart data={[]} chartRef={getChart} />, div)
 
     // expect(chart).toBeDefined()
   })

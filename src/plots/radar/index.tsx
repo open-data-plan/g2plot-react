@@ -1,11 +1,11 @@
 import React, { forwardRef } from 'react'
-import { Radar, RadarConfig, Base as BasePlot } from '@antv/g2plot'
+import { Radar, RadarConfig } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type RadarChartProps = Omit<BaseChartProps<RadarConfig>, 'chart'> &
   RadarConfig
 
-const RadarChart = forwardRef<BasePlot<RadarConfig>, RadarChartProps>(
+const RadarChart = forwardRef<HTMLDivElement | null, RadarChartProps>(
   (props, ref) => {
     return <BaseChart chart={Radar} ref={ref} {...props} />
   }

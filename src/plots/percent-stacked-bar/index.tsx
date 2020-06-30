@@ -1,9 +1,5 @@
 import React, { forwardRef } from 'react'
-import {
-  PercentStackedBar,
-  PercentStackedBarConfig,
-  Base as BasePlot,
-} from '@antv/g2plot'
+import { PercentStackedBar, PercentStackedBarConfig } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type PercentStackedBarChartProps = Omit<
@@ -13,7 +9,7 @@ export type PercentStackedBarChartProps = Omit<
   PercentStackedBarConfig
 
 const PercentStackedBarChart = forwardRef<
-  BasePlot<PercentStackedBarConfig>,
+  HTMLDivElement | null,
   PercentStackedBarChartProps
 >((props, ref) => {
   return <BaseChart chart={PercentStackedBar} ref={ref} {...props} />

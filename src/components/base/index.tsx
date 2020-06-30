@@ -71,7 +71,7 @@ const syncRef = <C extends PlotConfig>(
 export interface BaseChartProps<C extends PlotConfig>
   extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
   chart: Plot<C>
-  chartRef: Ref<BasePlot<C, LayerCtor<C>> | null>
+  chartRef?: Ref<BasePlot<C, LayerCtor<C>> | null>
   stateManager?: StateManagerCfg
 }
 
@@ -94,7 +94,6 @@ const BaseChart = <C extends PlotConfig>(
   const isFirstRenderRef = useRef<boolean>(true)
 
   useImperativeHandle(ref, () => containerRef.current)
-  useImperativeHandle(chart, () => chartRef.current)
 
   useEffect(() => {
     const { current: container } = containerRef
@@ -148,5 +147,5 @@ const BaseChart = <C extends PlotConfig>(
 }
 
 export default forwardRef(BaseChart) as <C extends PlotConfig>(
-  p: BaseChartProps<C> & RefAttributes<BasePlot<C, LayerCtor<C>> | null>
+  p: BaseChartProps<C> & RefAttributes<HTMLDivElement | null>
 ) => ReactElement

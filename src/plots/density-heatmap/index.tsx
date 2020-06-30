@@ -1,9 +1,5 @@
 import React, { forwardRef } from 'react'
-import {
-  DensityHeatmap,
-  DensityHeatmapConfig,
-  Base as BasePlot,
-} from '@antv/g2plot'
+import { DensityHeatmap, DensityHeatmapConfig } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type DensityHeatmapChartProps = Omit<
@@ -13,7 +9,7 @@ export type DensityHeatmapChartProps = Omit<
   DensityHeatmapConfig
 
 const DensityHeatmapChart = forwardRef<
-  BasePlot<DensityHeatmapConfig>,
+  HTMLDivElement | null,
   DensityHeatmapChartProps
 >((props, ref) => {
   return (

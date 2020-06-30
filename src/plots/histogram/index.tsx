@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { Histogram, HistogramConfig, Base as BasePlot } from '@antv/g2plot'
+import { Histogram, HistogramConfig } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type HistogramChartProps = Omit<
@@ -8,11 +8,10 @@ export type HistogramChartProps = Omit<
 > &
   HistogramConfig
 
-const HistogramChart = forwardRef<
-  BasePlot<HistogramConfig>,
-  HistogramChartProps
->((props, ref) => {
-  return <BaseChart chart={Histogram} ref={ref} {...props} />
-})
+const HistogramChart = forwardRef<HTMLDivElement | null, HistogramChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={Histogram} ref={ref} {...props} />
+  }
+)
 
 export default HistogramChart

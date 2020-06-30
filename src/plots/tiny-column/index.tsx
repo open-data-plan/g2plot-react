@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { TinyColumn, TinyColumnConfig, Base as BasePlot } from '@antv/g2plot'
+import { TinyColumn, TinyColumnConfig } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type TinyColumnChartProps = Omit<
@@ -8,11 +8,10 @@ export type TinyColumnChartProps = Omit<
 > &
   TinyColumnConfig
 
-const TinyColumnChart = forwardRef<
-  BasePlot<TinyColumnConfig>,
-  TinyColumnChartProps
->((props, ref) => {
-  return <BaseChart chart={TinyColumn} ref={ref} {...props} />
-})
+const TinyColumnChart = forwardRef<HTMLDivElement | null, TinyColumnChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={TinyColumn} ref={ref} {...props} />
+  }
+)
 
 export default TinyColumnChart

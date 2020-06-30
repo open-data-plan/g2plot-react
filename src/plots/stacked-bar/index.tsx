@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { StackedBar, StackedBarConfig, Base as BasePlot } from '@antv/g2plot'
+import { StackedBar, StackedBarConfig } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type StackedBarChartProps = Omit<
@@ -8,11 +8,10 @@ export type StackedBarChartProps = Omit<
 > &
   StackedBarConfig
 
-const StackedBarChart = forwardRef<
-  BasePlot<StackedBarConfig>,
-  StackedBarChartProps
->((props, ref) => {
-  return <BaseChart chart={StackedBar} ref={ref} {...props} />
-})
+const StackedBarChart = forwardRef<HTMLDivElement | null, StackedBarChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={StackedBar} ref={ref} {...props} />
+  }
+)
 
 export default StackedBarChart

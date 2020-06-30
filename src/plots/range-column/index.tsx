@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { RangeColumn, RangeColumnConfig, Base as BasePlot } from '@antv/g2plot'
+import { RangeColumn, RangeColumnConfig } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type RangeColumnChartProps = Omit<
@@ -9,7 +9,7 @@ export type RangeColumnChartProps = Omit<
   RangeColumnConfig
 
 const RangeColumnChart = forwardRef<
-  BasePlot<RangeColumnConfig>,
+  HTMLDivElement | null,
   RangeColumnChartProps
 >((props, ref) => {
   return <BaseChart chart={RangeColumn} ref={ref} {...props} />

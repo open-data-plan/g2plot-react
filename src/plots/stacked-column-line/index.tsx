@@ -1,9 +1,5 @@
 import React, { forwardRef } from 'react'
-import {
-  StackedColumnLine,
-  StackedColumnLineConfig,
-  Base as BasePlot,
-} from '@antv/g2plot'
+import { StackedColumnLine, StackedColumnLineConfig } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type StackedColumnLineChartProps = Omit<
@@ -13,7 +9,7 @@ export type StackedColumnLineChartProps = Omit<
   StackedColumnLineConfig
 
 const StackedColumnLineChart = forwardRef<
-  BasePlot<StackedColumnLineConfig>,
+  HTMLDivElement | null,
   StackedColumnLineChartProps
 >((props, ref) => {
   return <BaseChart chart={StackedColumnLine} ref={ref} {...props} />

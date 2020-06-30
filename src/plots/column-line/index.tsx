@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { ColumnLine, ColumnLineConfig, Base as BasePlot } from '@antv/g2plot'
+import { ColumnLine, ColumnLineConfig } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type ColumnLineChartProps = Omit<
@@ -8,11 +8,10 @@ export type ColumnLineChartProps = Omit<
 > &
   ColumnLineConfig
 
-const ColumnLineChart = forwardRef<
-  BasePlot<ColumnLineConfig>,
-  ColumnLineChartProps
->((props, ref) => {
-  return <BaseChart chart={ColumnLine} ref={ref} {...props} />
-})
+const ColumnLineChart = forwardRef<HTMLDivElement | null, ColumnLineChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={ColumnLine} ref={ref} {...props} />
+  }
+)
 
 export default ColumnLineChart

@@ -1,5 +1,5 @@
 import React, { forwardRef } from 'react'
-import { MeterGauge, MeterGaugeConfig, Base as BasePlot } from '@antv/g2plot'
+import { MeterGauge, MeterGaugeConfig } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type MeterGaugeChartProps = Omit<
@@ -8,11 +8,10 @@ export type MeterGaugeChartProps = Omit<
 > &
   MeterGaugeConfig
 
-const MeterGaugeChart = forwardRef<
-  BasePlot<MeterGaugeConfig>,
-  MeterGaugeChartProps
->((props, ref) => {
-  return <BaseChart chart={MeterGauge} ref={ref} {...props} />
-})
+const MeterGaugeChart = forwardRef<HTMLDivElement | null, MeterGaugeChartProps>(
+  (props, ref) => {
+    return <BaseChart chart={MeterGauge} ref={ref} {...props} />
+  }
+)
 
 export default MeterGaugeChart
