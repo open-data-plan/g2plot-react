@@ -26,7 +26,6 @@ import { PieChartProps as _PieChartProps } from './plots/pie'
 import { RadarChartProps as _RadarChartProps } from './plots/radar'
 import { RangeBarChartProps as _RangeBarChartProps } from './plots/range-bar'
 import { RangeColumnChartProps as _RangeColumnChartProps } from './plots/range-column'
-import { RingChartProps as _RingChartProps } from './plots/ring'
 import { RoseChartProps as _RoseChartProps } from './plots/rose'
 import { ScatterChartProps as _ScatterChartProps } from './plots/scatter'
 import { StackedAreaChartProps as _StackedAreaChartProps } from './plots/stacked-area'
@@ -131,9 +130,6 @@ export type RangeBarChartProps = _RangeBarChartProps
 
 export { default as RangeColumnChart } from './plots/range-column'
 export type RangeColumnChartProps = _RangeColumnChartProps
-
-export { default as RingChart } from './plots/ring'
-export type RingChartProps = _RingChartProps
 
 export { default as RoseChart } from './plots/rose'
 export type RoseChartProps = _RoseChartProps

@@ -93,7 +93,6 @@ All config defined in `G2Plot` [document](https://g2plot.antv.vision/zh/docs/man
 - [x] [`PercentStackedAreaChart`](https://g2plot.antv.vision/zh/examples/area/percent-stacked)
 - [x] [`BubbleChart`](https://g2plot.antv.vision/zh/docs/manual/plots/bubble)
 - [x] [`PieChart`](https://g2plot.antv.vision/zh/docs/manual/plots/pie)
-- [x] [`RingChart`](https://g2plot.antv.vision/zh/docs/manual/plots/ring)
 - [x] [`RadarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/radar)
 - [x] [`GaugeChart`](https://g2plot.antv.vision/zh/docs/manual/plots/gauge)
 - [x] [`HeatmapChart`](https://g2plot.antv.vision/zh/docs/manual/plots/heatmap)
