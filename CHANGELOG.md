@@ -1,3 +1,9 @@
+## [1.7.1](https://github.com/open-data-plan/g2plot-react/compare/v1.7.0...v1.7.1) (2020-06-30)
+
+### Bug Fixes
+
+- **types:** fix types error ([681e0e1](https://github.com/open-data-plan/g2plot-react/commit/681e0e179fea5fad4a033aaf05b249fe4a985448))
+
 # [1.7.0](https://github.com/open-data-plan/g2plot-react/compare/v1.6.0...v1.7.0) (2020-06-30)
 
 ### Features
