@@ -99,9 +99,13 @@ const BaseChart = <C extends PlotConfig>(
     const { current: container } = containerRef
     /* istanbul ignore else */
     if (container) {
-      const { data, ...config } = restProps as ChartConfig
+      const { data = [], ...config } = restProps as ChartConfig
       configRef.current = cloneDeep(config)
-      chartRef.current = new Chart(container, restProps as C)
+      const mergedConfig = {
+        ...config,
+        data,
+      } as any
+      chartRef.current = new Chart(container, mergedConfig)
       chartRef.current.render()
       /* istanbul ignore else */
       if (stateManager && stateManagerCfg) {
