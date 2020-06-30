@@ -1,3 +1,9 @@
+## [1.7.2](https://github.com/open-data-plan/g2plot-react/compare/v1.7.1...v1.7.2) (2020-06-30)
+
+### Features
+
+- add default data ([607ec16](https://github.com/open-data-plan/g2plot-react/commit/607ec169bb9352a0723cdaaafcc324ed5f4abbba))
+
 ## [1.7.1](https://github.com/open-data-plan/g2plot-react/compare/v1.7.0...v1.7.1) (2020-06-30)
 
 ### Bug Fixes
