@@ -1,3 +1,13 @@
+# [1.6.0](https://github.com/open-data-plan/g2plot-react/compare/v1.5.2...v1.6.0) (2020-06-30)
+
+### Bug Fixes
+
+- add lodash to peer ([412ff59](https://github.com/open-data-plan/g2plot-react/commit/412ff59eedc3b360fdf7d5b1cefbbd218f1309e9))
+
+### Features
+
+- use chartRef instead of ref ([d567a29](https://github.com/open-data-plan/g2plot-react/commit/d567a291b8558803dec859c0df0f45429cd88319))
+
 <a name="1.5.2"></a>
 
 ## [1.5.2](https://github.com/open-data-plan/g2plot-react/compare/v1.5.1...v1.5.2) (2020-06-03)
