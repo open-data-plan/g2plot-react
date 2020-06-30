@@ -1,3 +1,9 @@
+# [1.7.0](https://github.com/open-data-plan/g2plot-react/compare/v1.6.0...v1.7.0) (2020-06-30)
+
+### Features
+
+- remove deprecate chart ([2bf2459](https://github.com/open-data-plan/g2plot-react/commit/2bf2459548285b17fa4e3c93b28a472c3acaf900))
+
 # [1.6.0](https://github.com/open-data-plan/g2plot-react/compare/v1.5.2...v1.6.0) (2020-06-30)
 
 ### Bug Fixes
