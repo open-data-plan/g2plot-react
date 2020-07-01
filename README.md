@@ -60,7 +60,7 @@ const config: LineChartProps = {
 
 export default () => {
   const chartRef = useRef()
-  return <LineChart {...config} ref={chartRef} />
+  return <LineChart {...config} chartRef={chartRef} />
 }
 ```
 
