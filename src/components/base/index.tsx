@@ -134,6 +134,7 @@ const BaseChart = <C extends PlotConfig>(
         if (!isEqual(config, configRef.current)) {
           configRef.current = cloneDeep(config)
           chart.updateConfig(config as RecursivePartial<C>)
+          chart.render()
         } else {
           if (data) {
             chart.changeData(data)
