@@ -17,6 +17,7 @@ import {
   ViewLayer,
   PlotConfig,
   ViewConfig,
+  DataItem,
 } from '@antv/g2plot'
 import { StateManagerContext } from '../state-manager'
 import { RecursivePartial } from '@antv/g2plot/lib/interface/types'
@@ -52,7 +53,7 @@ interface StateManagerCfg {
 interface ChartConfig extends PlotConfig, ViewConfig {}
 
 export interface Plot<C extends PlotConfig> {
-  new (container: HTMLElement, props: C): BasePlot<C, LayerCtor<C>>
+  new (container: HTMLElement, config: C): BasePlot<C, LayerCtor<C>>
 }
 
 const syncRef = <C extends PlotConfig>(
@@ -92,6 +93,7 @@ const BaseChart = <C extends PlotConfig>(
   const containerRef = useRef<HTMLDivElement>(null)
   const stateManager = useContext(StateManagerContext)
   const isFirstRenderRef = useRef<boolean>(true)
+  const dataRef = useRef<DataItem[]>([])
 
   useImperativeHandle(ref, () => containerRef.current)
 
@@ -99,11 +101,13 @@ const BaseChart = <C extends PlotConfig>(
     const { current: container } = containerRef
     /* istanbul ignore else */
     if (container) {
-      const { data = [], ...config } = restProps as ChartConfig
+      const { data, ...config } = restProps as ChartConfig
       configRef.current = cloneDeep(config)
+      const normalizedData = data || []
+      dataRef.current = normalizedData
       const mergedConfig = {
         ...config,
-        data,
+        data: normalizedData,
       } as any
       chartRef.current = new Chart(container, mergedConfig)
       chartRef.current.render()
@@ -131,17 +135,19 @@ const BaseChart = <C extends PlotConfig>(
       // avoid update in first time
       if (!isFirstRenderRef.current) {
         const { data, ...config } = restProps as ChartConfig
-        if (!isEqual(config, configRef.current)) {
+        const normalizedData = data || []
+        if (!isEqual(config, configRef.current) || !dataRef.current.length) {
           configRef.current = cloneDeep(config)
-          chart.updateConfig(config as RecursivePartial<C>)
+          const mergedConfig = {
+            ...config,
+            data: normalizedData,
+          } as RecursivePartial<C>
+          chart.updateConfig(mergedConfig)
           chart.render()
         } else {
-          if (data) {
-            chart.changeData(data)
-          } else {
-            chart.changeData([])
-          }
+          chart.changeData(normalizedData)
         }
+        dataRef.current = normalizedData
       } else {
         isFirstRenderRef.current = false
       }

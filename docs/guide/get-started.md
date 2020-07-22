@@ -254,11 +254,11 @@ export default () => {
   const [restConfig, setConfig] = useState({})
 
   const handleBtnClick = useCallback(() => {
-    setConfig({
+    setConfig((config) => ({
       point: {
-        visible: false,
+        visible: config.point ? !config.point.visible : false,
       },
-    })
+    }))
   }, [])
 
   return (
