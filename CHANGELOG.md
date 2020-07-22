@@ -1,3 +1,9 @@
+## [1.7.4](https://github.com/open-data-plan/g2plot-react/compare/v1.7.3...v1.7.4) (2020-07-22)
+
+### Performance Improvements
+
+- optimize data update ([3897729](https://github.com/open-data-plan/g2plot-react/commit/3897729249b1ed04abdde9f20463b87042cc3c94))
+
 ## [1.7.3](https://github.com/open-data-plan/g2plot-react/compare/v1.7.2...v1.7.3) (2020-07-01)
 
 ### Bug Fixes
