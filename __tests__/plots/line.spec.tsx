@@ -56,14 +56,14 @@ describe('LineChart', () => {
     const handleLineClick2 = () => {
       console.log(2)
     }
-    ReactDOM.render(<LineChart data={[]} />, div)
+    ReactDOM.render(<LineChart data={null} />, div)
 
     ReactDOM.render(<LineChart data={[]} forceFit />, div)
 
     ReactDOM.render(<LineChart data={null} forceFit />, div)
 
     ReactDOM.render(<LineChart data={[{ x: 1 }]} forceFit />, div)
-
+    ReactDOM.render(<LineChart forceFit />, div)
     ReactDOM.render(
       <LineChart
         data={[]}
