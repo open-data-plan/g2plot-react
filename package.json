@@ -47,7 +47,7 @@
     "postversion": "npm publish"
   },
   "devDependencies": {
-    "@antv/g2plot": "^1.1.14",
+    "@antv/g2plot": "^1.1.15",
     "@babel/cli": "^7.10.5",
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^9.1.1",
@@ -55,7 +55,6 @@
     "@opd/eslint-config-pangu": "^1.5.0",
     "@opd/jest-preset-pangu": "^1.5.0",
     "@opd/prettier-config-pangu": "^1.2.0",
-    "@types/jest": "^26.0.5",
     "@types/lodash": "^4.14.158",
     "@types/react": "^16.9.43",
     "@types/react-dom": "^16.9.8",
