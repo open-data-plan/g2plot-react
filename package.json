@@ -50,10 +50,10 @@
     "@antv/g2plot": "^1.1.20",
     "@babel/cli": "^7.10.5",
     "@commitlint/cli": "^9.1.2",
-    "@commitlint/config-conventional": "^9.1.2",
+    "@commitlint/config-conventional": "^10.0.0",
     "@opd/babel-preset-component": "^1.6.0",
-    "@opd/eslint-config-pangu": "^1.7.0",
-    "@opd/jest-preset-pangu": "^1.6.0",
+    "@opd/eslint-config-pangu": "^1.8.1",
+    "@opd/jest-preset-pangu": "^1.8.1",
     "@opd/prettier-config-pangu": "^1.2.0",
     "@types/lodash": "^4.14.159",
     "@types/react": "^16.9.46",
@@ -71,7 +71,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
-    "typescript": "^3.9.7"
+    "typescript": "^4.0.2"
   },
   "prettier": "@opd/prettier-config-pangu",
   "peerDependencies": {
