@@ -21,29 +21,15 @@ import React, { useRef } from 'react'
 import { LineChart, LineChartProps } from '@opd/g2plot-react'
 
 const config: LineChartProps = {
-  height: 400,
-  title: {
-    visible: true,
-    text: '配置折线数据点样式',
-  },
-  description: {
-    visible: true,
-    text: '自定义配置趋势线上数据点的样式',
-  },
-  padding: 'auto',
-  forceFit: true,
+  height: 350,
+  autoFit: true,
   xField: 'year',
   yField: 'value',
-  label: {
-    visible: true,
-    type: 'point',
-  },
-  point: {
-    visible: true,
-    size: 5,
-  },
-  xAxis: {
-    tickCount: 10,
+  smooth: true,
+  meta: {
+    value: {
+      max: 15,
+    },
   },
   data: [
     { year: '1991', value: 3 },
