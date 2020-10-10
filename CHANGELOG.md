@@ -1,3 +1,9 @@
+## [2.0.1](https://github.com/open-data-plan/g2plot-react/compare/v2.0.0...v2.0.1) (2020-10-10)
+
+### Bug Fixes
+
+- fix peer dep version ([fd7effd](https://github.com/open-data-plan/g2plot-react/commit/fd7effda8ff76125f25038374bcc557699268583))
+
 # [2.0.0](https://github.com/open-data-plan/g2plot-react/compare/v1.7.4...v2.0.0) (2020-10-10)
 
 ### Features
