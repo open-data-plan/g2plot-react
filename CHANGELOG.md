@@ -1,3 +1,9 @@
+# [2.0.0](https://github.com/open-data-plan/g2plot-react/compare/v1.7.4...v2.0.0) (2020-10-10)
+
+### Features
+
+- compatible with g2plot v2 ([3ee6d0f](https://github.com/open-data-plan/g2plot-react/commit/3ee6d0fe16a914e2bb7ce6ce6c90eb7ecee1d748))
+
 ## [1.7.4](https://github.com/open-data-plan/g2plot-react/compare/v1.7.3...v1.7.4) (2020-07-22)
 
 ### Performance Improvements
