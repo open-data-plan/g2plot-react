@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react'
-import { Bullet, BulletConfig } from '@antv/g2plot'
+import { Bullet, BulletOptions } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type BulletChartProps = Omit<BaseChartProps<BulletConfig>, 'chart'> &
-  BulletConfig
+export type BulletChartProps = Omit<BaseChartProps<BulletOptions>, 'chart'> &
+  BulletOptions
 
 const BulletChart = forwardRef<HTMLDivElement | null, BulletChartProps>(
   (props, ref) => {

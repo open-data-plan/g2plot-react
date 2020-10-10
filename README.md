@@ -70,48 +70,6 @@ export default () => {
 
 All config defined in `G2Plot` [document](https://g2plot.antv.vision/zh/docs/manual/introduction) can be used as `props`
 
-## Support Chart
-
-- [x] [`LineChart`](https://g2plot.antv.vision/zh/docs/manual/plots/line)
-- [x] [`StepLineChart`](https://g2plot.antv.vision/zh/examples/step-line/multiple)
-- [x] [`ScatterChart`](https://g2plot.antv.vision/zh/docs/manual/plots/scatter)
-- [x] [`ColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/column)
-- [x] [`HistogramChart`](https://g2plot.antv.vision/zh/examples/column/histogram)
-- [x] [`StackedColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/stacked-column)
-- [x] [`RangeColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/range-column)
-- [x] [`PercentStackedColumnChart`](https://g2plot.antv.vision/zh/examples/column/percent-stacked)
-- [x] [`GroupedColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/grouped-column)
-- [x] [`WaterfallChart`](https://g2plot.antv.vision/zh/examples/column/waterfall)
-- [x] [`BarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/bar)
-- [x] [`StackedBarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/stacked-bar)
-- [x] [`RangeBarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/range-bar)
-- [x] [`PercentStackedBarChart`](https://g2plot.antv.vision/zh/examples/bar/percent-stacked)
-- [x] [`GroupedBarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/grouped-bar)
-- [x] [`AreaChart`](https://g2plot.antv.vision/zh/docs/manual/plots/area)
-- [x] [`DensityChart`](https://github.com/antvis/G2Plot/blob/master/src/plots/density/index.ts)
-- [x] [`StackedAreaChart`](https://g2plot.antv.vision/zh/docs/manual/plots/stacked-area)
-- [x] [`PercentStackedAreaChart`](https://g2plot.antv.vision/zh/examples/area/percent-stacked)
-- [x] [`BubbleChart`](https://g2plot.antv.vision/zh/docs/manual/plots/bubble)
-- [x] [`PieChart`](https://g2plot.antv.vision/zh/docs/manual/plots/pie)
-- [x] [`RadarChart`](https://g2plot.antv.vision/zh/docs/manual/plots/radar)
-- [x] [`GaugeChart`](https://g2plot.antv.vision/zh/docs/manual/plots/gauge)
-- [x] [`HeatmapChart`](https://g2plot.antv.vision/zh/docs/manual/plots/heatmap)
-- [x] [`ProgressChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-progress)
-- [x] [`RingProgressChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-ring-progress)
-- [x] [`TinyLineChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-line)
-- [x] [`TinyAreaChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-area)
-- [x] [`TinyColumnChart`](https://g2plot.antv.vision/zh/docs/manual/plots/sparkline-column)
-- [x] [`FunnelChart`](https://g2plot.antv.vision/zh/examples/funnel/basic)
-- [x] [`LiquidChart`](https://g2plot.antv.vision/zh/examples/liquid/basic)
-- [x] [`RoseChart`](https://g2plot.antv.vision/zh/examples/rose/basic)
-- [x] [`WordCloudChart`](https://g2plot.antv.vision/zh/examples/word-cloud/basic)
-- [x] [`BulletChart`](https://g2plot.antv.vision/zh/examples/bullet/basic)
-- [x] [`TreemapChart`](https://g2plot.antv.vision/zh/examples/treemap/rect)
-- [x] [`CalendarChart`](https://g2plot.antv.vision/zh/examples/calendar/basic)
-- [x] [`DonutChart`](https://g2plot.antv.vision/zh/examples/pie/donut)
-- [x] [`StackedRoseChart`](https://g2plot.antv.vision/zh/examples/rose/rose#stacked-rose)
-- [x] [`GroupedRoseChart`](https://g2plot.antv.vision/zh/examples/rose/rose#grouped-rose)
-
 ## Develop
 
 ```

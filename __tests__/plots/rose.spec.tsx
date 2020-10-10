@@ -4,9 +4,7 @@ import RoseChart from '../../src/plots/rose'
 
 describe('RoseChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(
-      <RoseChart data={[]} radiusField="X" categoryField="Y" />
-    )
+    const renderer = create(<RoseChart data={[]} xField="x" yField="y" />)
 
     expect(renderer.toJSON()).toMatchSnapshot()
   })

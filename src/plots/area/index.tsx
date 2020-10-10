@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react'
-import { Area, AreaConfig } from '@antv/g2plot'
+import { Area, AreaOptions } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type AreaChartProps = Omit<BaseChartProps<AreaConfig>, 'chart'> &
-  AreaConfig
+export type AreaChartProps = Omit<BaseChartProps<AreaOptions>, 'chart'> &
+  AreaOptions
 
 const AreaChart = forwardRef<HTMLDivElement | null, AreaChartProps>(
   (props, ref) => {

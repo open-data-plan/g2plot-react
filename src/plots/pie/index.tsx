@@ -1,8 +1,9 @@
 import React, { forwardRef } from 'react'
-import { Pie, PieConfig } from '@antv/g2plot'
+import { Pie, PieOptions } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type PieChartProps = Omit<BaseChartProps<PieConfig>, 'chart'> & PieConfig
+export type PieChartProps = Omit<BaseChartProps<PieOptions>, 'chart'> &
+  PieOptions
 
 const PieChart = forwardRef<HTMLDivElement | null, PieChartProps>(
   (props, ref) => {

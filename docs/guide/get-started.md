@@ -25,28 +25,13 @@ Config chart based on `G2Plot` [docs](https://g2plot.antv.vision/en/docs/manual/
 ```ts
 const config = {
   height: 400,
-  title: {
-    visible: true,
-    text: 'LineChart',
-  },
-  description: {
-    visible: true,
-    text: 'This is Description',
-  },
-  padding: 'auto',
-  forceFit: true,
   xField: 'year',
   yField: 'value',
-  label: {
-    visible: true,
-    type: 'point',
-  },
-  point: {
-    visible: true,
-    size: 5,
-  },
-  xAxis: {
-    tickCount: 10,
+  smooth: true,
+  meta: {
+    value: {
+      max: 15,
+    },
   },
   data: [
     { year: '1991', value: 3 },
@@ -70,28 +55,13 @@ import { LineChart } from '@opd/g2plot-react'
 
 const config = {
   height: 400,
-  title: {
-    visible: true,
-    text: 'LineChart',
-  },
-  description: {
-    visible: true,
-    text: 'This is Description',
-  },
-  padding: 'auto',
-  forceFit: true,
   xField: 'year',
   yField: 'value',
-  label: {
-    visible: true,
-    type: 'point',
-  },
-  point: {
-    visible: true,
-    size: 5,
-  },
-  xAxis: {
-    tickCount: 10,
+  smooth: true,
+  meta: {
+    value: {
+      max: 15,
+    },
   },
   data: [
     { year: '1991', value: 3 },
@@ -125,29 +95,25 @@ import { LineChart } from '@opd/g2plot-react'
 
 const config = {
   height: 400,
-  title: {
-    visible: true,
-    text: 'LineChart',
-  },
-  description: {
-    visible: true,
-    text: 'This is Description',
-  },
-  padding: 'auto',
-  forceFit: true,
   xField: 'year',
   yField: 'value',
-  label: {
-    visible: true,
-    type: 'point',
+  smooth: true,
+  meta: {
+    value: {
+      max: 15,
+    },
   },
-  point: {
-    visible: true,
-    size: 5,
-  },
-  xAxis: {
-    tickCount: 10,
-  },
+  data: [
+    { year: '1991', value: 3 },
+    { year: '1992', value: 4 },
+    { year: '1993', value: 3.5 },
+    { year: '1994', value: 5 },
+    { year: '1995', value: 4.9 },
+    { year: '1996', value: 6 },
+    { year: '1997', value: 7 },
+    { year: '1998', value: 9 },
+    { year: '1999', value: 11 },
+  ],
 }
 
 export default () => {
@@ -207,28 +173,13 @@ import { LineChart } from '@opd/g2plot-react'
 
 const config = {
   height: 400,
-  title: {
-    visible: true,
-    text: 'LineChart',
-  },
-  description: {
-    visible: true,
-    text: 'This is Description',
-  },
-  padding: 'auto',
-  forceFit: true,
   xField: 'year',
   yField: 'value',
-  label: {
-    visible: true,
-    type: 'point',
-  },
-  point: {
-    visible: true,
-    size: 5,
-  },
-  xAxis: {
-    tickCount: 10,
+  smooth: true,
+  meta: {
+    value: {
+      max: 15,
+    },
   },
   data: [
     { year: '1991', value: 3 },

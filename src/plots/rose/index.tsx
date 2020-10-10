@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react'
-import { Rose, RoseConfig } from '@antv/g2plot'
+import { Rose, RoseOptions } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type RoseChartProps = Omit<BaseChartProps<RoseConfig>, 'chart'> &
-  RoseConfig
+export type RoseChartProps = Omit<BaseChartProps<RoseOptions>, 'chart'> &
+  RoseOptions
 
 const RoseChart = forwardRef<HTMLDivElement | null, RoseChartProps>(
   (props, ref) => {

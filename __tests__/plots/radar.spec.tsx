@@ -4,7 +4,7 @@ import RadarChart from '../../src/plots/radar'
 
 describe('RadarChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(<RadarChart data={[]} angleField="X" />)
+    const renderer = create(<RadarChart data={[]} xField="x" yField="y" />)
 
     expect(renderer.toJSON()).toMatchSnapshot()
   })

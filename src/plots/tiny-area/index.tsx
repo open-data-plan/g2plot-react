@@ -1,9 +1,12 @@
 import React, { forwardRef } from 'react'
-import { TinyArea, TinyAreaConfig } from '@antv/g2plot'
+import { TinyArea, TinyAreaOptions } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type TinyAreaChartProps = Omit<BaseChartProps<TinyAreaConfig>, 'chart'> &
-  TinyAreaConfig
+export type TinyAreaChartProps = Omit<
+  BaseChartProps<TinyAreaOptions>,
+  'chart'
+> &
+  TinyAreaOptions
 
 const TinyAreaChart = forwardRef<HTMLDivElement | null, TinyAreaChartProps>(
   (props, ref) => {

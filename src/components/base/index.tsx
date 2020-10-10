@@ -2,7 +2,6 @@ import React, {
   HTMLAttributes,
   forwardRef,
   useRef,
-  useContext,
   useEffect,
   Ref,
   MutableRefObject,
@@ -12,19 +11,13 @@ import React, {
 } from 'react'
 import isEqual from 'lodash/isEqual'
 import cloneDeep from 'lodash/cloneDeep'
-import {
-  Base as BasePlot,
-  ViewLayer,
-  PlotConfig,
-  ViewConfig,
-  DataItem,
-} from '@antv/g2plot'
-import { StateManagerContext } from '../state-manager'
-import { RecursivePartial } from '@antv/g2plot/lib/interface/types'
+import { Plot as BasePlot } from '@antv/g2plot'
+
+interface Options {
+  [x: string]: any
+}
 
 type PickedAttrs = 'className' | 'style'
-
-export type LayerCtor<C> = ViewLayer<C>
 
 type ExpCbFunc = (...args: any[]) => any
 
@@ -50,33 +43,32 @@ interface StateManagerCfg {
   onStateChange?: StateChangeObj[]
 }
 
-interface ChartConfig extends PlotConfig, ViewConfig {}
+type ChartConfig = Omit<Options, 'data'>
 
-export interface Plot<C extends PlotConfig> {
-  new (container: HTMLElement, config: C): BasePlot<C, LayerCtor<C>>
+export interface Plot<C extends Options> {
+  new (container: HTMLElement, config: C): BasePlot<C>
 }
 
-const syncRef = <C extends PlotConfig>(
-  source: MutableRefObject<BasePlot<C, LayerCtor<C>> | null>,
-  target?: Ref<BasePlot<C, LayerCtor<C>> | null>
+const syncRef = <C extends Options>(
+  source: MutableRefObject<BasePlot<C> | null>,
+  target?: Ref<BasePlot<C> | null>
 ) => {
   /* istanbul ignore else */
   if (typeof target === 'function') {
     target(source.current)
   } else if (target) {
-    ;(target as MutableRefObject<BasePlot<C, LayerCtor<C>> | null>).current =
-      source.current
+    ;(target as MutableRefObject<BasePlot<C> | null>).current = source.current
   }
 }
 
-export interface BaseChartProps<C extends PlotConfig>
+export interface BaseChartProps<C extends Options>
   extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
   chart: Plot<C>
-  chartRef?: Ref<BasePlot<C, LayerCtor<C>> | null>
+  chartRef?: Ref<BasePlot<C> | null>
   stateManager?: StateManagerCfg
 }
 
-const BaseChart = <C extends PlotConfig>(
+const BaseChart = <C extends Options>(
   props: BaseChartProps<C>,
   ref?: Ref<HTMLDivElement | null>
 ) => {
@@ -88,12 +80,11 @@ const BaseChart = <C extends PlotConfig>(
     chartRef: chart,
     ...restProps
   } = props
-  const chartRef = useRef<BasePlot<C, LayerCtor<C>> | null>(null)
+  const chartRef = useRef<BasePlot<C> | null>(null)
   const configRef = useRef<ChartConfig>()
   const containerRef = useRef<HTMLDivElement>(null)
-  const stateManager = useContext(StateManagerContext)
   const isFirstRenderRef = useRef<boolean>(true)
-  const dataRef = useRef<DataItem[]>([])
+  const dataRef = useRef<Record<string, any>[]>([])
 
   useImperativeHandle(ref, () => containerRef.current)
 
@@ -101,7 +92,7 @@ const BaseChart = <C extends PlotConfig>(
     const { current: container } = containerRef
     /* istanbul ignore else */
     if (container) {
-      const { data, ...config } = restProps as ChartConfig
+      const { data, ...config } = restProps as Options
       configRef.current = cloneDeep(config)
       const normalizedData = data || []
       dataRef.current = normalizedData
@@ -111,10 +102,6 @@ const BaseChart = <C extends PlotConfig>(
       } as any
       chartRef.current = new Chart(container, mergedConfig)
       chartRef.current.render()
-      /* istanbul ignore else */
-      if (stateManager && stateManagerCfg) {
-        chartRef.current.bindStateManager(stateManager, stateManagerCfg)
-      }
     }
     syncRef(chartRef, chart)
     return () => {
@@ -134,15 +121,16 @@ const BaseChart = <C extends PlotConfig>(
     if (chart) {
       // avoid update in first time
       if (!isFirstRenderRef.current) {
-        const { data, ...config } = restProps as ChartConfig
+        const { data, ...config } = restProps as Options
         const normalizedData = data || []
         if (!isEqual(config, configRef.current) || !dataRef.current.length) {
           configRef.current = cloneDeep(config)
           const mergedConfig = {
             ...config,
             data: normalizedData,
-          } as RecursivePartial<C>
-          chart.updateConfig(mergedConfig)
+          }
+
+          chart.update(mergedConfig as any)
           chart.render()
         } else {
           chart.changeData(normalizedData)
@@ -157,6 +145,6 @@ const BaseChart = <C extends PlotConfig>(
   return <div style={style} className={className} ref={containerRef} />
 }
 
-export default forwardRef(BaseChart) as <C extends PlotConfig>(
+export default forwardRef(BaseChart) as <C extends Options>(
   p: BaseChartProps<C> & RefAttributes<HTMLDivElement | null>
 ) => ReactElement

@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react'
-import { RingProgress, RingProgressConfig } from '@antv/g2plot'
+import { RingProgress, RingProgressOptions } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type RingProgressChartProps = Omit<
-  BaseChartProps<RingProgressConfig>,
+  BaseChartProps<RingProgressOptions>,
   'chart'
 > &
-  RingProgressConfig
+  RingProgressOptions
 
 const RingProgressChart = forwardRef<
   HTMLDivElement | null,

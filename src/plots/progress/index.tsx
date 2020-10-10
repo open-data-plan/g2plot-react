@@ -1,9 +1,12 @@
 import React, { forwardRef } from 'react'
-import { Progress, ProgressConfig } from '@antv/g2plot'
+import { Progress, ProgressOptions } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type ProgressChartProps = Omit<BaseChartProps<ProgressConfig>, 'chart'> &
-  ProgressConfig
+export type ProgressChartProps = Omit<
+  BaseChartProps<ProgressOptions>,
+  'chart'
+> &
+  ProgressOptions
 
 const ProgressChart = forwardRef<HTMLDivElement | null, ProgressChartProps>(
   (props, ref) => {

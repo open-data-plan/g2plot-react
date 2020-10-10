@@ -39,29 +39,14 @@ import React, { useCallback } from 'react'
 import { LineChart, ColumnChart, PieChart, BarChart } from '@opd/g2plot-react'
 
 const config = {
-  width: 350,
   height: 350,
-  forceFit: true,
-  padding: 'auto',
+  autoFit: true,
   xField: 'year',
   yField: 'value',
-  label: {
-    visible: true,
-    type: 'point',
-  },
-  point: {
-    visible: true,
-    size: 5,
-  },
-  xAxis: {
-    tickCount: 10,
-    title: {
-      visible: false,
-    },
-  },
-  yAxis: {
-    title: {
-      visible: false,
+  smooth: true,
+  meta: {
+    value: {
+      max: 15,
     },
   },
   data: [
@@ -78,9 +63,8 @@ const config = {
 }
 
 const pieConfig = {
-  width: 350,
   height: 350,
-  forceFit: true,
+  autoFit: true,
   padding: 'auto',
   radius: 1,
   data: [
@@ -142,5 +126,3 @@ export default () => {
   )
 }
 ```
-
-[More examples](/examples/)

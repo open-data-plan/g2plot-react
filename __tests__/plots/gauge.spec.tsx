@@ -4,9 +4,7 @@ import GaugeChart from '../../src/plots/gauge'
 
 describe('GaugeChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(
-      <GaugeChart data={[]} value={90} range={[1, 100]} statistic={{}} />
-    )
+    const renderer = create(<GaugeChart percent={90} />)
 
     expect(renderer.toJSON()).toMatchSnapshot()
   })

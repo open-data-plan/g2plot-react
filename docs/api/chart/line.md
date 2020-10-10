@@ -1,7 +1,0 @@
----
-title: LineChart
----
-
-## Props
-
-> TODO

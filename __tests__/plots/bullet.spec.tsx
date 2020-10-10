@@ -6,13 +6,15 @@ describe('BulletChart', () => {
   test('should render without crashed', () => {
     const renderer = create(
       <BulletChart
-        rangeMax={100}
         data={[
           {
             targets: [90],
             measures: [0.9],
           },
         ]}
+        measureField="x"
+        rangeField="y"
+        targetField="z"
       />
     )
 

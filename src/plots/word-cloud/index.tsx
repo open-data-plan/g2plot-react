@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react'
-import { WordCloud, WordCloudConfig } from '@antv/g2plot'
+import { WordCloud, WordCloudOptions } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type WordCloudChartProps = Omit<
-  BaseChartProps<WordCloudConfig>,
+  BaseChartProps<WordCloudOptions>,
   'chart'
 > &
-  WordCloudConfig
+  WordCloudOptions
 
 const WordCloudChart = forwardRef<HTMLDivElement | null, WordCloudChartProps>(
   (props, ref) => {

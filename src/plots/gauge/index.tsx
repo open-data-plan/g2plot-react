@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react'
-import { Gauge, GaugeConfig } from '@antv/g2plot'
+import { Gauge, GaugeOptions } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type GaugeChartProps = Omit<BaseChartProps<GaugeConfig>, 'chart'> &
-  GaugeConfig
+export type GaugeChartProps = Omit<BaseChartProps<GaugeOptions>, 'chart'> &
+  GaugeOptions
 
 const GaugeChart = forwardRef<HTMLDivElement | null, GaugeChartProps>(
   (props, ref) => {

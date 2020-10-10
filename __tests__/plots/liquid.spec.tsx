@@ -4,9 +4,7 @@ import LiquidChart from '../../src/plots/liquid'
 
 describe('LiquidChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(
-      <LiquidChart data={[]} min={0} max={100} value={90} />
-    )
+    const renderer = create(<LiquidChart percent={90} />)
 
     expect(renderer.toJSON()).toMatchSnapshot()
   })

@@ -1,9 +1,9 @@
 import React, { forwardRef } from 'react'
-import { Scatter, ScatterConfig } from '@antv/g2plot'
+import { Scatter, ScatterOptions } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type ScatterChartProps = Omit<BaseChartProps<ScatterConfig>, 'chart'> &
-  ScatterConfig
+export type ScatterChartProps = Omit<BaseChartProps<ScatterOptions>, 'chart'> &
+  ScatterOptions
 
 const ScatterChart = forwardRef<HTMLDivElement | null, ScatterChartProps>(
   (props, ref) => {
