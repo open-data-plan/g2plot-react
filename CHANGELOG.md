@@ -1,3 +1,5 @@
+## [2.0.2](https://github.com/open-data-plan/g2plot-react/compare/v2.0.1...v2.0.2) (2020-10-12)
+
 ## [2.0.1](https://github.com/open-data-plan/g2plot-react/compare/v2.0.0...v2.0.1) (2020-10-10)
 
 ### Bug Fixes
