@@ -51,9 +51,9 @@
     "@babel/cli": "^7.11.6",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@opd/babel-preset-component": "^1.8.3",
-    "@opd/eslint-config-pangu": "^1.8.7",
-    "@opd/jest-preset-pangu": "^1.8.7",
+    "@opd/babel-preset-component": "^1.10.0",
+    "@opd/eslint-config-pangu": "^1.10.0",
+    "@opd/jest-preset-pangu": "^1.10.0",
     "@opd/prettier-config-pangu": "^1.8.7",
     "@types/lodash": "^4.14.162",
     "@types/react": "^16.9.52",
@@ -79,7 +79,9 @@
     "lodash": "^4.17.x",
     "react": "^15.0.0 || ^16.0.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@babel/runtime": "^7.11.2"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
