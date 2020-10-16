@@ -1,3 +1,9 @@
+# [2.1.0](https://github.com/open-data-plan/g2plot-react/compare/v2.0.2...v2.1.0) (2020-10-16)
+
+### Features
+
+- add waterfall chart suport ([9f859e6](https://github.com/open-data-plan/g2plot-react/commit/9f859e64fc7e956f1290b6fdf1c6088b809769d3))
+
 ## [2.0.2](https://github.com/open-data-plan/g2plot-react/compare/v2.0.1...v2.0.2) (2020-10-12)
 
 ## [2.0.1](https://github.com/open-data-plan/g2plot-react/compare/v2.0.0...v2.0.1) (2020-10-10)
