@@ -14,6 +14,7 @@ import { RadarChartProps as _RadarChartProps } from './plots/radar'
 import { RoseChartProps as _RoseChartProps } from './plots/rose'
 import { ScatterChartProps as _ScatterChartProps } from './plots/scatter'
 import { WordCloudChartProps as _WordCloudChartProps } from './plots/word-cloud'
+import { WaterfallChartProps as _WaterfallChartProps } from './plots/waterfall'
 
 // mini plots
 import { ProgressChartProps as _ProgressChartProps } from './plots/progress'
@@ -82,3 +83,6 @@ export type TinyColumnChartProps = _TinyColumnChartProps
 
 export { default as TinyLineChart } from './plots/tiny-line'
 export type TinyLineChartProps = _TinyLineChartProps
+
+export { default as WaterfallChart } from './plots/waterfall'
+export type WaterfallChartProps = _WaterfallChartProps
