@@ -1,3 +1,9 @@
+# [2.2.0](https://github.com/open-data-plan/g2plot-react/compare/v2.1.0...v2.2.0) (2020-10-19)
+
+### Features
+
+- add new chart ([d9fc8d8](https://github.com/open-data-plan/g2plot-react/commit/d9fc8d88b0acdb626d77449f2fb9c660ae7bd521))
+
 # [2.1.0](https://github.com/open-data-plan/g2plot-react/compare/v2.0.2...v2.1.0) (2020-10-16)
 
 ### Features
