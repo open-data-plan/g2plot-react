@@ -113,15 +113,40 @@ export default () => {
         justifyContent: 'space-between',
       }}
     >
-      <LineChart style={{ width: '50%', minWidth: 350 }} {...config} />
-      <ColumnChart style={{ width: '50%', minWidth: 350 }} {...config} />
+      <LineChart
+        style={{
+          width: '48%',
+          minWidth: 350,
+          marginTop: 32,
+        }}
+        {...config}
+      />
+      <ColumnChart
+        style={{
+          width: '48%',
+          minWidth: 350,
+          marginTop: 32,
+        }}
+        {...config}
+      />
       <BarChart
-        style={{ width: '50%', minWidth: 350 }}
+        style={{
+          width: '48%',
+          minWidth: 350,
+          marginTop: 32,
+        }}
         {...config}
         xField="value"
         yField="year"
       />
-      <PieChart style={{ width: '50%', minWidth: 350 }} {...pieConfig} />
+      <PieChart
+        style={{
+          width: '48%',
+          minWidth: 350,
+          marginTop: 32,
+        }}
+        {...pieConfig}
+      />
     </div>
   )
 }
