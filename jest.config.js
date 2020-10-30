@@ -7,4 +7,5 @@ module.exports = {
     '!./**/*.d.ts',
     '!src/.umi/**/*.ts',
   ],
+  coverageReporters: ['json', 'text', 'lcov', 'clover', 'cobertura'],
 }
