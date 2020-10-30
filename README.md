@@ -2,6 +2,7 @@
 
 > [G2Plot](https://g2plot.antv.vision/) for React
 
+[![Build Status](https://dev.azure.com/kagawagao/OPD/_apis/build/status/open-data-plan.g2plot-react?branchName=master)](https://dev.azure.com/kagawagao/OPD/_build/latest?definitionId=1&branchName=master)
 [![build](https://github.com/open-data-plan/g2plot-react/workflows/build/badge.svg)](https://github.com/open-data-plan/g2plot-react/actions?query=workflow%3Abuild)
 [![npm](https://img.shields.io/npm/v/@opd/g2plot-react.svg)](https://www.npmjs.com/package/@opd/g2plot-react)
 [![npm](https://img.shields.io/npm/dm/@opd/g2plot-react.svg)](https://www.npmjs.com/package/@opd/g2plot-react)
