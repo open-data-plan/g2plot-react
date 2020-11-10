@@ -6,6 +6,8 @@ import { promisify } from 'util'
 import { ESLint } from 'eslint'
 import decamelize from 'decamelize'
 
+console.log('Sync start')
+
 const mkdir = promisify(fs.mkdir)
 const writeFile = promisify(fs.writeFile)
 const readFile = promisify(fs.readFile)
@@ -36,6 +38,13 @@ Object.entries(g2plot).forEach(([chartName, module]: [string, any]) => {
     }
   } catch (error) {}
 })
+
+if (newCharts.length) {
+  console.log('Follow charts will be added:')
+  console.log(newCharts.join(''))
+} else {
+  console.log('No new charts found')
+}
 
 const lintAndFixFileContent = async (fileContent: string, filePath: string) => {
   const lintResult = await eslint.lintText(fileContent, {
@@ -98,8 +107,8 @@ const addExport = async () => {
     const importPath = `./plots/${cmpPath}`
 
     const content = `
-    \nimport { ${chartName}Props as _${chartName}Props } from '${importPath}'
-      export { default as ${chartName} } from '${importPath}'
+      import { ${chartName}Props as _${chartName}Props } from '${importPath}'
+    \nexport { default as ${chartName} } from '${importPath}'
       export type ${chartName}Props = _${chartName}Props
     `
 
@@ -146,6 +155,7 @@ const createTestCases = async () => {
 
 const start = async () => {
   await Promise.all([createComponents(), addExport(), createTestCases()])
+  console.log('Sync done')
 }
 
 start()
