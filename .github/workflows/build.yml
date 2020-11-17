@@ -5,11 +5,12 @@ on: [push, pull_request]
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v1
-      - name: Use Node.js
-        uses: actions/setup-node@v1.1.0
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.2
+        with:
+          check-latest: true
       - name: npm install, test and build
         run: |
           npm ci
@@ -19,6 +20,5 @@ jobs:
         with:
           # Repository upload token - get it from codecov.io
           token: 94a32c70-7d5a-481e-ae1b-4b5b5ec09223
-
         env:
           CI: true
