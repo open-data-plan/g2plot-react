@@ -59,7 +59,7 @@
     "@types/lodash": "^4.14.163",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "@types/react-test-renderer": "^16.9.3",
+    "@types/react-test-renderer": "^17.0.0",
     "@umijs/plugin-analytics": "^0.2.1",
     "canvas": "^2.6.1",
     "conventional-changelog-cli": "^2.1.0",
