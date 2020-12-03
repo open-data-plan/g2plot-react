@@ -35,6 +35,8 @@ import { RadialBarChartProps as _RadialBarChartProps } from './plots/radial-bar'
 
 import { BidirectionalBarChartProps as _BidirectionalBarChartProps } from './plots/bidirectional-bar'
 
+import { SankeyChartProps as _SankeyChartProps } from './plots/sankey'
+
 export { default as AreaChart } from './plots/area'
 export type AreaChartProps = _AreaChartProps
 
@@ -116,3 +118,6 @@ export type RadialBarChartProps = _RadialBarChartProps
 
 export { default as BidirectionalBarChart } from './plots/bidirectional-bar'
 export type BidirectionalBarChartProps = _BidirectionalBarChartProps
+
+export { default as SankeyChart } from './plots/sankey'
+export type SankeyChartProps = _SankeyChartProps

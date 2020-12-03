@@ -48,7 +48,7 @@
     "sync": "ts-node ./scripts/sync.ts"
   },
   "devDependencies": {
-    "@antv/g2plot": "2.2.13",
+    "@antv/g2plot": "2.3.1",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@opd/babel-preset-component": "^1.11.3",
@@ -65,8 +65,8 @@
     "conventional-changelog-cli": "^2.1.0",
     "cross-env": "^7.0.2",
     "decamelize": "^4.0.0",
-    "dumi": "^1.1.0-beta.32",
-    "dumi-theme-default": "^1.0.0-beta.15",
+    "dumi": "^1.1.0-rc.5",
+    "dumi-theme-default": "^1.0.0-rc.1",
     "husky": "^4.3.0",
     "jest-canvas-mock": "^2.3.0",
     "lint-staged": "^10.5.0",
@@ -80,7 +80,7 @@
   },
   "prettier": "@opd/prettier-config-pangu",
   "peerDependencies": {
-    "@antv/g2plot": "^2.2.11",
+    "@antv/g2plot": "^2.3.1",
     "lodash": "^4.17.x",
     "react": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
