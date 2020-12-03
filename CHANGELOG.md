@@ -1,3 +1,9 @@
+# [2.4.0](https://github.com/open-data-plan/g2plot-react/compare/v2.3.1...v2.4.0) (2020-12-03)
+
+### Features
+
+- add SankeyChart support ([dc1e77e](https://github.com/open-data-plan/g2plot-react/commit/dc1e77e760f0575a84bb7c23f7894c6526978e5c))
+
 ## [2.3.1](https://github.com/open-data-plan/g2plot-react/compare/v2.3.0...v2.3.1) (2020-11-24)
 
 # [2.3.0](https://github.com/open-data-plan/g2plot-react/compare/v2.2.1...v2.3.0) (2020-11-10)
