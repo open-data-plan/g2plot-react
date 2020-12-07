@@ -1,3 +1,4 @@
+import { BaseChartProps as _BaseChartProps } from './components/base'
 // base plots
 import { AreaChartProps as _AreaChartProps } from './plots/area'
 import { BarChartProps as _BarChartProps } from './plots/bar'
@@ -36,6 +37,9 @@ import { RadialBarChartProps as _RadialBarChartProps } from './plots/radial-bar'
 import { BidirectionalBarChartProps as _BidirectionalBarChartProps } from './plots/bidirectional-bar'
 
 import { SankeyChartProps as _SankeyChartProps } from './plots/sankey'
+
+export { default as BaseChart } from './components/base'
+export type BaseChartProps<T = any> = _BaseChartProps<T>
 
 export { default as AreaChart } from './plots/area'
 export type AreaChartProps = _AreaChartProps

@@ -225,3 +225,12 @@ export default () => {
   )
 }
 ```
+
+## Use Lab Chart
+
+```tsx | pure
+import { Lab } from '@antv/g2plot'
+import { BaseChart } from '@opd/g2plot'
+
+export default () => <BaseChart chart={Lab.MultiView} data={[]} />
+```

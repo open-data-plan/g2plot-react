@@ -26,6 +26,14 @@ const exportPath = path.resolve(process.cwd(), 'src/index.tsx')
 
 const { Plot } = g2plot
 
+// const staticProperties = ['length', 'name', 'prototype']
+
+// const labCharts = Object.getOwnPropertyNames(Lab).filter((property) =>
+//   /^[A-Z]/.test(property)
+// )
+
+// console.log(labCharts)
+
 const newCharts: string[] = []
 
 Object.entries(g2plot).forEach(([chartName, module]: [string, any]) => {
