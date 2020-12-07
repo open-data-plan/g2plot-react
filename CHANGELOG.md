@@ -1,3 +1,9 @@
+# [2.5.0](https://github.com/open-data-plan/g2plot-react/compare/v2.4.0...v2.5.0) (2020-12-07)
+
+### Features
+
+- support lab chart ([a3ef4ba](https://github.com/open-data-plan/g2plot-react/commit/a3ef4ba891c5b0e38d1fcf51b2db89fec016d9d8))
+
 # [2.4.0](https://github.com/open-data-plan/g2plot-react/compare/v2.3.1...v2.4.0) (2020-12-03)
 
 ### Features
