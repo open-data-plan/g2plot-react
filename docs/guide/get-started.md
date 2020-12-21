@@ -137,18 +137,14 @@ export default () => {
   ])
 
   const handleBtnClick = useCallback(() => {
-    setData([
-      { year: '1991', value: 3 },
-      { year: '1992', value: 4 },
-      { year: '1993', value: 3.5 },
-      { year: '1994', value: 5 },
-      { year: '1995', value: 4.9 },
-      { year: '1996', value: 6 },
-      { year: '1997', value: 7 },
-      { year: '1998', value: 9 },
-      { year: '1999', value: 11 },
-      { year: '2000', value: 14 },
-    ])
+    setData((items) => {
+      const last = items.pop()
+
+      return items.concat(last, {
+        year: (+last.year + 1).toString(),
+        value: Math.random() * 10,
+      })
+    })
   }, [])
 
   return (
@@ -206,9 +202,7 @@ export default () => {
 
   const handleBtnClick = useCallback(() => {
     setConfig((config) => ({
-      point: {
-        visible: config.point ? !config.point.visible : false,
-      },
+      point: config.point ? undefined : {},
     }))
   }, [])
 

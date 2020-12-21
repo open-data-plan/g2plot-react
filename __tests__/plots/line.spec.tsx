@@ -6,8 +6,10 @@ import { LineOptions, Plot as BasePlot } from '@antv/g2plot'
 
 describe('LineChart', () => {
   test('render without crashed', () => {
-    const div = document.createElement('div')
+    let div = document.createElement('div')
     ReactDOM.render(<LineChart data={[]} />, div)
+    ReactDOM.unmountComponentAtNode(div)
+    div = null
   })
 
   test('object ref should be assigned', () => {
