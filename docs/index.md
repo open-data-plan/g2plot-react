@@ -151,3 +151,8 @@ export default () => {
   )
 }
 ```
+
+## Links
+
+- [`G2Plot`](https://g2plot.antv.vision/)
+- [`Vue Version`](https://github.com/open-data-plan/g2plot-vue)
