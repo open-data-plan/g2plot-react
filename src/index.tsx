@@ -38,6 +38,10 @@ import { BidirectionalBarChartProps as _BidirectionalBarChartProps } from './plo
 
 import { SankeyChartProps as _SankeyChartProps } from './plots/sankey'
 
+import { TreemapChartProps as _TreemapChartProps } from './plots/treemap'
+
+import { ChordChartProps as _ChordChartProps } from './plots/chord'
+
 export { default as BaseChart } from './components/base'
 export type BaseChartProps<T = any> = _BaseChartProps<T>
 
@@ -125,3 +129,9 @@ export type BidirectionalBarChartProps = _BidirectionalBarChartProps
 
 export { default as SankeyChart } from './plots/sankey'
 export type SankeyChartProps = _SankeyChartProps
+
+export { default as TreemapChart } from './plots/treemap'
+export type TreemapChartProps = _TreemapChartProps
+
+export { default as ChordChart } from './plots/chord'
+export type ChordChartProps = _ChordChartProps

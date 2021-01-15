@@ -49,7 +49,7 @@ Object.entries(g2plot).forEach(([chartName, module]: [string, any]) => {
 
 if (newCharts.length) {
   console.log('Follow charts will be added:')
-  console.log(newCharts.join(''))
+  console.log(newCharts.join(' '))
 } else {
   console.log('No new charts found')
 }
@@ -67,7 +67,9 @@ const lintAndFixFileContent = async (fileContent: string, filePath: string) => {
 const getChartConfig = (chart: string) => {
   return {
     cmpName: `${chart}Chart`,
-    cmpPath: decamelize(chart, '-'),
+    cmpPath: decamelize(chart, {
+      separator: '-',
+    }),
   }
 }
 
