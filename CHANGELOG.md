@@ -1,3 +1,13 @@
+# [2.6.0](https://github.com/open-data-plan/g2plot-react/compare/v2.5.0...v2.6.0) (2021-01-15)
+
+### Bug Fixes
+
+- fix severity vulnerability ([b996dc9](https://github.com/open-data-plan/g2plot-react/commit/b996dc95f26bb501406ddd4d12ac0cbf563c4580))
+
+### Features
+
+- introduce new charts ([8384965](https://github.com/open-data-plan/g2plot-react/commit/8384965a6e88dedac7ab2d7c99925ca605f3b600))
+
 # [2.5.0](https://github.com/open-data-plan/g2plot-react/compare/v2.4.0...v2.5.0) (2020-12-07)
 
 ### Features
