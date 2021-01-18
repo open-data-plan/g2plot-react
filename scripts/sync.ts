@@ -5,6 +5,7 @@ import fs from 'fs'
 import { promisify } from 'util'
 import { ESLint } from 'eslint'
 import decamelize from 'decamelize'
+import stringTemplate from 'string-template'
 
 console.log('Sync start')
 
@@ -34,12 +35,15 @@ const { Plot } = g2plot
 
 // console.log(labCharts)
 
+const allCharts: string[] = []
+
 const newCharts: string[] = []
 
 Object.entries(g2plot).forEach(([chartName, module]: [string, any]) => {
   try {
     if (module.prototype instanceof Plot && chartName !== 'P') {
       const chartModuleName = chartName + 'Chart'
+      allCharts.push(chartName)
       if (!(g2plotReact as any)[chartModuleName]) {
         newCharts.push(chartName)
       }
@@ -163,8 +167,36 @@ const createTestCases = async () => {
   await Promise.all(promises)
 }
 
+const createDocs = async () => {
+  const docTemplate = await fs.promises.readFile(
+    path.resolve(__dirname, 'doc-template.ftl'),
+    {
+      encoding: 'utf-8',
+    }
+  )
+  await Promise.all(
+    allCharts.map(async (chart) => {
+      const { cmpPath, cmpName } = getChartConfig(chart)
+
+      const docFilePath = path.resolve(process.cwd(), `docs/api/${cmpPath}.md`)
+      const docContent = stringTemplate(docTemplate, {
+        cmpName,
+        srcPath: `../../src/plots/${cmpPath}/index.tsx`,
+      })
+      await fs.promises.writeFile(docFilePath, docContent, {
+        encoding: 'utf-8',
+      })
+    })
+  )
+}
+
 const start = async () => {
-  await Promise.all([createComponents(), addExport(), createTestCases()])
+  await Promise.all([
+    createComponents(),
+    addExport(),
+    createTestCases(),
+    createDocs(),
+  ])
   console.log('Sync done')
 }
 

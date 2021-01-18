@@ -19,30 +19,6 @@ interface Options {
 
 type PickedAttrs = 'className' | 'style'
 
-type ExpCbFunc = (...args: any[]) => any
-
-interface ManagerStateCfg {
-  name: string
-  exp: string | number | ExpCbFunc
-}
-
-type StateExp = ManagerStateCfg | ExpCbFunc
-
-interface ManagerState {
-  event?: string
-  state: StateExp
-}
-
-interface StateChangeObj {
-  name: string
-  callback: (...args: any[]) => any
-}
-
-interface StateManagerCfg {
-  setState?: ManagerState[]
-  onStateChange?: StateChangeObj[]
-}
-
 type ChartConfig = Omit<Options, 'data'>
 
 export interface Plot<C extends Options> {
@@ -63,9 +39,15 @@ const syncRef = <C extends Options>(
 
 export interface BaseChartProps<C extends Options>
   extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
+  /**
+   * Plot Class
+   * @note Internal use, should not use directly
+   */
   chart: Plot<C>
+  /**
+   * Plot Ref
+   */
   chartRef?: Ref<BasePlot<C> | null>
-  stateManager?: StateManagerCfg
 }
 
 const BaseChart = <C extends Options>(
@@ -74,7 +56,6 @@ const BaseChart = <C extends Options>(
 ) => {
   const {
     chart: Chart,
-    stateManager: stateManagerCfg,
     style,
     className,
     chartRef: chart,
