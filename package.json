@@ -48,7 +48,7 @@
     "sync": "ts-node ./scripts/sync.ts"
   },
   "devDependencies": {
-    "@antv/g2plot": "2.3.8",
+    "@antv/g2plot": "2.3.9",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@opd/babel-preset-component": "^1.11.3",
@@ -81,7 +81,7 @@
   },
   "prettier": "@opd/prettier-config-pangu",
   "peerDependencies": {
-    "@antv/g2plot": "^2.3.8",
+    "@antv/g2plot": "^2.3.9",
     "lodash": "^4.17.x",
     "react": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
