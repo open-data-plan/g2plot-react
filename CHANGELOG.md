@@ -1,3 +1,9 @@
+# [2.7.0](https://github.com/open-data-plan/g2plot-react/compare/v2.6.0...v2.7.0) (2021-03-05)
+
+### Features
+
+- add MultiViewChart ([9d912cf](https://github.com/open-data-plan/g2plot-react/commit/9d912cf6702731289f5d500958c7effcf345fb0c))
+
 # [2.6.0](https://github.com/open-data-plan/g2plot-react/compare/v2.5.0...v2.6.0) (2021-01-15)
 
 ### Bug Fixes
