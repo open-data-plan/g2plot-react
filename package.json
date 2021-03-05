@@ -45,7 +45,8 @@
     "preversion": "npm run build",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "postversion": "npm publish",
-    "sync": "ts-node ./scripts/sync.ts"
+    "sync": "ts-node ./scripts/sync.ts",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "@antv/g2plot": "2.3.12",
@@ -87,12 +88,6 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.12.1"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

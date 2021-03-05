@@ -42,6 +42,8 @@ import { TreemapChartProps as _TreemapChartProps } from './plots/treemap'
 
 import { ChordChartProps as _ChordChartProps } from './plots/chord'
 
+import { MultiViewChartProps as _MultiViewChartProps } from './plots/multi-view'
+
 export { default as BaseChart } from './components/base'
 export type BaseChartProps<T = any> = _BaseChartProps<T>
 
@@ -135,3 +137,6 @@ export type TreemapChartProps = _TreemapChartProps
 
 export { default as ChordChart } from './plots/chord'
 export type ChordChartProps = _ChordChartProps
+
+export { default as MultiViewChart } from './plots/multi-view'
+export type MultiViewChartProps = _MultiViewChartProps
