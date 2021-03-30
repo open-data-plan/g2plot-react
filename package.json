@@ -82,7 +82,7 @@
   },
   "prettier": "@opd/prettier-config-pangu",
   "peerDependencies": {
-    "@antv/g2plot": "^2.3.9",
+    "@antv/g2plot": "^2.3.17",
     "lodash": "^4.17.x",
     "react": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
