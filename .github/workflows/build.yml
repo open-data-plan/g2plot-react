@@ -16,9 +16,6 @@ jobs:
           npm ci
           npm run build
       - name: Codecov
-        uses: codecov/codecov-action@v1.0.5
-        with:
-          # Repository upload token - get it from codecov.io
-          token: 94a32c70-7d5a-481e-ae1b-4b5b5ec09223
+        uses: codecov/codecov-action@v1.4.1
         env:
           CI: true
