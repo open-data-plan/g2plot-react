@@ -44,6 +44,8 @@ import { ChordChartProps as _ChordChartProps } from './plots/chord'
 
 import { MultiViewChartProps as _MultiViewChartProps } from './plots/multi-view'
 
+import { MixChartProps as _MixChartProps } from './plots/mix'
+
 export { default as BaseChart } from './components/base'
 export type BaseChartProps<T = any> = _BaseChartProps<T>
 
@@ -140,3 +142,6 @@ export type ChordChartProps = _ChordChartProps
 
 export { default as MultiViewChart } from './plots/multi-view'
 export type MultiViewChartProps = _MultiViewChartProps
+
+export { default as MixChart } from './plots/mix'
+export type MixChartProps = _MixChartProps

@@ -1,5 +1,7 @@
 # MultiViewChart
 
+> **deprecated**, use `MixChart` instead
+
 ## Usage
 
 ```tsx | pure
