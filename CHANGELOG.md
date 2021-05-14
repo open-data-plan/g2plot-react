@@ -1,3 +1,9 @@
+# [2.8.0](https://github.com/open-data-plan/g2plot-react/compare/v2.7.0...v2.8.0) (2021-05-14)
+
+### Features
+
+- add MixChart and deprecate MultiViewChart ([e8620fc](https://github.com/open-data-plan/g2plot-react/commit/e8620fc20f6b460bfd334d7eb1a3d8120ddabb20))
+
 # [2.7.0](https://github.com/open-data-plan/g2plot-react/compare/v2.6.0...v2.7.0) (2021-03-05)
 
 ### Features
