@@ -48,7 +48,7 @@
     "sync": "ts-node ./scripts/sync.ts"
   },
   "devDependencies": {
-    "@antv/g2plot": "^2.3.21",
+    "@antv/g2plot": "^2.3.24",
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1",
     "@opd/babel-preset-component": "^1.11.3",

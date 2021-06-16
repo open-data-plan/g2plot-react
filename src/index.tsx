@@ -46,6 +46,10 @@ import { MultiViewChartProps as _MultiViewChartProps } from './plots/multi-view'
 
 import { MixChartProps as _MixChartProps } from './plots/mix'
 
+import { ViolinChartProps as _ViolinChartProps } from './plots/violin'
+
+import { FacetChartProps as _FacetChartProps } from './plots/facet'
+
 export { default as BaseChart } from './components/base'
 export type BaseChartProps<T = any> = _BaseChartProps<T>
 
@@ -145,3 +149,9 @@ export type MultiViewChartProps = _MultiViewChartProps
 
 export { default as MixChart } from './plots/mix'
 export type MixChartProps = _MixChartProps
+
+export { default as ViolinChart } from './plots/violin'
+export type ViolinChartProps = _ViolinChartProps
+
+export { default as FacetChart } from './plots/facet'
+export type FacetChartProps = _FacetChartProps

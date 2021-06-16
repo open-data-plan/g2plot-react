@@ -175,7 +175,7 @@ const createDocs = async () => {
     }
   )
   await Promise.all(
-    allCharts.map(async (chart) => {
+    newCharts.map(async (chart) => {
       const { cmpPath, cmpName } = getChartConfig(chart)
 
       const docFilePath = path.resolve(process.cwd(), `docs/api/${cmpPath}.md`)
