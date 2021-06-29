@@ -63,7 +63,7 @@
     "@types/react-test-renderer": "^17.0.0",
     "@types/string-template": "^1.0.2",
     "@umijs/plugin-analytics": "^0.2.1",
-    "canvas": "^2.6.1",
+    "canvas": "2.6.1",
     "conventional-changelog-cli": "^2.1.0",
     "cross-env": "^7.0.2",
     "decamelize": "^5.0.0",
