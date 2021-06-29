@@ -8,4 +8,5 @@ module.exports = {
     '!src/.umi/**/*.ts',
   ],
   coverageReporters: ['json', 'text', 'lcov', 'clover', 'cobertura'],
+  testEnvironment: 'jsdom',
 }
