@@ -1,3 +1,9 @@
+## [2.9.1](https://github.com/open-data-plan/g2plot-react/compare/v2.9.0...v2.9.1) (2021-06-29)
+
+### Bug Fixes
+
+- add sideEffects ([23212c2](https://github.com/open-data-plan/g2plot-react/commit/23212c2cb8fba5529b358f5cbdf22afb9d331e9c))
+
 # [2.9.0](https://github.com/open-data-plan/g2plot-react/compare/v2.8.0...v2.9.0) (2021-06-16)
 
 ### Features
