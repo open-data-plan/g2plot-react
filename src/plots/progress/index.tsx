@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type ProgressChartProps = Omit<
   BaseChartProps<ProgressOptions>,
-  'chart'
+  'chart' | 'data'
 > &
   ProgressOptions
 

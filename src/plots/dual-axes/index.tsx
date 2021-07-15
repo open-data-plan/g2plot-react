@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type DualAxesChartProps = Omit<
   BaseChartProps<DualAxesOptions>,
-  'chart'
+  'chart' | 'data'
 > &
   DualAxesOptions
 

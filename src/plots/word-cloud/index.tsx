@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type WordCloudChartProps = Omit<
   BaseChartProps<WordCloudOptions>,
-  'chart'
+  'chart' | 'data'
 > &
   WordCloudOptions
 

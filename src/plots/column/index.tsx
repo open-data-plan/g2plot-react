@@ -2,7 +2,10 @@ import React, { forwardRef } from 'react'
 import { Column, ColumnOptions } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type ColumnChartProps = Omit<BaseChartProps<ColumnOptions>, 'chart'> &
+export type ColumnChartProps = Omit<
+  BaseChartProps<ColumnOptions>,
+  'chart' | 'data'
+> &
   ColumnOptions
 
 const ColumnChart = forwardRef<HTMLDivElement | null, ColumnChartProps>(

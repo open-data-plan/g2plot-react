@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type RingProgressChartProps = Omit<
   BaseChartProps<RingProgressOptions>,
-  'chart'
+  'chart' | 'data'
 > &
   RingProgressOptions
 

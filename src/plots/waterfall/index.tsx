@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type WaterfallChartProps = Omit<
   BaseChartProps<WaterfallOptions>,
-  'chart'
+  'chart' | 'data'
 > &
   WaterfallOptions
 

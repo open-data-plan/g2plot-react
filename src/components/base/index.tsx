@@ -8,8 +8,10 @@ import React, {
   ReactElement,
   RefAttributes,
   useImperativeHandle,
+  RefCallback,
 } from 'react'
 import isEqual from 'lodash/isEqual'
+import isEmpty from 'lodash/isEmpty'
 import cloneDeep from 'lodash/cloneDeep'
 import { Plot as BasePlot } from '@antv/g2plot'
 
@@ -27,13 +29,15 @@ export interface Plot<C extends Options> {
 
 const syncRef = <C extends Options>(
   source: MutableRefObject<BasePlot<C> | null>,
-  target?: Ref<BasePlot<C> | null>
+  target?:
+    | RefCallback<BasePlot<C> | null>
+    | MutableRefObject<BasePlot<C> | null>
 ) => {
   /* istanbul ignore else */
   if (typeof target === 'function') {
     target(source.current)
   } else if (target) {
-    ;(target as MutableRefObject<BasePlot<C> | null>).current = source.current
+    target.current = source.current
   }
 }
 
@@ -47,7 +51,10 @@ export interface BaseChartProps<C extends Options>
   /**
    * Plot Ref
    */
-  chartRef?: Ref<BasePlot<C> | null>
+  chartRef?:
+    | RefCallback<BasePlot<C> | null>
+    | MutableRefObject<BasePlot<C> | null>
+  data?: Record<string, any> | Record<string, any>[]
 }
 
 const BaseChart = <C extends Options>(
@@ -104,7 +111,7 @@ const BaseChart = <C extends Options>(
       if (!isFirstRenderRef.current) {
         const { data, ...config } = restProps as Options
         const normalizedData = data || []
-        if (!isEqual(config, configRef.current) || !dataRef.current.length) {
+        if (!isEqual(config, configRef.current) || isEmpty(dataRef.current)) {
           configRef.current = cloneDeep(config)
           const mergedConfig = {
             ...config,

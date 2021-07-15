@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type TinyLineChartProps = Omit<
   BaseChartProps<TinyLineOptions>,
-  'chart'
+  'chart' | 'data'
 > &
   TinyLineOptions
 

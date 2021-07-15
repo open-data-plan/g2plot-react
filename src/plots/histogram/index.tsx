@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type HistogramChartProps = Omit<
   BaseChartProps<HistogramOptions>,
-  'chart'
+  'chart' | 'data'
 > &
   HistogramOptions
 

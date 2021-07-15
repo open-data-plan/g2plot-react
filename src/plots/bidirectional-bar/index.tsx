@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type BidirectionalBarChartProps = Omit<
   BaseChartProps<BidirectionalBarOptions>,
-  'chart'
+  'chart' | 'data'
 > &
   BidirectionalBarOptions
 

@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type RadialBarChartProps = Omit<
   BaseChartProps<RadialBarOptions>,
-  'chart'
+  'chart' | 'data'
 > &
   RadialBarOptions
 

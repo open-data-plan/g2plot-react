@@ -4,7 +4,7 @@ import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type SunburstChartProps = Omit<
   BaseChartProps<SunburstOptions>,
-  'chart'
+  'chart' | 'data'
 > &
   SunburstOptions
 

@@ -2,7 +2,10 @@ import React, { forwardRef } from 'react'
 import { Stock, StockOptions } from '@antv/g2plot'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
-export type StockChartProps = Omit<BaseChartProps<StockOptions>, 'chart'> &
+export type StockChartProps = Omit<
+  BaseChartProps<StockOptions>,
+  'chart' | 'data'
+> &
   StockOptions
 
 const StockChart = forwardRef<HTMLDivElement | null, StockChartProps>(
