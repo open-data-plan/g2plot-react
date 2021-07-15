@@ -1,3 +1,9 @@
+# [2.10.0](https://github.com/open-data-plan/g2plot-react/compare/v2.9.1...v2.10.0) (2021-07-15)
+
+### Features
+
+- add CirclePackingChart ([75ba9fb](https://github.com/open-data-plan/g2plot-react/commit/75ba9fbf5fdfab952c064d924db2f30829d25a9c))
+
 ## [2.9.1](https://github.com/open-data-plan/g2plot-react/compare/v2.9.0...v2.9.1) (2021-06-29)
 
 ### Bug Fixes
