@@ -46,6 +46,7 @@
     "preversion": "npm run build",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
     "postversion": "npm publish",
+    "postpublish": "git push --follow-tags",
     "sync": "ts-node ./scripts/sync.ts"
   },
   "devDependencies": {
