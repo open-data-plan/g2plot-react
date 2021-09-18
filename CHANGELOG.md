@@ -1,3 +1,14 @@
+# [2.11.0](https://github.com/open-data-plan/g2plot-react/compare/v2.10.1...v2.11.0) (2021-09-18)
+
+### Features
+
+- introduce VennChart ([2f297bb](https://github.com/open-data-plan/g2plot-react/commit/2f297bbfd9f30e15b626a13fe1ecceacc22586d2))
+
+### Reverts
+
+- Revert "chore(deps-dev): bump canvas from 2.6.1 to 2.8.0 (#373)" (#374) ([d1372a7](https://github.com/open-data-plan/g2plot-react/commit/d1372a71ad665f5e886add9c1b9bdce2dc132ca5)), closes [#373](https://github.com/open-data-plan/g2plot-react/issues/373) [#374](https://github.com/open-data-plan/g2plot-react/issues/374)
+- Revert "chore(deps-dev): bump canvas from 2.6.1 to 2.8.0 (#367)" (#372) ([d77fb67](https://github.com/open-data-plan/g2plot-react/commit/d77fb67b751b5b641913b6b229bafecfd260b597)), closes [#367](https://github.com/open-data-plan/g2plot-react/issues/367) [#372](https://github.com/open-data-plan/g2plot-react/issues/372)
+
 ## [2.10.1](https://github.com/open-data-plan/g2plot-react/compare/v2.10.0...v2.10.1) (2021-07-15)
 
 # [2.10.0](https://github.com/open-data-plan/g2plot-react/compare/v2.9.1...v2.10.0) (2021-07-15)
