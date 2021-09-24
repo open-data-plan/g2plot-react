@@ -21,6 +21,14 @@ describe('LineChart', () => {
     expect(chartRef.current).toBeDefined()
   })
 
+  test('onReady should be called', () => {
+    const onReady = (plot: BasePlot<LineOptions>) => {
+      expect(plot).toBeDefined()
+    }
+    const div = document.createElement('div')
+    ReactDOM.render(<LineChart data={[]} onReady={onReady} />, div)
+  })
+
   test('function ref should be called', () => {
     // let chart
     const getChart = (instance) => {

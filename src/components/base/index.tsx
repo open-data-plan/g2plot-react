@@ -55,6 +55,7 @@ export interface BaseChartProps<C extends Options>
     | RefCallback<BasePlot<C> | null>
     | MutableRefObject<BasePlot<C> | null>
   data?: Record<string, any> | Record<string, any>[]
+  onReady?: (plot: BasePlot<C>) => void
 }
 
 const BaseChart = <C extends Options>(
@@ -66,6 +67,7 @@ const BaseChart = <C extends Options>(
     style,
     className,
     chartRef: chart,
+    onReady,
     ...restProps
   } = props
   const chartRef = useRef<BasePlot<C> | null>(null)
@@ -92,6 +94,9 @@ const BaseChart = <C extends Options>(
       chartRef.current.render()
     }
     syncRef(chartRef, chart)
+    if (chartRef.current) {
+      onReady?.(chartRef.current)
+    }
     return () => {
       /* istanbul ignore else */
       if (chartRef.current) {
