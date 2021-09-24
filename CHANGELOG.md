@@ -1,3 +1,9 @@
+# [2.12.0](https://github.com/open-data-plan/g2plot-react/compare/v2.11.0...v2.12.0) (2021-09-24)
+
+### Features
+
+- add onReady callback support ([61d1dc8](https://github.com/open-data-plan/g2plot-react/commit/61d1dc8f9bad5eb4e45798408eafcef3a6133d7c))
+
 # [2.11.0](https://github.com/open-data-plan/g2plot-react/compare/v2.10.1...v2.11.0) (2021-09-18)
 
 ### Features
