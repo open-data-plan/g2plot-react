@@ -4,7 +4,7 @@ import path from 'path'
 import fs from 'fs'
 import { promisify } from 'util'
 import { ESLint } from 'eslint'
-import decamelize from 'decamelize'
+import { kebabCase } from 'lodash'
 import stringTemplate from 'string-template'
 
 console.log('Sync start')
@@ -71,9 +71,7 @@ const lintAndFixFileContent = async (fileContent: string, filePath: string) => {
 const getChartConfig = (chart: string) => {
   return {
     cmpName: `${chart}Chart`,
-    cmpPath: decamelize(chart, {
-      separator: '-',
-    }),
+    cmpPath: kebabCase(chart),
   }
 }
 
