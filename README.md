@@ -1,3 +1,7 @@
+<p align="center">
+<img src="./assets/logo.svg">
+</p>
+
 # @opd/g2plot-react
 
 > [G2Plot](https://g2plot.antv.vision/) for React

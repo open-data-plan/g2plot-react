@@ -13,8 +13,7 @@ export default {
     },
     {
       title: 'Changelog',
-      path:
-        'https://github.com/open-data-plan/g2plot-react/blob/master/CHANGELOG.md',
+      path: 'https://github.com/open-data-plan/g2plot-react/blob/master/CHANGELOG.md',
     },
     {
       title: 'G2Plot',
