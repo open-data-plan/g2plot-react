@@ -1,7 +1,7 @@
 export default {
   mode: 'site',
   title: 'G2Plot React',
-  logo: 'https://avatars1.githubusercontent.com/u/48743659',
+  logo: 'https://raw.githubusercontent.com/open-data-plan/g2plot-react/master/assets/logo.svg',
   resolve: {
     includes: ['docs'],
   },
