@@ -64,6 +64,7 @@ es
 
 # umi
 .umi
+.umi-production
 dist
 es/.umi
 lib/.umi
