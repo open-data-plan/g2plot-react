@@ -73,9 +73,9 @@
     "jest-canvas-mock": "^2.3.0",
     "lint-staged": "^12.1.1",
     "lodash": "^4.17.20",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-test-renderer": "^17.0.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-test-renderer": "^18.0.0",
     "string-template": "^1.0.0",
     "ts-node": "^10.0.0",
     "typescript": "^4.5.2"
