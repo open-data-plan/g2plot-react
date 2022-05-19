@@ -1,5 +1,5 @@
 import React, { createRef } from 'react'
-import ReactDOM from 'react-dom'
+import { createRoot } from 'react-dom/client'
 import { create } from 'react-test-renderer'
 import LineChart from '../../src/plots/line'
 import { LineOptions, Plot as BasePlot } from '@antv/g2plot'
@@ -7,8 +7,9 @@ import { LineOptions, Plot as BasePlot } from '@antv/g2plot'
 describe('LineChart', () => {
   test('render without crashed', () => {
     let div = document.createElement('div')
-    ReactDOM.render(<LineChart data={[]} />, div)
-    ReactDOM.unmountComponentAtNode(div)
+    const root = createRoot(div)
+    root.render(<LineChart data={[]} />)
+    root.unmount()
     div = null
   })
 
@@ -16,7 +17,9 @@ describe('LineChart', () => {
     const ref = createRef<HTMLDivElement | null>()
     const chartRef = createRef<BasePlot<LineOptions> | null>()
     const div = document.createElement('div')
-    ReactDOM.render(<LineChart data={[]} ref={ref} chartRef={chartRef} />, div)
+    const root = createRoot(div)
+    root.render(<LineChart data={[]} ref={ref} chartRef={chartRef} />)
+    root.unmount()
     expect(ref.current).toBeDefined()
     expect(chartRef.current).toBeDefined()
   })
@@ -26,7 +29,9 @@ describe('LineChart', () => {
       expect(plot).toBeDefined()
     }
     const div = document.createElement('div')
-    ReactDOM.render(<LineChart data={[]} onReady={onReady} />, div)
+    const root = createRoot(div)
+    root.render(<LineChart data={[]} onReady={onReady} />)
+    root.unmount()
   })
 
   test('function ref should be called', () => {
@@ -35,7 +40,9 @@ describe('LineChart', () => {
       expect(instance).toBeTruthy()
     }
     const div = document.createElement('div')
-    ReactDOM.render(<LineChart data={[]} chartRef={getChart} />, div)
+    const root = createRoot(div)
+    root.render(<LineChart data={[]} chartRef={getChart} />)
+    root.unmount()
 
     // expect(chart).toBeDefined()
   })
@@ -64,18 +71,18 @@ describe('LineChart', () => {
       },
     }
     const div = document.createElement('div')
+    const root = createRoot(div)
+    root.render(<LineChart {...config} data={null} />)
 
-    ReactDOM.render(<LineChart {...config} data={null} />, div)
+    root.render(<LineChart {...config} data={[]} autoFit />)
 
-    ReactDOM.render(<LineChart {...config} data={[]} autoFit />, div)
+    root.render(<LineChart {...config} data={null} autoFit />)
 
-    ReactDOM.render(<LineChart {...config} data={null} autoFit />, div)
+    root.render(<LineChart {...config} autoFit />)
+    root.render(<LineChart {...config} autoFit data={[]} />)
+    root.render(<LineChart {...config} data={[]} autoFit />)
 
-    ReactDOM.render(<LineChart {...config} autoFit />, div)
-    ReactDOM.render(<LineChart {...config} autoFit data={[]} />, div)
-    ReactDOM.render(<LineChart {...config} data={[]} autoFit />, div)
-
-    ReactDOM.unmountComponentAtNode(div)
+    root.unmount()
   })
 
   test('lifecycle', () => {
