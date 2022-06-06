@@ -71,7 +71,7 @@
     "dumi": "^1.1.19",
     "husky": "^8.0.1",
     "jest-canvas-mock": "^2.3.0",
-    "lint-staged": "^12.1.1",
+    "lint-staged": "^13.0.0",
     "lodash": "^4.17.20",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
