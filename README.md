@@ -12,6 +12,7 @@
 [![npm](https://img.shields.io/npm/dm/@opd/g2plot-react.svg)](https://www.npmjs.com/package/@opd/g2plot-react)
 [![npm](https://img.shields.io/npm/l/@opd/g2plot-react.svg)](https://www.npmjs.com/package/@opd/g2plot-react)
 [![codecov](https://codecov.io/gh/open-data-plan/g2plot-react/branch/master/graph/badge.svg)](https://codecov.io/gh/open-data-plan/g2plot-react)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fopen-data-plan%2Fg2plot-react.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fopen-data-plan%2Fg2plot-react?ref=badge_shield)
 
 ## Install
 
@@ -67,3 +68,7 @@ All config defined in `G2Plot` [document](https://g2plot.antv.vision/zh/docs/man
 npm install
 npm run build
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fopen-data-plan%2Fg2plot-react.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fopen-data-plan%2Fg2plot-react?ref=badge_large)
