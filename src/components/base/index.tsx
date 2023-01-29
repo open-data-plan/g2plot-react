@@ -1,19 +1,19 @@
-import React, {
-  HTMLAttributes,
+import { Plot as BasePlot } from '@antv/g2plot'
+import cloneDeep from 'lodash/cloneDeep'
+import isEmpty from 'lodash/isEmpty'
+import isEqual from 'lodash/isEqual'
+import {
   forwardRef,
-  useRef,
-  useEffect,
-  Ref,
+  HTMLAttributes,
   MutableRefObject,
   ReactElement,
+  Ref,
   RefAttributes,
-  useImperativeHandle,
   RefCallback,
+  useEffect,
+  useImperativeHandle,
+  useRef,
 } from 'react'
-import isEqual from 'lodash/isEqual'
-import isEmpty from 'lodash/isEmpty'
-import cloneDeep from 'lodash/cloneDeep'
-import { Plot as BasePlot } from '@antv/g2plot'
 
 interface Options {
   [x: string]: any

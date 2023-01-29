@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react'
 import { Facet, FacetOptions } from '@antv/g2plot'
+import { forwardRef } from 'react'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type FacetChartProps = Omit<

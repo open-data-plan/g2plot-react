@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react'
 import { Chord, ChordOptions } from '@antv/g2plot'
+import { forwardRef } from 'react'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type ChordChartProps = Omit<

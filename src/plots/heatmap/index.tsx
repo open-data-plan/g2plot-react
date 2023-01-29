@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react'
 import { Heatmap, HeatmapOptions } from '@antv/g2plot'
+import { forwardRef } from 'react'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type HeatmapChartProps = Omit<

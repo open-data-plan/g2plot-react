@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react'
 import { Venn, VennOptions } from '@antv/g2plot'
+import { forwardRef } from 'react'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type VennChartProps = Omit<BaseChartProps<VennOptions>, 'chart'> &

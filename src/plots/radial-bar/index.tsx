@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react'
 import { RadialBar, RadialBarOptions } from '@antv/g2plot'
+import { forwardRef } from 'react'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type RadialBarChartProps = Omit<

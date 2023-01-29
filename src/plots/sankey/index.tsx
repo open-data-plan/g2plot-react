@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react'
 import { Sankey, SankeyOptions } from '@antv/g2plot'
+import { forwardRef } from 'react'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type SankeyChartProps = Omit<

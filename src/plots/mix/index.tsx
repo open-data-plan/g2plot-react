@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react'
 import { Mix, MixOptions } from '@antv/g2plot'
+import { forwardRef } from 'react'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type MixChartProps = Omit<BaseChartProps<MixOptions>, 'chart' | 'data'> &

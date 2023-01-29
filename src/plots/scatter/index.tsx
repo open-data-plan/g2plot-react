@@ -1,5 +1,5 @@
-import React, { forwardRef } from 'react'
 import { Scatter, ScatterOptions } from '@antv/g2plot'
+import { forwardRef } from 'react'
 import BaseChart, { BaseChartProps } from '../../components/base'
 
 export type ScatterChartProps = Omit<
