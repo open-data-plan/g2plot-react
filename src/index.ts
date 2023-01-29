@@ -53,9 +53,11 @@ import { FacetChartProps as _FacetChartProps } from './plots/facet'
 import { CirclePackingChartProps as _CirclePackingChartProps } from './plots/circle-packing'
 
 import { VennChartProps as _VennChartProps } from './plots/venn'
+import { Options } from '@antv/g2plot'
 
 export { default as BaseChart } from './components/base'
-export type BaseChartProps<T = any> = _BaseChartProps<T>
+
+export type BaseChartProps<T extends Options = any> = _BaseChartProps<T>
 
 export { default as AreaChart } from './plots/area'
 export type AreaChartProps = _AreaChartProps

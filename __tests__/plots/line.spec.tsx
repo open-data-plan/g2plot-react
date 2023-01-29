@@ -1,25 +1,42 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { createRef } from 'react'
 import { createRoot } from 'react-dom/client'
-import { create } from 'react-test-renderer'
+import { create, act } from 'react-test-renderer'
 import LineChart from '../../src/plots/line'
 import { LineOptions, Plot as BasePlot } from '@antv/g2plot'
 
+let div
+let root
+
+beforeEach(() => {
+  div = document.createElement('div')
+  document.body.appendChild(div)
+  act(() => {
+    root = createRoot(div)
+  })
+})
+
+afterEach(() => {
+  act(() => {
+    root.unmount()
+  })
+  document.body.removeChild(div)
+  div = null
+})
+
 describe('LineChart', () => {
   test('render without crashed', () => {
-    let div = document.createElement('div')
-    const root = createRoot(div)
-    root.render(<LineChart data={[]} />)
-    root.unmount()
-    div = null
+    act(() => {
+      root.render(<LineChart data={[]} />)
+    })
   })
 
   test('object ref should be assigned', () => {
     const ref = createRef<HTMLDivElement | null>()
     const chartRef = createRef<BasePlot<LineOptions> | null>()
-    const div = document.createElement('div')
-    const root = createRoot(div)
-    root.render(<LineChart data={[]} ref={ref} chartRef={chartRef} />)
-    root.unmount()
+    act(() => {
+      root.render(<LineChart data={[]} ref={ref} chartRef={chartRef} />)
+    })
     expect(ref.current).toBeDefined()
     expect(chartRef.current).toBeDefined()
   })
@@ -28,23 +45,21 @@ describe('LineChart', () => {
     const onReady = (plot: BasePlot<LineOptions>) => {
       expect(plot).toBeDefined()
     }
-    const div = document.createElement('div')
-    const root = createRoot(div)
-    root.render(<LineChart data={[]} onReady={onReady} />)
-    root.unmount()
+    act(() => {
+      root.render(<LineChart data={[]} onReady={onReady} />)
+    })
   })
 
   test('function ref should be called', () => {
-    // let chart
+    let chart
     const getChart = (instance) => {
-      expect(instance).toBeTruthy()
+      chart = instance
     }
-    const div = document.createElement('div')
-    const root = createRoot(div)
-    root.render(<LineChart data={[]} chartRef={getChart} />)
-    root.unmount()
+    act(() => {
+      root.render(<LineChart data={[]} chartRef={getChart} />)
+    })
 
-    // expect(chart).toBeDefined()
+    expect(chart).toBeDefined()
   })
 
   test('test update config and data', () => {
@@ -70,19 +85,29 @@ describe('LineChart', () => {
         },
       },
     }
-    const div = document.createElement('div')
-    const root = createRoot(div)
-    root.render(<LineChart {...config} data={null} />)
+    act(() => {
+      // @ts-ignore
+      root.render(<LineChart {...config} data={null} />)
+    })
 
-    root.render(<LineChart {...config} data={[]} autoFit />)
+    act(() => {
+      root.render(<LineChart {...config} data={[]} autoFit />)
+    })
 
-    root.render(<LineChart {...config} data={null} autoFit />)
+    act(() => {
+      // @ts-ignore
+      root.render(<LineChart {...config} data={null} autoFit />)
+    })
 
-    root.render(<LineChart {...config} autoFit />)
-    root.render(<LineChart {...config} autoFit data={[]} />)
-    root.render(<LineChart {...config} data={[]} autoFit />)
-
-    root.unmount()
+    act(() => {
+      root.render(<LineChart {...config} autoFit />)
+    })
+    act(() => {
+      root.render(<LineChart {...config} autoFit data={[]} />)
+    })
+    act(() => {
+      root.render(<LineChart {...config} data={[]} autoFit />)
+    })
   })
 
   test('lifecycle', () => {

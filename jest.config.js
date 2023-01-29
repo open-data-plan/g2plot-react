@@ -5,7 +5,7 @@ module.exports = {
     './__tests__/setups/worker.js',
     './__tests__/setups/url.js',
   ],
-  transformIgnorePatterns: ['/node_modules/', '/src/.umi/'],
+  transformIgnorePatterns: ['/node_modules/!d3-*', '/src/.umi/'],
   collectCoverageFrom: [
     './src/**/*.{ts,tsx}',
     '!./**/*.d.ts',
@@ -13,4 +13,7 @@ module.exports = {
   ],
   coverageReporters: ['json', 'text', 'lcov', 'clover', 'cobertura'],
   testEnvironment: 'jsdom',
+  globals: {
+    IS_REACT_ACT_ENVIRONMENT: true,
+  },
 }

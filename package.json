@@ -8,12 +8,16 @@
     "g2plot",
     "chart"
   ],
-  "author": "kagawagao <kingsongao1221@gmail.com> (https://kingsongao.com/)",
   "homepage": "https://g2plot.opd.cool/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/open-data-plan/g2plot-react.git"
+  },
   "license": "MIT",
+  "author": "kagawagao <kingsongao1221@gmail.com> (https://kingsongao.com/)",
+  "sideEffects": false,
   "main": "lib/index.js",
   "module": "es/index.js",
-  "sideEffects": false,
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -24,30 +28,35 @@
     "typings",
     "*.d.ts"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/open-data-plan/g2plot-react.git"
-  },
   "scripts": {
-    "dev": "dumi dev",
-    "lint": "eslint . --ext=.ts,.tsx",
-    "lint:fix": "eslint . --ext=.ts,.tsx --fix",
-    "test": "jest -u",
     "prebuild": "npm test",
     "build": "npm run build:es & npm run build:commonjs",
     "postbuild": "npm run build:types",
-    "build:es": "babel src -d es --extensions .ts,.tsx --delete-dir-on-start",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src -d lib --extensions .ts,.tsx --delete-dir-on-start",
-    "build:types": "tsc --declarationDir ./lib & tsc --declarationDir ./es",
     "build:docs": "dumi build",
+    "build:es": "babel src -d es --extensions .ts,.tsx --delete-dir-on-start",
+    "build:types": "tsc --declarationDir ./lib & tsc --declarationDir ./es",
+    "dev": "dumi dev",
+    "lint": "eslint . --ext=.ts,.tsx",
+    "lint:fix": "eslint . --ext=.ts,.tsx --fix",
+    "postpublish": "git push --follow-tags",
+    "sync": "ts-node ./scripts/sync.ts",
+    "test": "jest -u",
     "preversion": "npm run build",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
-    "postversion": "npm publish",
-    "postpublish": "git push --follow-tags",
-    "sync": "ts-node ./scripts/sync.ts"
+    "postversion": "npm publish"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier -c --write"
+    ]
+  },
+  "prettier": "@opd/prettier-config-pangu",
+  "dependencies": {
+    "@babel/runtime": "^7.14.0"
   },
   "devDependencies": {
     "@antv/g2plot": "^2.3.24",
@@ -64,7 +73,7 @@
     "@types/react-test-renderer": "^18.0.0",
     "@types/string-template": "^1.0.2",
     "@umijs/plugin-analytics": "^0.2.1",
-    "canvas": "2.6.1",
+    "canvas": "^2.11.0",
     "conventional-changelog-cli": "^2.1.0",
     "cross-env": "^7.0.2",
     "diff-run": "^1.0.4",
@@ -80,22 +89,13 @@
     "ts-node": "^10.0.0",
     "typescript": "^4.5.2"
   },
-  "prettier": "@opd/prettier-config-pangu",
   "peerDependencies": {
     "@antv/g2plot": "^2.3.21",
     "lodash": "^4.17.x",
     "react": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
-  "dependencies": {
-    "@babel/runtime": "^7.14.0"
-  },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix"
-    ],
-    "*.{json,md}": [
-      "prettier -c --write"
-    ]
+  "publishConfig": {
+    "access": "public"
   },
   "diffrun": {
     "package-lock.json": "npm ci"
