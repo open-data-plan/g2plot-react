@@ -1,9 +1,9 @@
-import path from 'path'
-import fs from 'fs'
-import { promisify } from 'util'
 import { ESLint } from 'eslint'
+import fs from 'fs'
 import { camelCase, kebabCase, upperFirst } from 'lodash'
+import path from 'path'
 import stringTemplate from 'string-template'
+import { promisify } from 'util'
 
 console.log('Sync start')
 
@@ -176,7 +176,7 @@ const createDocs = async () => {
     }
   )
   await Promise.all(
-    newCharts.map(async (chart) => {
+    allCharts.map(async (chart) => {
       const { cmpPath, cmpName } = getChartConfig(chart)
 
       const docFilePath = path.resolve(process.cwd(), `docs/api/${cmpPath}.md`)

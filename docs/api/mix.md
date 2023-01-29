@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { MixChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/mix/index.tsx" />
+## API
+
+<API id="MixChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

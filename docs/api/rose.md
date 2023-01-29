@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { RoseChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/rose/index.tsx" />
+## API
+
+<API id="RoseChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

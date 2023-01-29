@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { ScatterChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/scatter/index.tsx" />
+## API
+
+<API id="ScatterChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { TreemapChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/treemap/index.tsx" />
+## API
+
+<API id="TreemapChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

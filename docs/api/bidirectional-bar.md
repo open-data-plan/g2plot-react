@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { BidirectionalBarChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/bidirectional-bar/index.tsx" />
+## API
+
+<API id="BidirectionalBarChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

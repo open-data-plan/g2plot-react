@@ -77,7 +77,7 @@
     "conventional-changelog-cli": "^2.1.0",
     "cross-env": "^7.0.2",
     "diff-run": "^1.0.4",
-    "dumi": "^1.1.50",
+    "dumi": "^2.1.5",
     "husky": "^8.0.1",
     "jest-canvas-mock": "^2.3.0",
     "lint-staged": "^13.0.0",

@@ -69,4 +69,6 @@ dist
 es/.umi
 lib/.umi
 
+.dumi
+
 .now

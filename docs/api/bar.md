@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { BarChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/bar/index.tsx" />
+## API
+
+<API id="BarChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

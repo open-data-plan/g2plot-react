@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { WaterfallChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/waterfall/index.tsx" />
+## API
+
+<API id="WaterfallChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

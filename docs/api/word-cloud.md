@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { WordCloudChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/word-cloud/index.tsx" />
+## API
+
+<API id="WordCloudChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

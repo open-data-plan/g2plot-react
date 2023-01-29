@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { LiquidChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/liquid/index.tsx" />
+## API
+
+<API id="LiquidChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

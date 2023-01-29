@@ -25,4 +25,4 @@ export default () => {
 
 view `G2Plot` [docs](https://g2plot.antv.vision/en/docs/manual/introduction)
 
-<API src="../../src/components/base/index.tsx" />
+<API id="BaseChart"></API>

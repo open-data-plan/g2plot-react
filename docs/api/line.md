@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { LineChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/line/index.tsx" />
+## API
+
+<API id="LineChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

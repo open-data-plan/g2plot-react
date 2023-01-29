@@ -1,3 +1,6 @@
 {
-  "extends": ["@opd/eslint-config-pangu"]
+  "extends": ["@opd/eslint-config-pangu"],
+  "rules": {
+    "react/react-in-jsx-scope": "off"
+  }
 }

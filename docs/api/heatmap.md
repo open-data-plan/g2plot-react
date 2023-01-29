@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { HeatmapChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/heatmap/index.tsx" />
+## API
+
+<API id="HeatmapChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

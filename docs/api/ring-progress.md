@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { RingProgressChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/ring-progress/index.tsx" />
+## API
+
+<API id="RingProgressChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

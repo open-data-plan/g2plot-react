@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { DualAxesChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/dual-axes/index.tsx" />
+## API
+
+<API id="DualAxesChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail

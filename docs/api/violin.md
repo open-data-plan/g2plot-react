@@ -3,7 +3,11 @@
 ## Usage
 
 ```tsx | pure
-import { ViolinChart } from '@opd/g2plot-react'
+
 ```
 
-<API src="../../src/plots/violin/index.tsx" />
+## API
+
+<API id="ViolinChart"></API>
+
+> Visit [G2Plot](https://g2plot.antv.antgroup.com/api/plot-api) form more detail
