@@ -1,3 +1,9 @@
+# [2.13.0](https://github.com/open-data-plan/g2plot-react/compare/v2.12.1...v2.13.0) (2023-01-29)
+
+### Features
+
+- use jsx-runtime ([61b12cf](https://github.com/open-data-plan/g2plot-react/commit/61b12cf36c2a046a41a119cfa06e1c4c212b6f40))
+
 ## [2.12.1](https://github.com/open-data-plan/g2plot-react/compare/v2.12.0...v2.12.1) (2023-01-29)
 
 # [2.12.0](https://github.com/open-data-plan/g2plot-react/compare/v2.11.0...v2.12.0) (2021-09-24)
