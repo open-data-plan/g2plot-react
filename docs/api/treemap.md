@@ -2,8 +2,8 @@
 
 ## Usage
 
-```tsx | pure
-
+```ts
+import { TreemapChart } from '@opd/g2plot-react'
 ```
 
 ## API

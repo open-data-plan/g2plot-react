@@ -2,8 +2,8 @@
 
 ## Usage
 
-```tsx | pure
-
+```ts
+import { BarChart } from '@opd/g2plot-react'
 ```
 
 ## API

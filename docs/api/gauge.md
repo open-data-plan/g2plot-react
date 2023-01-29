@@ -2,8 +2,8 @@
 
 ## Usage
 
-```tsx | pure
-
+```ts
+import { GaugeChart } from '@opd/g2plot-react'
 ```
 
 ## API
