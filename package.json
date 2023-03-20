@@ -87,7 +87,7 @@
     "react-test-renderer": "^18.0.0",
     "string-template": "^1.0.0",
     "ts-node": "^10.0.0",
-    "typescript": "^4.5.2"
+    "typescript": "^5.0.2"
   },
   "peerDependencies": {
     "@antv/g2plot": "^2.3.21",
