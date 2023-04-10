@@ -1,5 +1,0 @@
-{
-  "yaml.schemas": {
-    "https://json.schemastore.org/github-workflow.json": "file:///Users/kagawa/Workspaces/github/open-data-plan/g2plot-react/.github/workflows/build.yml"
-  }
-}
