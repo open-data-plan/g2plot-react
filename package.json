@@ -74,7 +74,7 @@
     "@types/string-template": "^1.0.2",
     "@umijs/plugin-analytics": "^0.2.3",
     "canvas": "^2.11.2",
-    "conventional-changelog-cli": "^2.2.2",
+    "conventional-changelog-cli": "^3.0.0",
     "cross-env": "^7.0.3",
     "diff-run": "^1.1.1",
     "dumi": "^2.1.19",
