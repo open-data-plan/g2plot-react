@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { RingProgressChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

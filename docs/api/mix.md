@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { MixChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { FacetChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

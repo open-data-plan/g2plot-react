@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { WordCloudChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

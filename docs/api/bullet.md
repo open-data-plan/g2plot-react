@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { BulletChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

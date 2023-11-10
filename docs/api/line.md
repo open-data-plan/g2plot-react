@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { LineChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

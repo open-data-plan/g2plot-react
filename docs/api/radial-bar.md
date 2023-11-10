@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { RadialBarChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

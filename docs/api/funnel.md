@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { FunnelChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

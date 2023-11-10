@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { BidirectionalBarChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

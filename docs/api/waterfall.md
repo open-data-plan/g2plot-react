@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { WaterfallChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

@@ -10,8 +10,7 @@ All configurations defined in `G2Plot` can be used as `props`, and use `chartRef
 
 For example
 
-```js
-import React from 'react'
+```tsx | pure
 import { LineChart } from '@opd/g2plot-react'
 
 export default () => {

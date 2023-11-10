@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { ViolinChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

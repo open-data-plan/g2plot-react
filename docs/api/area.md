@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { AreaChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

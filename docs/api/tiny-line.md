@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { TinyLineChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

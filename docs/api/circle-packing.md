@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { CirclePackingChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API

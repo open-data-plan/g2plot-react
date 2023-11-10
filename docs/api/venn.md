@@ -2,8 +2,8 @@
 
 ## Usage
 
-```ts
-import { VennChart } from '@opd/g2plot-react'
+```tsx | pure
+
 ```
 
 ## API
