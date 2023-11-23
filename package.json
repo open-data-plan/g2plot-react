@@ -63,13 +63,13 @@
     "@commitlint/cli": "^18.0.0",
     "@commitlint/config-conventional": "^18.0.0",
     "@opd/babel-preset-component": "^1.13.6",
-    "@opd/eslint-config-pangu": "^1.13.7",
+    "@opd/eslint-config-pangu": "^1.14.0",
     "@opd/jest-preset-pangu": "^1.13.8",
-    "@opd/prettier-config-pangu": "^1.13.6",
+    "@opd/prettier-config-pangu": "^1.14.0",
     "@types/eslint": "^8.37.0",
     "@types/lodash": "^4.14.192",
-    "@types/react": "^18.0.33",
-    "@types/react-dom": "^18.0.11",
+    "@types/react": "^18.2.38",
+    "@types/react-dom": "^18.2.17",
     "@types/react-test-renderer": "^18.0.0",
     "@types/string-template": "^1.0.2",
     "@umijs/plugin-analytics": "^0.2.3",
@@ -87,7 +87,7 @@
     "react-test-renderer": "^18.2.0",
     "string-template": "^1.0.0",
     "ts-node": "^10.9.1",
-    "typescript": "^5.0.3"
+    "typescript": "^5.3.2"
   },
   "peerDependencies": {
     "@antv/g2plot": "^2.3.21",
