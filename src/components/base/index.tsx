@@ -29,9 +29,7 @@ export interface Plot<C extends Options> {
 
 const syncRef = <C extends Options>(
   source: MutableRefObject<BasePlot<C> | null>,
-  target?:
-    | RefCallback<BasePlot<C> | null>
-    | MutableRefObject<BasePlot<C> | null>
+  target?: RefCallback<BasePlot<C> | null> | MutableRefObject<BasePlot<C> | null>,
 ) => {
   /* istanbul ignore else */
   if (typeof target === 'function') {
@@ -41,8 +39,7 @@ const syncRef = <C extends Options>(
   }
 }
 
-export interface BaseChartProps<C extends Options>
-  extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
+export interface BaseChartProps<C extends Options> extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
   /**
    * Plot Class
    * @note Internal use, should not use directly
@@ -51,25 +48,13 @@ export interface BaseChartProps<C extends Options>
   /**
    * Plot Ref
    */
-  chartRef?:
-    | RefCallback<BasePlot<C> | null>
-    | MutableRefObject<BasePlot<C> | null>
+  chartRef?: RefCallback<BasePlot<C> | null> | MutableRefObject<BasePlot<C> | null>
   data?: Record<string, any> | Record<string, any>[]
   onReady?: (plot: BasePlot<C>) => void
 }
 
-const BaseChart = <C extends Options>(
-  props: BaseChartProps<C>,
-  ref?: Ref<HTMLDivElement | null>
-) => {
-  const {
-    chart: Chart,
-    style,
-    className,
-    chartRef: chart,
-    onReady,
-    ...restProps
-  } = props
+const BaseChart = <C extends Options>(props: BaseChartProps<C>, ref?: Ref<HTMLDivElement | null>) => {
+  const { chart: Chart, style, className, chartRef: chart, onReady, ...restProps } = props
   const chartRef = useRef<BasePlot<C> | null>(null)
   const configRef = useRef<ChartConfig>()
   const containerRef = useRef<HTMLDivElement>(null)
@@ -139,5 +124,5 @@ const BaseChart = <C extends Options>(
 }
 
 export default forwardRef(BaseChart) as <C extends Options>(
-  p: BaseChartProps<C> & RefAttributes<HTMLDivElement | null>
+  p: BaseChartProps<C> & RefAttributes<HTMLDivElement | null>,
 ) => ReactElement

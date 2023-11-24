@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
+import { Plot as BasePlot, LineOptions } from '@antv/g2plot'
 import React, { createRef } from 'react'
 import { createRoot } from 'react-dom/client'
-import { create, act } from 'react-test-renderer'
+import { act, create } from 'react-test-renderer'
 import LineChart from '../../src/plots/line'
-import { LineOptions, Plot as BasePlot } from '@antv/g2plot'
 
 let div
 let root

@@ -4,9 +4,7 @@ import HeatmapChart from '../../src/plots/heatmap'
 
 describe('HeatmapChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(
-      <HeatmapChart data={[]} colorField="x" xField="a" yField="b" />
-    )
+    const renderer = create(<HeatmapChart data={[]} colorField="x" xField="a" yField="b" />)
 
     expect(renderer.toJSON()).toMatchSnapshot()
   })

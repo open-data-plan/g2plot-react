@@ -15,7 +15,7 @@ describe('BulletChart', () => {
         measureField="x"
         rangeField="y"
         targetField="z"
-      />
+      />,
     )
 
     expect(renderer.toJSON()).toMatchSnapshot()

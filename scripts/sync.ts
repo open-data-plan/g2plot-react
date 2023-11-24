@@ -18,10 +18,7 @@ const eslint = new ESLint({
   },
   fix: true,
 })
-const g2PlotDir = path.resolve(
-  process.cwd(),
-  'node_modules/@antv/g2plot/src/plots'
-)
+const g2PlotDir = path.resolve(process.cwd(), 'node_modules/@antv/g2plot/src/plots')
 const plotDir = path.resolve(process.cwd(), 'src/plots')
 const testDir = path.resolve(process.cwd(), '__tests__/plots')
 const exportPath = path.resolve(process.cwd(), 'src/index.ts')
@@ -46,9 +43,7 @@ const newCharts: string[] = []
 plotNames.forEach((chartName) => {
   try {
     allCharts.push(chartName)
-    if (
-      !fs.existsSync(path.resolve(plotDir, `${kebabCase(chartName)}/index.tsx`))
-    ) {
+    if (!fs.existsSync(path.resolve(plotDir, `${kebabCase(chartName)}/index.tsx`))) {
       newCharts.push(chartName)
     }
   } catch (error) {}
@@ -100,7 +95,7 @@ const createComponents = async () => {
     const { cmpPath } = getChartConfig(chart)
     const dir = path.resolve(plotDir, cmpPath)
     await mkdir(dir)
-    const filePath = path.resolve(dir, `index.tsx`)
+    const filePath = path.resolve(dir, 'index.tsx')
     const fixedContent = await lintAndFixFileContent(cmp, filePath)
 
     await writeFile(filePath, fixedContent, {
@@ -130,10 +125,7 @@ const addExport = async () => {
     exportFileContent += content
   })
 
-  const fixedContent = await lintAndFixFileContent(
-    exportFileContent,
-    exportPath
-  )
+  const fixedContent = await lintAndFixFileContent(exportFileContent, exportPath)
 
   writeFile(exportPath, fixedContent, {
     encoding: 'utf8',
@@ -169,12 +161,9 @@ const createTestCases = async () => {
 }
 
 const createDocs = async () => {
-  const docTemplate = await fs.promises.readFile(
-    path.resolve(__dirname, 'doc-template.ftl'),
-    {
-      encoding: 'utf-8',
-    }
-  )
+  const docTemplate = await fs.promises.readFile(path.resolve(__dirname, 'doc-template.ftl'), {
+    encoding: 'utf-8',
+  })
   await Promise.all(
     allCharts.map(async (chart) => {
       const { cmpPath, cmpName } = getChartConfig(chart)
@@ -187,17 +176,12 @@ const createDocs = async () => {
       await fs.promises.writeFile(docFilePath, docContent, {
         encoding: 'utf-8',
       })
-    })
+    }),
   )
 }
 
 const start = async () => {
-  await Promise.all([
-    createComponents(),
-    addExport(),
-    createTestCases(),
-    createDocs(),
-  ])
+  await Promise.all([createComponents(), addExport(), createTestCases(), createDocs()])
   console.log('Sync done')
 }
 

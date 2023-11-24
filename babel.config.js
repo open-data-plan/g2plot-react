@@ -9,5 +9,4 @@ module.exports = {
       },
     ],
   ],
-  ignore: ['src/.umi/**/*.ts'],
 }

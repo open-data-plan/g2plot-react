@@ -4,9 +4,7 @@ import StockChart from '../../src/plots/stock'
 
 describe('StockChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(
-      <StockChart data={[]} xField="x" yField={['a', 'b', 'c', 'd']} />
-    )
+    const renderer = create(<StockChart data={[]} xField="x" yField={['a', 'b', 'c', 'd']} />)
 
     expect(renderer.toJSON()).toMatchSnapshot()
   })
