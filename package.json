@@ -54,7 +54,7 @@
       "prettier -c --write"
     ]
   },
-  "prettier": "@opd/prettier-config-pangu",
+  "prettier": "@opd/prettier-config",
   "dependencies": {
     "@babel/runtime": "^7.21.0"
   },
@@ -63,8 +63,8 @@
     "@commitlint/cli": "^18.0.0",
     "@commitlint/config-conventional": "^18.0.0",
     "@opd/babel-preset-component": "^1.13.6",
-    "@opd/eslint-config-pangu": "^1.14.0",
-    "@opd/prettier-config-pangu": "^1.14.0",
+    "@opd/eslint-config": "^2.0.0",
+    "@opd/prettier-config": "^2.0.0",
     "@types/eslint": "^8.37.0",
     "@types/jest": "^29.5.10",
     "@types/lodash": "^4.14.192",

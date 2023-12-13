@@ -14,7 +14,7 @@ const readFile = promisify(fs.readFile)
 const eslint = new ESLint({
   extensions: ['.tsx'],
   baseConfig: {
-    extends: ['@opd/eslint-config-pangu'],
+    extends: ['@opd/eslint-config'],
   },
   fix: true,
 })

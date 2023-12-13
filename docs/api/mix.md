@@ -3,7 +3,7 @@
 ## Usage
 
 ```tsx | pure
-
+import { MixChart } from '@opd/g2plot-react'
 ```
 
 ## API

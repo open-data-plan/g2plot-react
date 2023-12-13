@@ -3,7 +3,7 @@
 ## Usage
 
 ```tsx | pure
-
+import { RoseChart } from '@opd/g2plot-react'
 ```
 
 ## API
