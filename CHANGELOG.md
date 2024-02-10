@@ -1,3 +1,9 @@
+## [2.13.2](https://github.com/open-data-plan/g2plot-react/compare/v2.13.1...v2.13.2) (2024-02-10)
+
+### Bug Fixes
+
+- fix peer deps version ([cda999e](https://github.com/open-data-plan/g2plot-react/commit/cda999ea048ba12b70d9468b1263a0fcaa022072)), closes [#818](https://github.com/open-data-plan/g2plot-react/issues/818)
+
 ## [2.13.1](https://github.com/open-data-plan/g2plot-react/compare/v2.13.0...v2.13.1) (2023-04-06)
 
 # [2.13.0](https://github.com/open-data-plan/g2plot-react/compare/v2.12.1...v2.13.0) (2023-01-29)
