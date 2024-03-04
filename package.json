@@ -61,7 +61,7 @@
   "devDependencies": {
     "@antv/g2plot": "^2.4.29",
     "@commitlint/cli": "^18.0.0",
-    "@commitlint/config-conventional": "^18.0.0",
+    "@commitlint/config-conventional": "^19.0.3",
     "@opd/babel-preset-component": "^1.13.6",
     "@opd/eslint-config": "^2.0.0",
     "@opd/prettier-config": "^2.0.0",
