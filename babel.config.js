@@ -1,12 +1,3 @@
 module.exports = {
-  presets: [
-    '@opd/babel-preset-component',
-    require.resolve('@babel/preset-typescript'),
-    [
-      require.resolve('@babel/preset-react'),
-      {
-        runtime: 'automatic',
-      },
-    ],
-  ],
+  presets: ['@pixas/babel-preset-lib'],
 }

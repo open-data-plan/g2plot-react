@@ -3,7 +3,7 @@
  * https://jestjs.io/docs/configuration
  */
 
-import type { Config } from 'jest'
+import type { Config } from 'jest';
 
 const config: Config = {
   // All imported modules in your tests should be mocked automatically
@@ -161,7 +161,7 @@ const config: Config = {
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
 
-  transformIgnorePatterns: ['/node_modules/!d3-*', '/src/.umi/'],
+  transformIgnorePatterns: ['/node_modules/!d3-*', '/src/.umi/', '/node_modules/core-js'],
 
   // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
   // unmockedModulePathPatterns: undefined,
@@ -177,6 +177,6 @@ const config: Config = {
   globals: {
     IS_REACT_ACT_ENVIRONMENT: true,
   },
-}
+};
 
-export default config
+export default config;
