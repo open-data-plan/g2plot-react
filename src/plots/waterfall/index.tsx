@@ -1,11 +1,11 @@
-import { Waterfall, WaterfallOptions } from '@antv/g2plot'
-import { forwardRef } from 'react'
-import BaseChart, { BaseChartProps } from '../../components/base'
+import { Waterfall, WaterfallOptions } from '@antv/g2plot';
+import { forwardRef } from 'react';
+import BaseChart, { BaseChartProps } from '../../components/base';
 
-export type WaterfallChartProps = Omit<BaseChartProps<WaterfallOptions>, 'chart' | 'data'> & WaterfallOptions
+export type WaterfallChartProps = Omit<BaseChartProps<WaterfallOptions>, 'chart' | 'data'> & WaterfallOptions;
 
 const WaterfallChart = forwardRef<HTMLDivElement | null, WaterfallChartProps>((props, ref) => {
-  return <BaseChart chart={Waterfall} ref={ref} {...props} />
-})
+  return <BaseChart chart={Waterfall} ref={ref} {...props} />;
+});
 
-export default WaterfallChart
+export default WaterfallChart;

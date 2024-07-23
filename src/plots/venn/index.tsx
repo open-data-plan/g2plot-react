@@ -1,11 +1,11 @@
-import { Venn, VennOptions } from '@antv/g2plot'
-import { forwardRef } from 'react'
-import BaseChart, { BaseChartProps } from '../../components/base'
+import { Venn, VennOptions } from '@antv/g2plot';
+import { forwardRef } from 'react';
+import BaseChart, { BaseChartProps } from '../../components/base';
 
-export type VennChartProps = Omit<BaseChartProps<VennOptions>, 'chart'> & VennOptions
+export type VennChartProps = Omit<BaseChartProps<VennOptions>, 'chart'> & VennOptions;
 
 const VennChart = forwardRef<HTMLDivElement | null, VennChartProps>((props, ref) => {
-  return <BaseChart chart={Venn} ref={ref} {...props} />
-})
+  return <BaseChart chart={Venn} ref={ref} {...props} />;
+});
 
-export default VennChart
+export default VennChart;

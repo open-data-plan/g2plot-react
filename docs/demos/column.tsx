@@ -1,4 +1,4 @@
-import { ColumnChart } from '@opd/g2plot-react'
+import { ColumnChart } from '@opd/g2plot-react';
 
 const config = {
   height: 350,
@@ -22,8 +22,8 @@ const config = {
     { year: '1998', value: 9 },
     { year: '1999', value: 11 },
   ],
-}
+};
 
 export default () => {
-  return <ColumnChart {...config} />
-}
+  return <ColumnChart {...config} />;
+};

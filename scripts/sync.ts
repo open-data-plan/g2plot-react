@@ -1,32 +1,32 @@
-import { ESLint } from 'eslint'
-import fs from 'fs'
-import { camelCase, kebabCase, upperFirst } from 'lodash'
-import path from 'path'
-import stringTemplate from 'string-template'
-import { promisify } from 'util'
+import { ESLint } from 'eslint';
+import fs from 'fs';
+import { camelCase, kebabCase, upperFirst } from 'lodash';
+import path from 'path';
+import stringTemplate from 'string-template';
+import { promisify } from 'util';
 
-console.log('Sync start')
+console.log('Sync start');
 
-const mkdir = promisify(fs.mkdir)
-const writeFile = promisify(fs.writeFile)
-const readFile = promisify(fs.readFile)
+const mkdir = promisify(fs.mkdir);
+const writeFile = promisify(fs.writeFile);
+const readFile = promisify(fs.readFile);
 
 const eslint = new ESLint({
   extensions: ['.tsx'],
   baseConfig: {
-    extends: ['@opd/eslint-config'],
+    extends: ['@pixas/eslint-config'],
   },
   fix: true,
-})
-const g2PlotDir = path.resolve(process.cwd(), 'node_modules/@antv/g2plot/src/plots')
-const plotDir = path.resolve(process.cwd(), 'src/plots')
-const testDir = path.resolve(process.cwd(), '__tests__/plots')
-const exportPath = path.resolve(process.cwd(), 'src/index.ts')
+});
+const g2PlotDir = path.resolve(process.cwd(), 'node_modules/@antv/g2plot/src/plots');
+const plotDir = path.resolve(process.cwd(), 'src/plots');
+const testDir = path.resolve(process.cwd(), '__tests__/plots');
+const exportPath = path.resolve(process.cwd(), 'src/index.ts');
 
 const plotNames = fs
   .readdirSync(g2PlotDir)
   .filter((dir) => !dir.startsWith('_'))
-  .map((dir) => upperFirst(camelCase(dir)))
+  .map((dir) => upperFirst(camelCase(dir)));
 
 // const staticProperties = ['length', 'name', 'prototype']
 
@@ -36,42 +36,42 @@ const plotNames = fs
 
 // console.log(labCharts)
 
-const allCharts: string[] = []
+const allCharts: string[] = [];
 
-const newCharts: string[] = []
+const newCharts: string[] = [];
 
 plotNames.forEach((chartName) => {
   try {
-    allCharts.push(chartName)
+    allCharts.push(chartName);
     if (!fs.existsSync(path.resolve(plotDir, `${kebabCase(chartName)}/index.tsx`))) {
-      newCharts.push(chartName)
+      newCharts.push(chartName);
     }
   } catch (error) {}
-})
+});
 
 if (newCharts.length) {
-  console.log('Follow charts will be added:')
-  console.log(newCharts.join(' '))
+  console.log('Follow charts will be added:');
+  console.log(newCharts.join(' '));
 } else {
-  console.log('No new charts found')
+  console.log('No new charts found');
 }
 
 const lintAndFixFileContent = async (fileContent: string, filePath: string) => {
   const lintResult = await eslint.lintText(fileContent, {
     filePath,
-  })
+  });
 
-  const { output } = lintResult[0]
+  const { output } = lintResult[0];
 
-  return output || fileContent
-}
+  return output || fileContent;
+};
 
 const getChartConfig = (chart: string) => {
   return {
     cmpName: `${chart}Chart`,
     cmpPath: kebabCase(chart),
-  }
-}
+  };
+};
 
 const createComponents = async () => {
   const promises = newCharts.map(async (chart) => {
@@ -90,51 +90,51 @@ const createComponents = async () => {
     )
 
     export default ${chart}Chart
-    `
+    `;
 
-    const { cmpPath } = getChartConfig(chart)
-    const dir = path.resolve(plotDir, cmpPath)
-    await mkdir(dir)
-    const filePath = path.resolve(dir, 'index.tsx')
-    const fixedContent = await lintAndFixFileContent(cmp, filePath)
+    const { cmpPath } = getChartConfig(chart);
+    const dir = path.resolve(plotDir, cmpPath);
+    await mkdir(dir);
+    const filePath = path.resolve(dir, 'index.tsx');
+    const fixedContent = await lintAndFixFileContent(cmp, filePath);
 
     await writeFile(filePath, fixedContent, {
       encoding: 'utf8',
-    })
-  })
+    });
+  });
 
-  await Promise.all(promises)
-}
+  await Promise.all(promises);
+};
 
 const addExport = async () => {
   let exportFileContent = await readFile(exportPath, {
     encoding: 'utf8',
-  })
+  });
 
   newCharts.forEach((chart) => {
-    const chartName = chart + 'Chart'
-    const { cmpPath } = getChartConfig(chart)
-    const importPath = `./plots/${cmpPath}`
+    const chartName = chart + 'Chart';
+    const { cmpPath } = getChartConfig(chart);
+    const importPath = `./plots/${cmpPath}`;
 
     const content = `
       import { ${chartName}Props as _${chartName}Props } from '${importPath}'
     \nexport { default as ${chartName} } from '${importPath}'
       export type ${chartName}Props = _${chartName}Props
-    `
+    `;
 
-    exportFileContent += content
-  })
+    exportFileContent += content;
+  });
 
-  const fixedContent = await lintAndFixFileContent(exportFileContent, exportPath)
+  const fixedContent = await lintAndFixFileContent(exportFileContent, exportPath);
 
   writeFile(exportPath, fixedContent, {
     encoding: 'utf8',
-  })
-}
+  });
+};
 
 const createTestCases = async () => {
   const promises = newCharts.map(async (chart) => {
-    const { cmpPath } = getChartConfig(chart)
+    const { cmpPath } = getChartConfig(chart);
     const cmp = `
     import React from 'react'
     import { create } from 'react-test-renderer'
@@ -147,42 +147,42 @@ const createTestCases = async () => {
         expect(renderer.toJSON()).toMatchSnapshot()
       })
     })
-    `
+    `;
 
-    const filePath = path.resolve(testDir, `${cmpPath}.spec.tsx`)
-    const fixedContent = await lintAndFixFileContent(cmp, filePath)
+    const filePath = path.resolve(testDir, `${cmpPath}.spec.tsx`);
+    const fixedContent = await lintAndFixFileContent(cmp, filePath);
 
     await writeFile(filePath, fixedContent, {
       encoding: 'utf8',
-    })
-  })
+    });
+  });
 
-  await Promise.all(promises)
-}
+  await Promise.all(promises);
+};
 
 const createDocs = async () => {
   const docTemplate = await fs.promises.readFile(path.resolve(__dirname, 'doc-template.ftl'), {
     encoding: 'utf-8',
-  })
+  });
   await Promise.all(
     allCharts.map(async (chart) => {
-      const { cmpPath, cmpName } = getChartConfig(chart)
+      const { cmpPath, cmpName } = getChartConfig(chart);
 
-      const docFilePath = path.resolve(process.cwd(), `docs/api/${cmpPath}.md`)
+      const docFilePath = path.resolve(process.cwd(), `docs/api/${cmpPath}.md`);
       const docContent = stringTemplate(docTemplate, {
         cmpName,
         srcPath: `../../src/plots/${cmpPath}/index.tsx`,
-      })
+      });
       await fs.promises.writeFile(docFilePath, docContent, {
         encoding: 'utf-8',
-      })
+      });
     }),
-  )
-}
+  );
+};
 
 const start = async () => {
-  await Promise.all([createComponents(), addExport(), createTestCases(), createDocs()])
-  console.log('Sync done')
-}
+  await Promise.all([createComponents(), addExport(), createTestCases(), createDocs()]);
+  console.log('Sync done');
+};
 
-start()
+start();

@@ -1,7 +1,7 @@
-import { Plot as BasePlot } from '@antv/g2plot'
-import cloneDeep from 'lodash/cloneDeep'
-import isEmpty from 'lodash/isEmpty'
-import isEqual from 'lodash/isEqual'
+import { Plot as BasePlot } from '@antv/g2plot';
+import cloneDeep from 'lodash/cloneDeep';
+import isEmpty from 'lodash/isEmpty';
+import isEqual from 'lodash/isEqual';
 import {
   forwardRef,
   HTMLAttributes,
@@ -13,18 +13,18 @@ import {
   useEffect,
   useImperativeHandle,
   useRef,
-} from 'react'
+} from 'react';
 
 interface Options {
-  [x: string]: any
+  [x: string]: any;
 }
 
-type PickedAttrs = 'className' | 'style'
+type PickedAttrs = 'className' | 'style';
 
-type ChartConfig = Omit<Options, 'data'>
+type ChartConfig = Omit<Options, 'data'>;
 
 export interface Plot<C extends Options> {
-  new (container: HTMLElement, config: C): BasePlot<C>
+  new (container: HTMLElement, config: C): BasePlot<C>;
 }
 
 const syncRef = <C extends Options>(
@@ -33,96 +33,96 @@ const syncRef = <C extends Options>(
 ) => {
   /* istanbul ignore else */
   if (typeof target === 'function') {
-    target(source.current)
+    target(source.current);
   } else if (target) {
-    target.current = source.current
+    target.current = source.current;
   }
-}
+};
 
 export interface BaseChartProps<C extends Options> extends Pick<HTMLAttributes<HTMLDivElement>, PickedAttrs> {
   /**
    * Plot Class
    * @note Internal use, should not use directly
    */
-  chart: Plot<C>
+  chart: Plot<C>;
   /**
    * Plot Ref
    */
-  chartRef?: RefCallback<BasePlot<C> | null> | MutableRefObject<BasePlot<C> | null>
-  data?: Record<string, any> | Record<string, any>[]
-  onReady?: (plot: BasePlot<C>) => void
+  chartRef?: RefCallback<BasePlot<C> | null> | MutableRefObject<BasePlot<C> | null>;
+  data?: Record<string, any> | Record<string, any>[];
+  onReady?: (plot: BasePlot<C>) => void;
 }
 
 const BaseChart = <C extends Options>(props: BaseChartProps<C>, ref?: Ref<HTMLDivElement | null>) => {
-  const { chart: Chart, style, className, chartRef: chart, onReady, ...restProps } = props
-  const chartRef = useRef<BasePlot<C> | null>(null)
-  const configRef = useRef<ChartConfig>()
-  const containerRef = useRef<HTMLDivElement>(null)
-  const isFirstRenderRef = useRef<boolean>(true)
-  const dataRef = useRef<Record<string, any>[]>([])
+  const { chart: Chart, style, className, chartRef: chart, onReady, ...restProps } = props;
+  const chartRef = useRef<BasePlot<C> | null>(null);
+  const configRef = useRef<ChartConfig>();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const isFirstRenderRef = useRef<boolean>(true);
+  const dataRef = useRef<Record<string, any>[]>([]);
 
-  useImperativeHandle(ref, () => containerRef.current)
+  useImperativeHandle(ref, () => containerRef.current);
 
   useEffect(() => {
-    const { current: container } = containerRef
+    const { current: container } = containerRef;
     /* istanbul ignore else */
     if (container) {
-      const { data, ...config } = restProps as Options
-      configRef.current = cloneDeep(config)
-      const normalizedData = data || []
-      dataRef.current = normalizedData
+      const { data, ...config } = restProps as Options;
+      configRef.current = cloneDeep(config);
+      const normalizedData = data || [];
+      dataRef.current = normalizedData;
       const mergedConfig = {
         ...config,
         data: normalizedData,
-      } as any
-      chartRef.current = new Chart(container, mergedConfig)
-      chartRef.current.render()
+      } as any;
+      chartRef.current = new Chart(container, mergedConfig);
+      chartRef.current.render();
     }
-    syncRef(chartRef, chart)
+    syncRef(chartRef, chart);
     if (chartRef.current) {
-      onReady?.(chartRef.current)
+      onReady?.(chartRef.current);
     }
     return () => {
       /* istanbul ignore else */
       if (chartRef.current) {
-        chartRef.current.destroy()
-        chartRef.current = null
-        syncRef(chartRef, chart)
+        chartRef.current.destroy();
+        chartRef.current = null;
+        syncRef(chartRef, chart);
       }
-    }
+    };
     // eslint-disable-next-line
   }, [])
 
   useEffect(() => {
-    const { current: chart } = chartRef
+    const { current: chart } = chartRef;
     /* istanbul ignore else */
     if (chart) {
       // avoid update in first time
       if (!isFirstRenderRef.current) {
-        const { data, ...config } = restProps as Options
-        const normalizedData = data || []
+        const { data, ...config } = restProps as Options;
+        const normalizedData = data || [];
         if (!isEqual(config, configRef.current) || isEmpty(dataRef.current)) {
-          configRef.current = cloneDeep(config)
+          configRef.current = cloneDeep(config);
           const mergedConfig = {
             ...config,
             data: normalizedData,
-          }
+          };
 
-          chart.update(mergedConfig as any)
-          chart.render()
+          chart.update(mergedConfig as any);
+          chart.render();
         } else {
-          chart.changeData(normalizedData)
+          chart.changeData(normalizedData);
         }
-        dataRef.current = normalizedData
+        dataRef.current = normalizedData;
       } else {
-        isFirstRenderRef.current = false
+        isFirstRenderRef.current = false;
       }
     }
-  }, [restProps])
+  }, [restProps]);
 
-  return <div style={style} className={className} ref={containerRef} />
-}
+  return <div style={style} className={className} ref={containerRef} />;
+};
 
 export default forwardRef(BaseChart) as <C extends Options>(
   p: BaseChartProps<C> & RefAttributes<HTMLDivElement | null>,
-) => ReactElement
+) => ReactElement;

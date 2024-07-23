@@ -1,8 +1,8 @@
-import * as components from '../src'
+import * as components from '../src';
 
 describe('index.tsx', () => {
   it('component exported', () => {
-    expect(components).toBeTruthy()
-    expect(components).toHaveProperty('LineChart')
-  })
-})
+    expect(components).toBeTruthy();
+    expect(components).toHaveProperty('LineChart');
+  });
+});

@@ -1,6 +1,6 @@
-import React from 'react'
-import { create } from 'react-test-renderer'
-import BulletChart from '../../src/plots/bullet'
+import React from 'react';
+import { create } from 'react-test-renderer';
+import BulletChart from '../../src/plots/bullet';
 
 describe('BulletChart', () => {
   test('should render without crashed', () => {
@@ -16,8 +16,8 @@ describe('BulletChart', () => {
         rangeField="y"
         targetField="z"
       />,
-    )
+    );
 
-    expect(renderer.toJSON()).toMatchSnapshot()
-  })
-})
+    expect(renderer.toJSON()).toMatchSnapshot();
+  });
+});

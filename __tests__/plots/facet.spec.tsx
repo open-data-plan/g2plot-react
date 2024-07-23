@@ -1,6 +1,6 @@
-import React from 'react'
-import { create } from 'react-test-renderer'
-import FacetChart, { FacetChartProps } from '../../src/plots/facet'
+import React from 'react';
+import { create } from 'react-test-renderer';
+import FacetChart, { FacetChartProps } from '../../src/plots/facet';
 
 describe('FacetChart', () => {
   test('should render without crashed', () => {
@@ -34,11 +34,11 @@ describe('FacetChart', () => {
             shape: 'circle',
             pointStyle: { fillOpacity: 0.3, stroke: null },
           },
-        }
+        };
       },
-    }
-    const renderer = create(<FacetChart {...config} />)
+    };
+    const renderer = create(<FacetChart {...config} />);
 
-    expect(renderer.toJSON()).toMatchSnapshot()
-  })
-})
+    expect(renderer.toJSON()).toMatchSnapshot();
+  });
+});

@@ -1,4 +1,4 @@
-import { PieChart } from '@opd/g2plot-react'
+import { PieChart } from '@opd/g2plot-react';
 
 const pieConfig = {
   height: 350,
@@ -40,8 +40,8 @@ const pieConfig = {
   legend: {
     visible: false,
   },
-}
+};
 
 export default () => {
-  return <PieChart {...pieConfig} />
-}
+  return <PieChart {...pieConfig} />;
+};
