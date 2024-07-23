@@ -1,3 +1,34 @@
+## <small>2.13.4 (2024-07-23)</small>
+
+* style: lint and fix ([0350ae7](https://github.com/open-data-plan/g2plot-react/commit/0350ae7))
+* chore: update tool-chain deps ([e0461ca](https://github.com/open-data-plan/g2plot-react/commit/e0461ca))
+* chore(deps-dev): bump @babel/cli from 7.24.7 to 7.24.8 (#886) ([c4fbdcd](https://github.com/open-data-plan/g2plot-react/commit/c4fbdcd)), closes [#886](https://github.com/open-data-plan/g2plot-react/issues/886)
+* chore(deps-dev): bump @pixas/babel-preset-lib from 0.11.0 to 0.12.0 (#885) ([0325a98](https://github.com/open-data-plan/g2plot-react/commit/0325a98)), closes [#885](https://github.com/open-data-plan/g2plot-react/issues/885)
+* chore(deps-dev): bump @pixas/babel-preset-lib from 0.9.0 to 0.11.0 (#878) ([02f4336](https://github.com/open-data-plan/g2plot-react/commit/02f4336)), closes [#878](https://github.com/open-data-plan/g2plot-react/issues/878)
+* chore(deps-dev): bump @pixas/eslint-config from 0.11.0 to 0.12.0 (#887) ([963139f](https://github.com/open-data-plan/g2plot-react/commit/963139f)), closes [#887](https://github.com/open-data-plan/g2plot-react/issues/887)
+* chore(deps-dev): bump @pixas/eslint-config from 0.9.0 to 0.11.0 (#880) ([2677dda](https://github.com/open-data-plan/g2plot-react/commit/2677dda)), closes [#880](https://github.com/open-data-plan/g2plot-react/issues/880)
+* chore(deps-dev): bump @pixas/prettier-config from 0.11.0 to 0.12.0 (#889) ([d942afe](https://github.com/open-data-plan/g2plot-react/commit/d942afe)), closes [#889](https://github.com/open-data-plan/g2plot-react/issues/889)
+* chore(deps-dev): bump @pixas/prettier-config from 0.9.0 to 0.11.0 (#882) ([1eedcc8](https://github.com/open-data-plan/g2plot-react/commit/1eedcc8)), closes [#882](https://github.com/open-data-plan/g2plot-react/issues/882)
+* chore(deps-dev): bump @types/lodash from 4.17.4 to 4.17.5 (#875) ([52e570b](https://github.com/open-data-plan/g2plot-react/commit/52e570b)), closes [#875](https://github.com/open-data-plan/g2plot-react/issues/875)
+* chore(deps-dev): bump @types/lodash from 4.17.5 to 4.17.6 (#881) ([6ab72d4](https://github.com/open-data-plan/g2plot-react/commit/6ab72d4)), closes [#881](https://github.com/open-data-plan/g2plot-react/issues/881)
+* chore(deps-dev): bump @types/lodash from 4.17.6 to 4.17.7 (#891) ([f3c1c28](https://github.com/open-data-plan/g2plot-react/commit/f3c1c28)), closes [#891](https://github.com/open-data-plan/g2plot-react/issues/891)
+* chore(deps-dev): bump @types/react from 18.3.2 to 18.3.3 (#869) ([83d41c2](https://github.com/open-data-plan/g2plot-react/commit/83d41c2)), closes [#869](https://github.com/open-data-plan/g2plot-react/issues/869)
+* chore(deps-dev): bump dumi from 2.3.4 to 2.3.6 (#872) ([3565840](https://github.com/open-data-plan/g2plot-react/commit/3565840)), closes [#872](https://github.com/open-data-plan/g2plot-react/issues/872)
+* chore(deps-dev): bump dumi from 2.3.6 to 2.3.8 (#873) ([4d19c7f](https://github.com/open-data-plan/g2plot-react/commit/4d19c7f)), closes [#873](https://github.com/open-data-plan/g2plot-react/issues/873)
+* chore(deps-dev): bump dumi from 2.3.8 to 2.4.3 (#879) ([954481b](https://github.com/open-data-plan/g2plot-react/commit/954481b)), closes [#879](https://github.com/open-data-plan/g2plot-react/issues/879)
+* chore(deps-dev): bump dumi from 2.4.3 to 2.4.5 (#884) ([fe0c67d](https://github.com/open-data-plan/g2plot-react/commit/fe0c67d)), closes [#884](https://github.com/open-data-plan/g2plot-react/issues/884)
+* chore(deps-dev): bump dumi from 2.4.5 to 2.4.6 (#890) ([2f29abb](https://github.com/open-data-plan/g2plot-react/commit/2f29abb)), closes [#890](https://github.com/open-data-plan/g2plot-react/issues/890)
+* chore(deps-dev): bump husky from 9.0.11 to 9.1.1 (#892) ([2877ea9](https://github.com/open-data-plan/g2plot-react/commit/2877ea9)), closes [#892](https://github.com/open-data-plan/g2plot-react/issues/892)
+* chore(deps-dev): bump lint-staged from 15.2.2 to 15.2.5 (#871) ([08c8e9d](https://github.com/open-data-plan/g2plot-react/commit/08c8e9d)), closes [#871](https://github.com/open-data-plan/g2plot-react/issues/871)
+* chore(deps-dev): bump typescript from 5.4.5 to 5.5.2 (#877) ([cf72821](https://github.com/open-data-plan/g2plot-react/commit/cf72821)), closes [#877](https://github.com/open-data-plan/g2plot-react/issues/877)
+* chore(deps-dev): bump typescript from 5.5.2 to 5.5.3 (#883) ([58c9964](https://github.com/open-data-plan/g2plot-react/commit/58c9964)), closes [#883](https://github.com/open-data-plan/g2plot-react/issues/883)
+* chore(deps-dev): bump ws from 8.17.0 to 8.17.1 in the npm_and_yarn group (#876) ([69722e9](https://github.com/open-data-plan/g2plot-react/commit/69722e9)), closes [#876](https://github.com/open-data-plan/g2plot-react/issues/876)
+* chore(deps): bump @babel/runtime from 7.24.5 to 7.24.6 (#870) ([03c0f15](https://github.com/open-data-plan/g2plot-react/commit/03c0f15)), closes [#870](https://github.com/open-data-plan/g2plot-react/issues/870)
+* chore(deps): bump @babel/runtime from 7.24.6 to 7.24.7 (#874) ([3656111](https://github.com/open-data-plan/g2plot-react/commit/3656111)), closes [#874](https://github.com/open-data-plan/g2plot-react/issues/874)
+* chore(deps): bump @babel/runtime from 7.24.7 to 7.24.8 (#888) ([483517c](https://github.com/open-data-plan/g2plot-react/commit/483517c)), closes [#888](https://github.com/open-data-plan/g2plot-react/issues/888)
+
+
+
 ## <small>2.13.3 (2024-05-20)</small>
 
 * chore: update deps ([365320a](https://github.com/open-data-plan/g2plot-react/commit/365320a))
