@@ -1,11 +1,11 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { create } from 'react-test-renderer';
 import ProgressChart from '../../src/plots/progress';
 
 describe('ProgressChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(<ProgressChart percent={0.8} />);
+    const result = render(<ProgressChart percent={0.8} />);
 
-    expect(renderer.toJSON()).toMatchSnapshot();
+    expect(result.container).toMatchSnapshot();
   });
 });

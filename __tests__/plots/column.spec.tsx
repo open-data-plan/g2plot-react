@@ -1,11 +1,11 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { create } from 'react-test-renderer';
 import ColumnChart from '../../src/plots/column';
 
 describe('ColumnChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(<ColumnChart data={[]} xField="x" yField="y" />);
+    const result = render(<ColumnChart data={[]} xField="x" yField="y" />);
 
-    expect(renderer.toJSON()).toMatchSnapshot();
+    expect(result.container).toMatchSnapshot();
   });
 });

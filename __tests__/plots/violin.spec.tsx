@@ -1,11 +1,11 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { create } from 'react-test-renderer';
 import ViolinChart from '../../src/plots/violin';
 
 describe('ViolinChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(<ViolinChart xField="x" yField="y" data={[]} />);
+    const result = render(<ViolinChart xField="x" yField="y" data={[]} />);
 
-    expect(renderer.toJSON()).toMatchSnapshot();
+    expect(result.container).toMatchSnapshot();
   });
 });

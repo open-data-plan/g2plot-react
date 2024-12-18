@@ -142,9 +142,9 @@ const createTestCases = async () => {
 
     describe('${chart}Chart', () => {
       test('should render without crashed', () => {
-        const renderer = create(<${chart}Chart data={[]} />)
+        const result = render(<${chart}Chart data={[]} />)
 
-        expect(renderer.toJSON()).toMatchSnapshot()
+        expect(result.container).toMatchSnapshot()
       })
     })
     `;

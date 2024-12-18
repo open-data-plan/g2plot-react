@@ -5,11 +5,11 @@ import isEqual from 'lodash/isEqual';
 import {
   forwardRef,
   HTMLAttributes,
-  MutableRefObject,
   ReactElement,
   Ref,
   RefAttributes,
   RefCallback,
+  RefObject,
   useEffect,
   useImperativeHandle,
   useRef,
@@ -28,8 +28,8 @@ export interface Plot<C extends Options> {
 }
 
 const syncRef = <C extends Options>(
-  source: MutableRefObject<BasePlot<C> | null>,
-  target?: RefCallback<BasePlot<C> | null> | MutableRefObject<BasePlot<C> | null>,
+  source: RefObject<BasePlot<C> | null>,
+  target?: RefCallback<BasePlot<C> | null> | RefObject<BasePlot<C> | null>,
 ) => {
   /* istanbul ignore else */
   if (typeof target === 'function') {
@@ -48,7 +48,7 @@ export interface BaseChartProps<C extends Options> extends Pick<HTMLAttributes<H
   /**
    * Plot Ref
    */
-  chartRef?: RefCallback<BasePlot<C> | null> | MutableRefObject<BasePlot<C> | null>;
+  chartRef?: RefCallback<BasePlot<C> | null> | RefObject<BasePlot<C> | null>;
   data?: Record<string, any> | Record<string, any>[];
   onReady?: (plot: BasePlot<C>) => void;
 }
@@ -56,12 +56,12 @@ export interface BaseChartProps<C extends Options> extends Pick<HTMLAttributes<H
 const BaseChart = <C extends Options>(props: BaseChartProps<C>, ref?: Ref<HTMLDivElement | null>) => {
   const { chart: Chart, style, className, chartRef: chart, onReady, ...restProps } = props;
   const chartRef = useRef<BasePlot<C> | null>(null);
-  const configRef = useRef<ChartConfig>();
+  const configRef = useRef<ChartConfig | null>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const isFirstRenderRef = useRef<boolean>(true);
   const dataRef = useRef<Record<string, any>[]>([]);
 
-  useImperativeHandle(ref, () => containerRef.current);
+  useImperativeHandle(ref, () => containerRef.current as HTMLDivElement);
 
   useEffect(() => {
     const { current: container } = containerRef;
@@ -91,7 +91,7 @@ const BaseChart = <C extends Options>(props: BaseChartProps<C>, ref?: Ref<HTMLDi
       }
     };
     // eslint-disable-next-line
-  }, [])
+  }, []);
 
   useEffect(() => {
     const { current: chart } = chartRef;

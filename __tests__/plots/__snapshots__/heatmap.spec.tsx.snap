@@ -1,3 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`HeatmapChart should render without crashed 1`] = `<div />`;
+exports[`HeatmapChart should render without crashed 1`] = `
+<div>
+  <div
+    data-chart-source-type="G2Plot"
+  >
+    <div
+      style="position:relative;"
+    >
+      <canvas
+        height="500"
+        style="width: 650px; height: 500px; display: inline-block; vertical-align: middle;"
+        width="650"
+      />
+    </div>
+  </div>
+</div>
+`;

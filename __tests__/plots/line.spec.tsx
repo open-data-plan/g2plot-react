@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { Plot as BasePlot, LineOptions } from '@antv/g2plot';
+import { act, render } from '@testing-library/react';
 import React, { createRef } from 'react';
 import { createRoot } from 'react-dom/client';
-import { act, create } from 'react-test-renderer';
 import LineChart from '../../src/plots/line';
 
 let div;
@@ -111,10 +111,10 @@ describe('LineChart', () => {
   });
 
   test('lifecycle', () => {
-    const renderer = create(<LineChart data={[]} />);
+    const result = render(<LineChart data={[]} />);
 
-    expect(renderer.toJSON()).toMatchSnapshot();
+    expect(result.container).toMatchSnapshot();
 
-    renderer.unmount();
+    result.unmount();
   });
 });

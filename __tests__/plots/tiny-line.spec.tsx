@@ -1,11 +1,11 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { create } from 'react-test-renderer';
 import TinyLineChart from '../../src/plots/tiny-line';
 
 describe('TinyLineChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(<TinyLineChart data={[]} />);
+    const result = render(<TinyLineChart data={[]} />);
 
-    expect(renderer.toJSON()).toMatchSnapshot();
+    expect(result.container).toMatchSnapshot();
   });
 });

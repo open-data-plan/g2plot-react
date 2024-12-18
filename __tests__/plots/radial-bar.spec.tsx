@@ -1,11 +1,11 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { create } from 'react-test-renderer';
 import RadialBarChart from '../../src/plots/radial-bar';
 
 describe('RadialBarChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(<RadialBarChart data={[]} />);
+    const result = render(<RadialBarChart data={[]} />);
 
-    expect(renderer.toJSON()).toMatchSnapshot();
+    expect(result.container).toMatchSnapshot();
   });
 });

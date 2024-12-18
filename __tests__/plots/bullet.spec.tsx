@@ -1,10 +1,10 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { create } from 'react-test-renderer';
 import BulletChart from '../../src/plots/bullet';
 
 describe('BulletChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(
+    const result = render(
       <BulletChart
         data={[
           {
@@ -18,6 +18,6 @@ describe('BulletChart', () => {
       />,
     );
 
-    expect(renderer.toJSON()).toMatchSnapshot();
+    expect(result.container).toMatchSnapshot();
   });
 });

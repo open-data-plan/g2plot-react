@@ -1,11 +1,11 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { create } from 'react-test-renderer';
 import RingProgressChart from '../../src/plots/ring-progress';
 
 describe('RingProgressChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(<RingProgressChart percent={0.8} />);
+    const result = render(<RingProgressChart percent={0.8} />);
 
-    expect(renderer.toJSON()).toMatchSnapshot();
+    expect(result.container).toMatchSnapshot();
   });
 });

@@ -1,11 +1,11 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { create } from 'react-test-renderer';
 import MixChart from '../../src/plots/mix';
 
 describe('MixChart', () => {
   test('should render without crashed', () => {
-    const renderer = create(<MixChart views={[]} />);
+    const result = render(<MixChart views={[]} />);
 
-    expect(renderer.toJSON()).toMatchSnapshot();
+    expect(result.container).toMatchSnapshot();
   });
 });

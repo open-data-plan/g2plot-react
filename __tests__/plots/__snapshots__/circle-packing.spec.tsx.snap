@@ -1,3 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`CirclePackingChart should render without crashed 1`] = `<div />`;
+exports[`CirclePackingChart should render without crashed 1`] = `
+<div>
+  <div
+    data-chart-source-type="G2Plot"
+    size-sensor-id="1"
+  >
+    <div
+      style="position:relative;"
+    >
+      <canvas
+        height="400"
+        style="width: 400px; height: 400px; display: inline-block; vertical-align: middle;"
+        width="400"
+      />
+    </div>
+    <object
+      class="size-sensor-object"
+      data="about:blank"
+      style="display: block; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1; opacity: 0;"
+      tabindex="-1"
+      type="text/html"
+    />
+  </div>
+</div>
+`;

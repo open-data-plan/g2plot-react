@@ -1,3 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`LiquidChart should render without crashed 1`] = `<div />`;
+exports[`LiquidChart should render without crashed 1`] = `
+<div>
+  <div
+    data-chart-source-type="G2Plot"
+    size-sensor-id="1"
+  >
+    <div
+      style="position:relative;"
+    >
+      <canvas
+        height="400"
+        style="width: 400px; height: 400px; display: inline-block; vertical-align: middle;"
+        width="400"
+      />
+      <div
+        class="g2-html-annotation"
+        style="position: absolute; pointer-events: none; width: 360px; transform: translate(-50%, -50%); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; display: flex; justify-content: center; align-items: center; text-shadow:  0px 0px 0px; opacity: 0.75; font-size: 30px; line-height: 30px; text-align: center; left: 200px; top: 200px; z-index: 7;"
+      >
+        9000.00%
+      </div>
+    </div>
+    <object
+      class="size-sensor-object"
+      data="about:blank"
+      style="display: block; position: absolute; top: 0px; left: 0px; height: 100%; width: 100%; overflow: hidden; pointer-events: none; z-index: -1; opacity: 0;"
+      tabindex="-1"
+      type="text/html"
+    />
+  </div>
+</div>
+`;

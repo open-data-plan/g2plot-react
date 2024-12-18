@@ -1,5 +1,5 @@
+import { render } from '@testing-library/react';
 import React from 'react';
-import { create } from 'react-test-renderer';
 import FacetChart, { FacetChartProps } from '../../src/plots/facet';
 
 describe('FacetChart', () => {
@@ -37,8 +37,8 @@ describe('FacetChart', () => {
         };
       },
     };
-    const renderer = create(<FacetChart {...config} />);
+    const result = render(<FacetChart {...config} />);
 
-    expect(renderer.toJSON()).toMatchSnapshot();
+    expect(result.container).toMatchSnapshot();
   });
 });
