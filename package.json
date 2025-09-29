@@ -61,7 +61,7 @@
   "devDependencies": {
     "@antv/g2plot": "^2.4.29",
     "@babel/cli": "^7.24.7",
-    "@commitlint/cli": "^19.1.0",
+    "@commitlint/cli": "^20.0.0",
     "@commitlint/config-conventional": "^20.0.0",
     "@pixas/babel-preset-lib": "^0.13.0",
     "@pixas/eslint-config": "^0.13.0",
