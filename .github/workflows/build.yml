@@ -6,14 +6,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v5
       - name: Setup Node.js environment
-        uses: actions/setup-node@v3.2.0
+        uses: actions/setup-node@v6
         with:
           # Set always-auth in npmrc.
           # always-auth: # optional, default is false
           # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
-          node-version: 19.x
+          node-version: 22.x
           # File containing the version Spec of the version to use.  Examples: .nvmrc, .node-version.
           # node-version-file: # optional
           # Target architecture for Node to use. Examples: x86, x64. Will use system architecture by default.
