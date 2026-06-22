@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@antv/g2plot": "^2.4.29",
-    "@babel/cli": "^7.24.7",
+    "@babel/cli": "^8.0.1",
     "@commitlint/cli": "^21.0.0",
     "@commitlint/config-conventional": "^21.0.0",
     "@pixas/babel-preset-lib": "^0.13.0",
