@@ -56,7 +56,7 @@
   },
   "prettier": "@pixas/prettier-config",
   "dependencies": {
-    "@babel/runtime": "^7.21.0"
+    "@babel/runtime": "^8.0.0"
   },
   "devDependencies": {
     "@antv/g2plot": "^2.4.29",
