@@ -1,7 +1,7 @@
-import { ESLint } from 'eslint';
 import fs from 'fs';
 import { camelCase, kebabCase, upperFirst } from 'lodash';
 import path from 'path';
+import { format, resolveConfig } from 'prettier';
 import stringTemplate from 'string-template';
 import { promisify } from 'util';
 
@@ -11,13 +11,6 @@ const mkdir = promisify(fs.mkdir);
 const writeFile = promisify(fs.writeFile);
 const readFile = promisify(fs.readFile);
 
-const eslint = new ESLint({
-  extensions: ['.tsx'],
-  baseConfig: {
-    extends: ['@pixas/eslint-config'],
-  },
-  fix: true,
-});
 const g2PlotDir = path.resolve(process.cwd(), 'node_modules/@antv/g2plot/src/plots');
 const plotDir = path.resolve(process.cwd(), 'src/plots');
 const testDir = path.resolve(process.cwd(), '__tests__/plots');
@@ -56,14 +49,9 @@ if (newCharts.length) {
   console.log('No new charts found');
 }
 
-const lintAndFixFileContent = async (fileContent: string, filePath: string) => {
-  const lintResult = await eslint.lintText(fileContent, {
-    filePath,
-  });
-
-  const { output } = lintResult[0];
-
-  return output || fileContent;
+const formatFileContent = async (fileContent: string, filePath: string) => {
+  const prettierConfig = await resolveConfig(filePath);
+  return format(fileContent, { ...prettierConfig, filepath: filePath });
 };
 
 const getChartConfig = (chart: string) => {
@@ -96,7 +84,7 @@ const createComponents = async () => {
     const dir = path.resolve(plotDir, cmpPath);
     await mkdir(dir);
     const filePath = path.resolve(dir, 'index.tsx');
-    const fixedContent = await lintAndFixFileContent(cmp, filePath);
+    const fixedContent = await formatFileContent(cmp, filePath);
 
     await writeFile(filePath, fixedContent, {
       encoding: 'utf8',
@@ -125,7 +113,7 @@ const addExport = async () => {
     exportFileContent += content;
   });
 
-  const fixedContent = await lintAndFixFileContent(exportFileContent, exportPath);
+  const fixedContent = await formatFileContent(exportFileContent, exportPath);
 
   writeFile(exportPath, fixedContent, {
     encoding: 'utf8',
@@ -150,7 +138,7 @@ const createTestCases = async () => {
     `;
 
     const filePath = path.resolve(testDir, `${cmpPath}.spec.tsx`);
-    const fixedContent = await lintAndFixFileContent(cmp, filePath);
+    const fixedContent = await formatFileContent(cmp, filePath);
 
     await writeFile(filePath, fixedContent, {
       encoding: 'utf8',
